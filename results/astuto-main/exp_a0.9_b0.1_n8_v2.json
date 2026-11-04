@@ -1,0 +1,930 @@
+{
+  "parameters": {
+    "alpha": 0.9,
+    "beta": 0.1,
+    "n_top": 8,
+    "min_cluster_size": 3,
+    "gamma": 0.1,
+    "mode": "hierarchical",
+    "resolver": "v2",
+    "classes_dir": "./input/classes",
+    "data_dir": "./input/data"
+  },
+  "summary": {
+    "total_classes_original": 86,
+    "total_classes_active": 75,
+    "isolated_classes": 11,
+    "total_data_entities": 20,
+    "num_microservices": 9
+  },
+  "resolver_report": {
+    "l0_internal_or_external": 196,
+    "l2_self_unknown": 1076,
+    "l2_self_internal": 106,
+    "noise_filtered": 143,
+    "l4_no_owner": 735,
+    "l4_noise_suppressed": 55,
+    "l4_fanout_sites": 105,
+    "l0_chain_typed": 69,
+    "l0_const": 257,
+    "l0_chain_base": 104,
+    "l3_naming": 26,
+    "l4_cap_suppressed": 43,
+    "l1_typed_no_method": 159,
+    "l1_var_typed": 18,
+    "l2_mixin": 1,
+    "assoc_target_missing": 2
+  },
+  "dependency_graph": {
+    "Comment": {
+      "Post": 3.2,
+      "ApiKey": 0.2,
+      "Follow": 0.2,
+      "Like": 0.2,
+      "PostStatusChange": 0.2,
+      "Webhook": 3,
+      "RunWebhook": 2,
+      "Current": 2,
+      "User": 2
+    },
+    "Like": {
+      "Post": 3.2,
+      "ApiKey": 0.2,
+      "Comment": 0.2,
+      "Follow": 0.2,
+      "PostStatusChange": 0.2,
+      "Webhook": 3,
+      "RunWebhook": 2,
+      "Current": 2,
+      "User": 2
+    },
+    "OAuth": {
+      "Current": 3,
+      "TenantDefaultOAuth": 2
+    },
+    "Post": {
+      "Webhook": 9,
+      "RunWebhook": 6,
+      "Current": 6,
+      "Board": 2,
+      "User": 2,
+      "PostStatus": 2,
+      "Like": 2,
+      "Follow": 2,
+      "Comment": 2,
+      "PostStatusChange": 2
+    },
+    "PostStatusChange": {
+      "Post": 3.2,
+      "ApiKey": 0.2,
+      "Comment": 0.2,
+      "Follow": 0.2,
+      "Like": 0.2,
+      "Webhook": 3,
+      "RunWebhook": 2,
+      "Current": 2,
+      "User": 2,
+      "PostStatus": 2
+    },
+    "User": {
+      "Tenant": 1,
+      "CreateStripeCustomer": 2,
+      "TenantMailer": 3,
+      "Webhook": 3,
+      "RunWebhook": 2,
+      "Current": 2,
+      "Post": 2,
+      "Like": 2,
+      "Comment": 2,
+      "ApiKey": 2
+    },
+    "Api::BaseController": {
+      "Current": 3,
+      "ApiKey": 1
+    },
+    "Api::V1::BoardsController": {
+      "Board": 8
+    },
+    "Api::V1::CommentsController": {
+      "Comment": 22,
+      "SendNotificationForCommentWorkflow": 2
+    },
+    "Api::V1::LikesController": {
+      "Like": 16
+    },
+    "Api::V1::PostStatusesController": {
+      "PostStatus": 2
+    },
+    "Api::V1::PostsController": {
+      "Post": 26,
+      "ExecutePostStatusChangeLogicWorkflow": 2
+    },
+    "Api::V1::UsersController": {
+      "User": 17
+    },
+    "ApiKeysController": {
+      "User": 1.0,
+      "ApiKey": 2
+    },
+    "ApplicationController": {
+      "User": 1.0,
+      "Current": 11,
+      "TenantSetting": 1,
+      "TenantBilling": 1,
+      "Board": 4,
+      "OAuth": 5
+    },
+    "BillingController": {
+      "Current": 33,
+      "TenantBilling": 22.0,
+      "TenantMailer": 3,
+      "User": 1.0,
+      "Tenant": 2,
+      "Board": 4
+    },
+    "BoardsController": {
+      "Board": 11,
+      "ReorderWorkflow": 2
+    },
+    "CommentsController": {
+      "Comment": 16,
+      "SendNotificationForCommentWorkflow": 2,
+      "CommentPolicy": 0.5333333333333333,
+      "PostPolicy": 0.5333333333333333,
+      "TenantPolicy": 0.5333333333333333,
+      "TenantSettingPolicy": 0.2,
+      "UserPolicy": 0.2
+    },
+    "FollowsController": {
+      "Follow": 6
+    },
+    "InvitationsController": {
+      "User": 3,
+      "Invitation": 4,
+      "InvitationMailer": 6
+    },
+    "LikesController": {
+      "Like": 9
+    },
+    "OAuthsController": {
+      "OAuth": 30,
+      "Current": 4,
+      "Tenant": 2,
+      "OAuthExchangeAuthCodeForProfileWorkflow": 2,
+      "OAuthSignInUserWorkflow": 2,
+      "User": 5.0,
+      "ApplicationController": 1,
+      "OAuthPolicy": 0.5,
+      "WebhookPolicy": 0.5
+    },
+    "PostStatusChangesController": {
+      "PostStatusChange": 7
+    },
+    "PostStatusesController": {
+      "PostStatus": 8,
+      "ReorderWorkflow": 2
+    },
+    "PostsController": {
+      "Post": 41,
+      "Board": 3,
+      "Current": 12,
+      "User": 1.0,
+      "Follow": 2,
+      "PostStatus": 4,
+      "ExecutePostStatusChangeLogicWorkflow": 2,
+      "CommentPolicy": 0.5333333333333333,
+      "PostPolicy": 0.5333333333333333,
+      "TenantPolicy": 0.5333333333333333,
+      "TenantSettingPolicy": 0.2,
+      "UserPolicy": 0.2
+    },
+    "RegistrationsController": {
+      "Current": 10,
+      "Invitation": 3,
+      "User": 5.0
+    },
+    "SiteSettingsController": {
+      "Invitation": 4
+    },
+    "StaticPagesController": {
+      "Board": 2,
+      "Current": 3,
+      "PostStatus": 3,
+      "Post": 3
+    },
+    "TenantDefaultOAuthsController": {
+      "TenantDefaultOAuth": 4
+    },
+    "TenantsController": {
+      "OAuth": 6,
+      "Current": 5,
+      "Tenant": 5,
+      "User": 11,
+      "CreateWelcomeEntitiesWorkflow": 2,
+      "CreateStripeCustomer": 2,
+      "TenantMailer": 3,
+      "AddCustomDomainWorkflow": 2,
+      "CommentPolicy": 0.7333333333333334,
+      "PostPolicy": 0.7333333333333334,
+      "TenantPolicy": 0.7333333333333334,
+      "TenantSettingPolicy": 0.4,
+      "UserPolicy": 0.4
+    },
+    "UsersController": {
+      "User": 7,
+      "DestroyApiKeyIfNeededWorkflow": 2,
+      "CommentPolicy": 0.2,
+      "PostPolicy": 0.2,
+      "TenantPolicy": 0.2,
+      "TenantSettingPolicy": 0.2,
+      "UserPolicy": 0.2
+    },
+    "WebhooksController": {
+      "Webhook": 8,
+      "CreateLiquidTemplateContextWorkflow": 2,
+      "RunWebhook": 2,
+      "Current": 2,
+      "OAuthPolicy": 0.5,
+      "WebhookPolicy": 0.5
+    },
+    "ApplicationMailer": {
+      "Current": 7
+    },
+    "InvitationMailer": {
+      "Current": 1,
+      "Invitation": 1
+    },
+    "TenantMailer": {
+      "Current": 10,
+      "Tenant": 7
+    },
+    "UserMailer": {
+      "Current": 7,
+      "Invitation": 1.6666666666666665,
+      "TenantBilling": 1.6666666666666665,
+      "TenantSetting": 1.6666666666666665,
+      "Comment": 7
+    },
+    "RunWebhook": {
+      "Current": 3,
+      "Tenant": 2,
+      "Webhook": 2,
+      "CreateLiquidTemplateContextWorkflow": 2
+    },
+    "SendRecapEmails": {
+      "TenantBilling": 5.0,
+      "Tenant": 3,
+      "Current": 1,
+      "Post": 18,
+      "UserMailer": 9
+    },
+    "Api::BoardPolicy": {
+      "User": 3.0
+    },
+    "Api::CommentPolicy": {
+      "User": 7.0
+    },
+    "Api::LikePolicy": {
+      "User": 4.0
+    },
+    "Api::PostPolicy": {
+      "User": 9.0
+    },
+    "Api::PostStatusPolicy": {
+      "User": 1.0
+    },
+    "Api::UserPolicy": {
+      "User": 9.0
+    },
+    "ApiKeyPolicy": {
+      "User": 1.0
+    },
+    "BoardPolicy": {
+      "User": 4.0
+    },
+    "CommentPolicy": {
+      "User": 4.0
+    },
+    "OAuthPolicy": {
+      "User": 5.0
+    },
+    "PostPolicy": {
+      "User": 3.0
+    },
+    "PostStatusPolicy": {
+      "User": 4.0
+    },
+    "TenantPolicy": {
+      "User": 2.0
+    },
+    "TenantSettingPolicy": {
+      "User": 2.0
+    },
+    "UserPolicy": {
+      "User": 6.0
+    },
+    "WebhookPolicy": {
+      "User": 5.0
+    },
+    "AddCustomDomainWorkflow": {
+      "Tenant": 2
+    },
+    "CreateLiquidTemplateContextWorkflow": {
+      "Board": 2,
+      "PostStatus": 2,
+      "User": 8,
+      "Post": 2,
+      "Comment": 2,
+      "Current": 1
+    },
+    "CreateStripeCustomer": {
+      "Current": 1,
+      "User": 2,
+      "UserMailer": 1.0,
+      "TenantBilling": 1
+    },
+    "CreateWelcomeEntitiesWorkflow": {
+      "Current": 1,
+      "Tenant": 1,
+      "Board": 4,
+      "PostStatus": 8,
+      "Post": 5,
+      "PostStatusChange": 2,
+      "TenantSetting": 2,
+      "OAuth": 2,
+      "TenantDefaultOAuth": 2
+    },
+    "DestroyApiKeyIfNeededWorkflow": {
+      "User": 3
+    },
+    "ExecutePostStatusChangeLogicWorkflow": {
+      "PostStatusChange": 2,
+      "Post": 1,
+      "UserMailer": 3
+    },
+    "OAuthExchangeAuthCodeForProfileWorkflow": {
+      "OAuth": 1
+    },
+    "OAuthSignInUserWorkflow": {
+      "User": 4,
+      "Invitation": 2
+    },
+    "SendNotificationForCommentWorkflow": {
+      "Post": 2.0,
+      "Comment": 1.75,
+      "Follow": 0.75,
+      "Like": 0.75,
+      "PostStatusChange": 0.75,
+      "UserMailer": 9
+    },
+    "ApiKey": {
+      "User": 2
+    },
+    "Board": {
+      "Post": 2
+    },
+    "Follow": {
+      "User": 2,
+      "Post": 2
+    },
+    "Invitation": {
+      "Tenant": 2
+    },
+    "PostStatus": {
+      "Post": 2,
+      "PostStatusChange": 2
+    },
+    "Tenant": {
+      "TenantSetting": 2,
+      "TenantBilling": 2,
+      "Board": 2,
+      "PostStatus": 2,
+      "Post": 2,
+      "User": 2,
+      "OAuth": 2,
+      "TenantDefaultOAuth": 2
+    },
+    "TenantBilling": {
+      "Tenant": 2
+    },
+    "TenantDefaultOAuth": {
+      "OAuth": 2
+    },
+    "TenantSetting": {
+      "Tenant": 2
+    },
+    "Current": {
+    },
+    "Webhook": {
+    },
+    "ReorderWorkflow": {
+    }
+  },
+  "data_associations": {
+    "ApiKey": [
+      "User"
+    ],
+    "Board": [
+      "Post"
+    ],
+    "Comment": [
+      "User",
+      "Post",
+      "Webhook"
+    ],
+    "Follow": [
+      "User",
+      "Post"
+    ],
+    "Invitation": [
+      "Tenant"
+    ],
+    "Like": [
+      "User",
+      "Post",
+      "Webhook"
+    ],
+    "OAuth": [
+      "TenantDefaultOAuth"
+    ],
+    "Post": [
+      "Board",
+      "User",
+      "PostStatus",
+      "Like",
+      "Follow",
+      "Comment",
+      "PostStatusChange",
+      "Webhook"
+    ],
+    "PostStatus": [
+      "Post",
+      "PostStatusChange"
+    ],
+    "PostStatusChange": [
+      "User",
+      "Post",
+      "PostStatus",
+      "Webhook"
+    ],
+    "Tenant": [
+      "TenantSetting",
+      "TenantBilling",
+      "Board",
+      "PostStatus",
+      "Post",
+      "User",
+      "OAuth",
+      "TenantDefaultOAuth"
+    ],
+    "TenantBilling": [
+      "Tenant"
+    ],
+    "TenantDefaultOAuth": [
+      "OAuth"
+    ],
+    "TenantSetting": [
+      "Tenant"
+    ],
+    "User": [
+      "Post",
+      "Like",
+      "Comment",
+      "ApiKey",
+      "Webhook"
+    ],
+    "Api::V1::BoardsController": [
+      "Board"
+    ],
+    "Api::V1::CommentsController": [
+      "Comment"
+    ],
+    "Api::V1::LikesController": [
+      "Like"
+    ],
+    "Api::V1::PostStatusesController": [
+      "PostStatus"
+    ],
+    "Api::V1::PostsController": [
+      "Post"
+    ],
+    "Api::V1::UsersController": [
+      "User"
+    ],
+    "ApiKeysController": [
+      "ApiKey"
+    ],
+    "ApplicationController": [
+      "Board",
+      "OAuth"
+    ],
+    "BillingController": [
+      "TenantBilling",
+      "Board"
+    ],
+    "BoardsController": [
+      "Board"
+    ],
+    "CommentsController": [
+      "Comment"
+    ],
+    "FollowsController": [
+      "Follow"
+    ],
+    "InvitationsController": [
+      "User",
+      "Invitation"
+    ],
+    "LikesController": [
+      "Like"
+    ],
+    "OAuthsController": [
+      "OAuth",
+      "Tenant",
+      "User"
+    ],
+    "PostStatusChangesController": [
+      "PostStatusChange"
+    ],
+    "PostStatusesController": [
+      "PostStatus"
+    ],
+    "PostsController": [
+      "Post",
+      "Board",
+      "Follow",
+      "PostStatus"
+    ],
+    "RegistrationsController": [
+      "Invitation",
+      "User"
+    ],
+    "SiteSettingsController": [
+      "Invitation"
+    ],
+    "StaticPagesController": [
+      "Board",
+      "PostStatus",
+      "Post"
+    ],
+    "TenantDefaultOAuthsController": [
+      "TenantDefaultOAuth"
+    ],
+    "TenantsController": [
+      "OAuth",
+      "Tenant",
+      "User"
+    ],
+    "UsersController": [
+      "User"
+    ],
+    "WebhooksController": [
+      "Webhook"
+    ],
+    "ApplicationMailer": [
+      "Current"
+    ],
+    "RunWebhook": [
+      "Tenant",
+      "Webhook"
+    ],
+    "SendRecapEmails": [
+      "TenantBilling",
+      "Tenant",
+      "Post"
+    ],
+    "AddCustomDomainWorkflow": [
+      "Tenant"
+    ],
+    "CreateLiquidTemplateContextWorkflow": [
+      "Board",
+      "PostStatus",
+      "User",
+      "Post",
+      "Comment"
+    ],
+    "CreateStripeCustomer": [
+      "User"
+    ],
+    "CreateWelcomeEntitiesWorkflow": [
+      "Board",
+      "PostStatus",
+      "Post",
+      "PostStatusChange",
+      "TenantSetting",
+      "TenantDefaultOAuth"
+    ],
+    "ExecutePostStatusChangeLogicWorkflow": [
+      "PostStatusChange"
+    ],
+    "OAuthSignInUserWorkflow": [
+      "User",
+      "Invitation"
+    ],
+    "Current": [
+
+    ],
+    "Webhook": [
+
+    ],
+    "Api::BaseController": [
+
+    ],
+    "InvitationMailer": [
+
+    ],
+    "TenantMailer": [
+
+    ],
+    "UserMailer": [
+
+    ],
+    "Api::BoardPolicy": [
+
+    ],
+    "Api::CommentPolicy": [
+
+    ],
+    "Api::LikePolicy": [
+
+    ],
+    "Api::PostPolicy": [
+
+    ],
+    "Api::PostStatusPolicy": [
+
+    ],
+    "Api::UserPolicy": [
+
+    ],
+    "ApiKeyPolicy": [
+
+    ],
+    "BoardPolicy": [
+
+    ],
+    "CommentPolicy": [
+
+    ],
+    "OAuthPolicy": [
+
+    ],
+    "PostPolicy": [
+
+    ],
+    "PostStatusPolicy": [
+
+    ],
+    "TenantPolicy": [
+
+    ],
+    "TenantSettingPolicy": [
+
+    ],
+    "UserPolicy": [
+
+    ],
+    "WebhookPolicy": [
+
+    ],
+    "DestroyApiKeyIfNeededWorkflow": [
+
+    ],
+    "OAuthExchangeAuthCodeForProfileWorkflow": [
+
+    ],
+    "ReorderWorkflow": [
+
+    ],
+    "SendNotificationForCommentWorkflow": [
+
+    ]
+  },
+  "clusters": [
+    {
+      "id": 1,
+      "name": "Cluster139",
+      "classes": [
+        "PostStatusPolicy",
+        "CommentPolicy",
+        "Api::V1::PostStatusesController",
+        "CreateLiquidTemplateContextWorkflow",
+        "SendNotificationForCommentWorkflow",
+        "CommentsController",
+        "Comment",
+        "Api::V1::CommentsController"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cluster135",
+      "classes": [
+        "WebhookPolicy",
+        "WebhooksController",
+        "Webhook",
+        "PostStatusChange",
+        "PostStatusChangesController"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cluster138",
+      "classes": [
+        "TenantSettingPolicy",
+        "PostPolicy",
+        "AddCustomDomainWorkflow",
+        "CreateStripeCustomer",
+        "StaticPagesController",
+        "RunWebhook",
+        "ExecutePostStatusChangeLogicWorkflow",
+        "UserMailer",
+        "SendRecapEmails",
+        "Api::V1::PostsController",
+        "Post",
+        "PostsController",
+        "FollowsController",
+        "Follow"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cluster137",
+      "classes": [
+        "DestroyApiKeyIfNeededWorkflow",
+        "OAuthPolicy",
+        "UserPolicy",
+        "Api::CommentPolicy",
+        "UsersController",
+        "Api::UserPolicy",
+        "Api::PostPolicy",
+        "User",
+        "Api::V1::UsersController",
+        "Api::PostStatusPolicy"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cluster136",
+      "classes": [
+        "BoardPolicy",
+        "ApiKeysController",
+        "ApiKey",
+        "LikesController",
+        "Like",
+        "Api::V1::LikesController"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cluster134",
+      "classes": [
+        "ApiKeyPolicy",
+        "OAuthSignInUserWorkflow",
+        "Api::BaseController",
+        "TenantSetting",
+        "ApplicationMailer",
+        "RegistrationsController",
+        "Tenant",
+        "TenantMailer",
+        "TenantBilling",
+        "BillingController",
+        "Current",
+        "SiteSettingsController",
+        "Invitation",
+        "InvitationsController",
+        "InvitationMailer"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cluster122",
+      "classes": [
+        "Api::BoardPolicy",
+        "PostStatusesController",
+        "CreateWelcomeEntitiesWorkflow",
+        "PostStatus"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Cluster130",
+      "classes": [
+        "Api::LikePolicy",
+        "ReorderWorkflow",
+        "Api::V1::BoardsController",
+        "BoardsController",
+        "Board"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cluster133",
+      "classes": [
+        "TenantPolicy",
+        "OAuthExchangeAuthCodeForProfileWorkflow",
+        "TenantDefaultOAuthsController",
+        "TenantDefaultOAuth",
+        "ApplicationController",
+        "TenantsController",
+        "OAuth",
+        "OAuthsController"
+      ]
+    }
+  ],
+  "cluster_metrics": [
+    {
+      "cluster_id": 1,
+      "num_classes": 8,
+      "intra_dependencies": 46.2833,
+      "inter_dependencies": 52.7167,
+      "f_struct": 0.467508,
+      "f_data": 0.069048,
+      "f_quality": 0.427662
+    },
+    {
+      "cluster_id": 2,
+      "num_classes": 5,
+      "intra_dependencies": 18.5,
+      "inter_dependencies": 23.5,
+      "f_struct": 0.440476,
+      "f_data": 0.025,
+      "f_quality": 0.398929
+    },
+    {
+      "cluster_id": 3,
+      "num_classes": 14,
+      "intra_dependencies": 124.7333,
+      "inter_dependencies": 108.2667,
+      "f_struct": 0.535336,
+      "f_data": 0.068346,
+      "f_quality": 0.488637
+    },
+    {
+      "cluster_id": 4,
+      "num_classes": 10,
+      "intra_dependencies": 66.2,
+      "inter_dependencies": 21.8,
+      "f_struct": 0.752273,
+      "f_data": 0.022222,
+      "f_quality": 0.679268
+    },
+    {
+      "cluster_id": 5,
+      "num_classes": 6,
+      "intra_dependencies": 27.2,
+      "inter_dependencies": 19.8,
+      "f_struct": 0.578723,
+      "f_data": 0.088889,
+      "f_quality": 0.52974
+    },
+    {
+      "cluster_id": 6,
+      "num_classes": 15,
+      "intra_dependencies": 128.0,
+      "inter_dependencies": 31.0,
+      "f_struct": 0.805031,
+      "f_data": 0.076984,
+      "f_quality": 0.732227
+    },
+    {
+      "cluster_id": 7,
+      "num_classes": 4,
+      "intra_dependencies": 16,
+      "inter_dependencies": 28.0,
+      "f_struct": 0.363636,
+      "f_data": 0.083333,
+      "f_quality": 0.335606
+    },
+    {
+      "cluster_id": 8,
+      "num_classes": 5,
+      "intra_dependencies": 21,
+      "inter_dependencies": 6.0,
+      "f_struct": 0.777778,
+      "f_data": 0.1,
+      "f_quality": 0.71
+    },
+    {
+      "cluster_id": 9,
+      "num_classes": 8,
+      "intra_dependencies": 53.7333,
+      "inter_dependencies": 69.2667,
+      "f_struct": 0.436856,
+      "f_data": 0.130952,
+      "f_quality": 0.406266
+    }
+  ],
+  "isolated_classes": [
+    "ApplicationRecord",
+    "Current::MissingCurrentTenant",
+    "Current::CurrentTenantNotActive",
+    "Api::V1::Helpers::ImpersonationError",
+    "ModerationController",
+    "PasswordsController",
+    "SessionsController",
+    "Api::BasePolicy",
+    "ApplicationPolicy",
+    "ApplicationPolicy::Scope",
+    "EnsureCoherentOrderingWorkflow"
+  ]
+}

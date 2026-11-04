@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv*/
+build/
+# fetched subjects (scripts/fetch_subjects.sh)
+datasets/
+*.tar.gz
+*.zip
+*.pkl

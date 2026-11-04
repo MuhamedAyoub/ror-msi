@@ -1,0 +1,2 @@
+# Python 3.10 or later; only the figures need a third-party package
+matplotlib==3.10.7

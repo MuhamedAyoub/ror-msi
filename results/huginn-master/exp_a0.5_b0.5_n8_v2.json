@@ -1,0 +1,1484 @@
+{
+  "parameters": {
+    "alpha": 0.5,
+    "beta": 0.5,
+    "n_top": 8,
+    "min_cluster_size": 3,
+    "gamma": 0.1,
+    "mode": "hierarchical",
+    "resolver": "v2",
+    "classes_dir": "./input/classes",
+    "data_dir": "./input/data"
+  },
+  "summary": {
+    "total_classes_original": 135,
+    "total_classes_active": 129,
+    "isolated_classes": 6,
+    "total_data_entities": 107,
+    "num_microservices": 12
+  },
+  "resolver_report": {
+    "l2_self_unknown": 2763,
+    "l4_no_owner": 4013,
+    "noise_filtered": 1217,
+    "l0_internal_or_external": 533,
+    "l4_noise_suppressed": 92,
+    "l2_self_internal": 631,
+    "l4_fanout_sites": 400,
+    "l0_const": 66,
+    "l1_typed_no_method": 62,
+    "l4_cap_suppressed": 1,
+    "l3_naming": 36,
+    "l2_mixin": 502,
+    "l0_chain_base": 10,
+    "l1_var_typed": 15,
+    "l0_chain_typed": 8
+  },
+  "dependency_graph": {
+    "Agent": {
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5,
+      "User": 3.0,
+      "AgentLog": 3,
+      "Event": 7,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "AgentReceiveJob": 2,
+      "AgentCheckJob": 2,
+      "Agent::Drop": 1,
+      "Service": 2,
+      "Link": 4,
+      "ControlLink": 4,
+      "ScenarioMembership": 2,
+      "Scenario": 2
+    },
+    "Agent::Drop": {
+      "Agent": 1.0
+    },
+    "AgentLog": {
+      "Agent": 6,
+      "Event": 4
+    },
+    "Agents::AdiosoAgent": {
+      "Agent": 4,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::AftershipAgent": {
+      "Agent": 3
+    },
+    "Agents::AttributeDifferenceAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Seen": 2.0,
+      "Agents::WebsiteAgent::Output": 2.0
+    },
+    "Agents::ChangeDetectorAgent": {
+      "Agent": 4,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::CommanderAgent": {
+      "Agent": 1,
+      "Agent::Drop": 3
+    },
+    "Agents::CsvAgent": {
+      "Agent": 10,
+      "Agents::ImapFolderAgent::Notified": 2.5,
+      "Agents::WebsiteAgent::Repeater": 2.5,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5,
+      "Agents::DropboxWatchAgent::DropboxDirDiff": 2.0
+    },
+    "Agents::DataOutputAgent": {
+      "Agent": 11,
+      "Agents::ImapFolderAgent::Notified": 1.5,
+      "Agents::WebsiteAgent::Repeater": 1.5,
+      "Agents::ImapFolderAgent::Seen": 5.5,
+      "Agents::WebsiteAgent::Output": 5.5,
+      "Event": 3,
+      "Event::Drop": 1.0,
+      "Agents::DataOutputAgent::XMLNode": 2.0
+    },
+    "Agents::DeDuplicationAgent": {
+      "Agent": 4
+    },
+    "Agents::DelayAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::DigestAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::DropboxFileUrlAgent": {
+      "Agent": 5
+    },
+    "Agents::DropboxWatchAgent": {
+      "Agent": 5,
+      "Agents::DropboxWatchAgent::DropboxDirDiff": 2,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::EmailAgent": {
+      "Agent": 6,
+      "SystemMailer": 3
+    },
+    "Agents::EmailDigestAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "SystemMailer": 3,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::EventFormattingAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agent::Drop": 3,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5
+    },
+    "Agents::EvernoteAgent": {
+      "Agent": 4,
+      "Agents::EvernoteAgent::NoteStore": 2.0,
+      "Agents::EvernoteAgent::Note": 4,
+      "Agents::EvernoteAgent::NoteStore::Search": 4,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::EvernoteAgent::NoteStore": {
+      "Agents::EvernoteAgent::NoteStore::Search": 2,
+      "Agents::EvernoteAgent::Note": 12.0,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::EvernoteAgent::NoteStore::Search": {
+      "Agents::EvernoteAgent::Note": 2.0,
+      "Agents::EvernoteAgent::NoteStore": 2.0,
+      "Agents::ImapFolderAgent::Notified": 2.0,
+      "Agents::WebsiteAgent::Repeater": 2.0
+    },
+    "Agents::EvernoteAgent::Note": {
+      "Link": 1.0,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5
+    },
+    "Agents::FtpsiteAgent": {
+      "Agent": 10.2,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5,
+      "Event": 0.2,
+      "Scenario": 0.2,
+      "Service": 0.2,
+      "UserCredential": 0.2,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5
+    },
+    "Agents::GapDetectorAgent": {
+      "Agent": 2,
+      "Event::Drop": 2.0,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::GoogleCalendarPublishAgent": {
+      "Agent": 7,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::GoogleTranslationAgent": {
+      "Agent": 7,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5
+    },
+    "Agents::HipchatAgent": {
+      "Agent": 8
+    },
+    "Agents::HttpStatusAgent": {
+      "Agent": 6,
+      "Agents::WebsiteAgent::ResponseDrop": 2.083333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 2.083333333333333,
+      "Agent::Drop": 0.25,
+      "Agents::StubhubAgent": 0.25,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5,
+      "Agents::WitaiAgent": 0.3333333333333333
+    },
+    "Agents::HumanTaskAgent": {
+      "Agent": 15,
+      "Agents::ImapFolderAgent::Seen": 5.0,
+      "Agents::WebsiteAgent::Output": 5.0,
+      "Event": 1,
+      "Agents::WebsiteAgent::ResponseDrop": 1.0,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 1.0,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agent::Drop": 0.5,
+      "Agents::StubhubAgent": 0.5,
+      "Agents::HumanTaskAgent::AgentQuestionForm": 1
+    },
+    "Agents::HumanTaskAgent::AgentQuestionForm": {
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::ImapFolderAgent": {
+      "Agent": 29,
+      "Agents::ImapFolderAgent::Message": 9.0,
+      "Agents::ImapFolderAgent::Seen": 8.0,
+      "Agents::WebsiteAgent::Output": 3.0,
+      "Agents::LiquidOutputAgent": 1.0,
+      "Agents::ImapFolderAgent::Notified": 2.5,
+      "Agents::ImapFolderAgent::Client": 4.0,
+      "Agents::EvernoteAgent::Note": 2.0,
+      "Agents::WebsiteAgent::Repeater": 0.5
+    },
+    "Agents::ImapFolderAgent::Client": {
+      "Agents::ImapFolderAgent::Message": 2
+    },
+    "Agents::ImapFolderAgent::Message": {
+      "Agents::EvernoteAgent::Note": 3.0,
+      "Agents::ImapFolderAgent::Client": 2,
+      "Agents::LiquidOutputAgent": 1.0
+    },
+    "Agents::JabberAgent": {
+      "Agent": 5
+    },
+    "Agents::JabberAgent::Worker": {
+      "Agent": 1.0,
+      "Agents::LocalFileAgent::Worker": 0.5,
+      "Agents::TwitterStreamAgent::Worker": 0.5
+    },
+    "Agents::JavaScriptAgent": {
+      "Agent": 13,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0,
+      "Agents::KeyValueStoreAgent": 4,
+      "Event::Drop": 1.0,
+      "User": 1.0
+    },
+    "Agents::JiraAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5,
+      "Agents::JavaScriptAgent": 1.0
+    },
+    "Agents::JqAgent": {
+      "Agent": 9,
+      "Agents::LocalFileAgent": 1.3333333333333333,
+      "Agents::ShellCommandAgent": 0.6666666666666666
+    },
+    "Agents::JsonParseAgent": {
+      "Agent": 4
+    },
+    "Agents::KeyValueStoreAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5
+    },
+    "Agents::LiquidOutputAgent": {
+      "Agent": 4,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5,
+      "Agents::WebsiteAgent::ResponseDrop": 0.3333333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.3333333333333333,
+      "Agents::WitaiAgent": 0.3333333333333333
+    },
+    "Agents::LocalFileAgent": {
+      "Agent": 13,
+      "Agents::JqAgent": 0.5,
+      "Agents::ShellCommandAgent": 0.5
+    },
+    "Agents::LocalFileAgent::Worker": {
+      "Agents::LocalFileAgent": 5.0,
+      "Agents::JabberAgent::Worker": 0.5,
+      "Agents::TwitterStreamAgent::Worker": 0.5,
+      "Agent": 1.0
+    },
+    "Agents::ManualEventAgent": {
+      "Agent": 3
+    },
+    "Agents::MqttAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::OpenaiImageGenerationAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Seen": 3.5,
+      "Agents::WebsiteAgent::Output": 3.5
+    },
+    "Agents::OpenaiLlmAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Notified": 1.0,
+      "Agents::WebsiteAgent::Repeater": 1.0,
+      "Agents::ImapFolderAgent::Seen": 3.0,
+      "Agents::WebsiteAgent::Output": 3.0
+    },
+    "Agents::OpenaiSpeechAgent": {
+      "Agent": 10,
+      "Agents::ImapFolderAgent::Seen": 2.0,
+      "Agents::WebsiteAgent::Output": 2.0,
+      "Agents::WebsiteAgent::ResponseDrop": 1.1666666666666665,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 1.1666666666666665,
+      "Agents::WitaiAgent": 0.6666666666666666
+    },
+    "Agents::OpenaiVideoGenerationAgent": {
+      "Agent": 13,
+      "Agents::ImapFolderAgent::Seen": 3.0,
+      "Agents::WebsiteAgent::Output": 3.0,
+      "Agents::ImapFolderAgent::Notified": 1.5,
+      "Agents::WebsiteAgent::Repeater": 1.5
+    },
+    "Agents::PdfInfoAgent": {
+      "Agent": 7,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5
+    },
+    "Agents::PeakDetectorAgent": {
+      "Agent": 2,
+      "Event::Drop": 2.0,
+      "Agents::ImapFolderAgent::Notified": 1.0,
+      "Agents::WebsiteAgent::Repeater": 1.0
+    },
+    "Agents::PhantomJsCloudAgent": {
+      "Agent": 8,
+      "Agents::ImapFolderAgent::Seen": 2.5,
+      "Agents::WebsiteAgent::Output": 2.5,
+      "User": 1.0
+    },
+    "Agents::PostAgent": {
+      "Agent": 14,
+      "Agents::ImapFolderAgent::Seen": 2.0,
+      "Agents::WebsiteAgent::Output": 2.0,
+      "Agents::DataOutputAgent::XMLNode": 1.0,
+      "Agents::WebsiteAgent::ResponseDrop": 0.8333333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.8333333333333333,
+      "Agents::WitaiAgent": 0.3333333333333333
+    },
+    "Agents::PublicTransportAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5
+    },
+    "Agents::PushbulletAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::PushoverAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5
+    },
+    "Agents::ReadFileAgent": {
+      "Agent": 2
+    },
+    "Agents::RssAgent": {
+      "Agent": 10,
+      "Agent::Drop": 0.75,
+      "Agents::StubhubAgent": 0.75,
+      "Agents::WebsiteAgent::ResponseDrop": 0.75,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.75,
+      "Agents::EvernoteAgent::Note": 3.0,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5,
+      "Event": 2
+    },
+    "Agents::S3Agent": {
+      "Agent": 14,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 1.5,
+      "Agents::LiquidOutputAgent": 1.0
+    },
+    "Agents::SchedulerAgent": {
+      "Agent": 3
+    },
+    "Agents::SentimentAgent": {
+      "Agent": 2,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::ShellCommandAgent": {
+      "Agent": 8
+    },
+    "Agents::SlackAgent": {
+      "Agent": 6,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::StubhubAgent": {
+      "Agent": 3,
+      "Agents::StubhubAgent::StubhubFetcher": 1
+    },
+    "Agents::TelegramAgent": {
+      "Agent": 6,
+      "Agents::ImapFolderAgent::Seen": 4.0,
+      "Agents::WebsiteAgent::Output": 4.0,
+      "Agents::ImapFolderAgent::Client": 2.0
+    },
+    "Agents::ThreadsPublishAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Client": 2.0
+    },
+    "Agents::ThreadsUserAgent": {
+      "Agent": 5,
+      "LogsController": 1.0,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::TriggerAgent": {
+      "Agent": 7,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::TumblrLikesAgent": {
+      "Agent": 5,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::TumblrPublishAgent": {
+      "Agent": 7,
+      "Agents::ImapFolderAgent::Seen": 9.5,
+      "Agents::WebsiteAgent::Output": 9.5
+    },
+    "Agents::TwilioAgent": {
+      "Agent": 12,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::TwilioReceiveTextAgent": {
+      "Agent": 8,
+      "Agents::WebsiteAgent::ResponseDrop": 0.3333333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.3333333333333333,
+      "Agents::WitaiAgent": 0.3333333333333333
+    },
+    "Agents::TwitterActionAgent": {
+      "Agent": 7
+    },
+    "Agents::TwitterFavorites": {
+      "Agent": 5,
+      "Event::Drop": 1.0
+    },
+    "Agents::TwitterPublishAgent": {
+      "Agent": 5,
+      "Agent::Drop": 0.25,
+      "Agents::StubhubAgent": 0.25,
+      "Agents::WebsiteAgent::ResponseDrop": 0.25,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.25
+    },
+    "Agents::TwitterSearchAgent": {
+      "Agent": 5,
+      "Event::Drop": 1.0,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::TwitterStreamAgent": {
+      "Agent": 9,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0,
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agents::TwitterStreamAgent::Worker": 1
+    },
+    "Agents::TwitterStreamAgent::Worker": {
+      "Agents::ImapFolderAgent::Notified": 0.5,
+      "Agents::WebsiteAgent::Repeater": 0.5,
+      "Agents::TwitterStreamAgent": 1.0
+    },
+    "Agents::TwitterUserAgent": {
+      "Agent": 11,
+      "Event::Drop": 1.0,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::UserLocationAgent": {
+      "Agent": 6,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::WeatherAgent": {
+      "Agent": 5
+    },
+    "Agents::WebhookAgent": {
+      "Agent": 6,
+      "Agents::WebsiteAgent::ResponseDrop": 0.3333333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.3333333333333333,
+      "Agents::WitaiAgent": 0.3333333333333333,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0
+    },
+    "Agents::WebsiteAgent": {
+      "Agent": 26,
+      "Agents::ImapFolderAgent::Notified": 3.0,
+      "Agents::WebsiteAgent::Repeater": 4.0,
+      "Agents::ImapFolderAgent::Seen": 1.5,
+      "Agents::WebsiteAgent::Output": 3.5,
+      "Agents::WebsiteAgent::ResponseDrop": 2.0,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 2.0
+    },
+    "Agents::WebsiteAgent::Output": {
+      "Agents::ImapFolderAgent::Seen": 1.0
+    },
+    "Agents::WebsiteAgent::Repeater": {
+      "Agents::ImapFolderAgent::Notified": 1.0
+    },
+    "Agents::WebsiteAgent::ResponseDrop": {
+      "Agents::WebsiteAgent::HeaderDrop": 2,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 1.8333333333333333,
+      "Agents::WitaiAgent": 0.5,
+      "Agent::Drop": 0.3333333333333333,
+      "Agents::StubhubAgent": 0.3333333333333333
+    },
+    "Agents::WebsiteAgent::ResponseFromEventDrop": {
+      "Agents::WebsiteAgent::HeaderDrop": 2
+    },
+    "Agents::WeiboPublishAgent": {
+      "Agent": 5,
+      "Agent::Drop": 1.0,
+      "Event": 1
+    },
+    "Agents::WeiboUserAgent": {
+      "Agent": 3,
+      "Agents::ImapFolderAgent::Seen": 1.0,
+      "Agents::WebsiteAgent::Output": 1.0,
+      "Event::Drop": 1.0
+    },
+    "Agents::WitaiAgent": {
+      "Agent": 4
+    },
+    "Event": {
+      "Agent": 9.0,
+      "Event::Drop": 1,
+      "User": 2,
+      "AgentLog": 4
+    },
+    "Event::Drop": {
+      "Agents::ImapFolderAgent::Client": 2.0,
+      "AgentLog": 0.6666666666666666,
+      "Event": 1.6666666666666665,
+      "ScenarioMembership": 0.6666666666666666,
+      "Agents::WeatherAgent": 0.5,
+      "Agent": 0.5
+    },
+    "Link": {
+      "Agent": 4.5,
+      "User": 0.5
+    },
+    "Scenario": {
+      "Agent": 4.25,
+      "Event": 0.25,
+      "Service": 0.25,
+      "UserCredential": 0.25,
+      "User": 2,
+      "ScenarioMembership": 2
+    },
+    "Service": {
+      "Agents::ImapFolderAgent::Seen": 2.0,
+      "Agents::WebsiteAgent::Output": 2.0,
+      "Agents::ImapFolderAgent::Client": 2.0,
+      "User": 2,
+      "Agent": 2
+    },
+    "User": {
+      "Service": 4,
+      "UserCredential": 2,
+      "Event": 2,
+      "Agent": 2,
+      "AgentLog": 2,
+      "Scenario": 2
+    },
+    "Admin::UsersController": {
+      "User": 13,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "Agents::DryRunsController": {
+      "Agent": 4.5,
+      "Scenario": 1.0,
+      "Service": 1.0,
+      "User": 1.5,
+      "Event": 6,
+      "ApplicationController": 1,
+      "Agent::Drop": 1.0
+    },
+    "AgentsController": {
+      "Scenario": 4.333333333333333,
+      "Service": 4.333333333333333,
+      "User": 7.333333333333332,
+      "Agent": 6.0,
+      "AgentReemitJob": 2,
+      "AgentPropagateJob": 1,
+      "ApplicationController": 4,
+      "JobsController": 1.0,
+      "FormConfigurableAgentPresenter": 2,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "ApplicationController": {
+      "User": 1.6666666666666665,
+      "Scenario": 0.6666666666666666,
+      "Service": 0.6666666666666666,
+      "Agent": 3.0,
+      "Agents::ImapFolderAgent::Client": 1.0
+    },
+    "DiagramsController": {
+      "Agent": 2.5,
+      "User": 0.8333333333333333,
+      "Scenario": 1.3333333333333333,
+      "Service": 0.3333333333333333
+    },
+    "EventsController": {
+      "Scenario": 0.3333333333333333,
+      "Service": 0.3333333333333333,
+      "User": 1.3333333333333333,
+      "Agent": 2.0,
+      "Event": 1,
+      "ApplicationController": 2
+    },
+    "LogsController": {
+      "Agent": 2,
+      "Scenario": 0.3333333333333333,
+      "Service": 0.3333333333333333,
+      "User": 0.3333333333333333
+    },
+    "OmniauthCallbacksController": {
+      "Service": 2.0,
+      "User": 2.0
+    },
+    "ScenarioImportsController": {
+      "UserCredentialsController": 1.0,
+      "ScenarioMembership": 1.0
+    },
+    "ScenariosController": {
+      "Agent": 4.5,
+      "User": 4.5,
+      "Scenario": 6,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5,
+      "Agents::WebsiteAgent::ResponseDrop": 0.3333333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.3333333333333333,
+      "Agents::WitaiAgent": 0.3333333333333333,
+      "Event::Drop": 1.0
+    },
+    "ServicesController": {
+      "User": 3.333333333333333,
+      "Scenario": 0.3333333333333333,
+      "Service": 1.3333333333333333
+    },
+    "UserCredentialsController": {
+      "User": 7.0,
+      "Event::Drop": 1.0
+    },
+    "WebRequestsController": {
+      "User": 4,
+      "Agent": 3.0,
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5,
+      "Agents::WebsiteAgent::ResponseDrop": 0.3333333333333333,
+      "Agents::WebsiteAgent::ResponseFromEventDrop": 0.3333333333333333,
+      "Agents::WitaiAgent": 0.3333333333333333
+    },
+    "WorkerStatusController": {
+      "Agent": 0.5,
+      "User": 0.5
+    },
+    "DotHelper::DotDrawer": {
+      "Agents::ImapFolderAgent::Notified": 1.0,
+      "Agents::WebsiteAgent::Repeater": 1.0
+    },
+    "SystemMailer": {
+      "Agents::ImapFolderAgent::Seen": 0.5,
+      "Agents::WebsiteAgent::Output": 0.5
+    },
+    "AgentCheckJob": {
+      "Agent": 5
+    },
+    "AgentCleanupExpiredJob": {
+      "Event": 1
+    },
+    "AgentPropagateJob": {
+      "Agent": 1
+    },
+    "AgentReceiveJob": {
+      "Agent": 5,
+      "Event": 4
+    },
+    "AgentReemitJob": {
+      "Agent": 1,
+      "Event": 1
+    },
+    "AgentRunScheduleJob": {
+      "Agent": 1
+    },
+    "FormConfigurableAgentPresenter": {
+      "Agent": 1,
+      "Agents::ImapFolderAgent::Client": 1.0
+    },
+    "ControlLink": {
+      "Agent": 4
+    },
+    "ScenarioMembership": {
+      "Agent": 2,
+      "Scenario": 2
+    },
+    "UserCredential": {
+      "User": 2
+    },
+    "Agents::DataOutputAgent::XMLNode": {
+    },
+    "Agents::DropboxWatchAgent::DropboxDirDiff": {
+    },
+    "Agents::ImapFolderAgent::Seen": {
+    },
+    "Agents::ImapFolderAgent::Notified": {
+    },
+    "Agents::StubhubAgent::StubhubFetcher": {
+    },
+    "Agents::WebsiteAgent::HeaderDrop": {
+    },
+    "JobsController": {
+    }
+  },
+  "data_associations": {
+    "Agent": [
+      "User",
+      "Service",
+      "Event",
+      "AgentLog",
+      "Link",
+      "ControlLink",
+      "ScenarioMembership",
+      "Scenario"
+    ],
+    "AgentLog": [
+      "Agent",
+      "Event"
+    ],
+    "ControlLink": [
+      "Agent"
+    ],
+    "Event": [
+      "User",
+      "Agent",
+      "AgentLog"
+    ],
+    "Link": [
+      "Agent"
+    ],
+    "Scenario": [
+      "User",
+      "ScenarioMembership",
+      "Agent"
+    ],
+    "ScenarioMembership": [
+      "Agent",
+      "Scenario"
+    ],
+    "Service": [
+      "User",
+      "Agent"
+    ],
+    "User": [
+      "UserCredential",
+      "Event",
+      "Agent",
+      "AgentLog",
+      "Scenario",
+      "Service"
+    ],
+    "UserCredential": [
+      "User"
+    ],
+    "Agents::EvernoteAgent::NoteStore": [
+      "Agents::EvernoteAgent::Note"
+    ],
+    "Agents::ImapFolderAgent::Client": [
+      "Agents::ImapFolderAgent::Message"
+    ],
+    "Agents::JavaScriptAgent": [
+      "Agents::KeyValueStoreAgent"
+    ],
+    "Agents::RssAgent": [
+      "Event"
+    ],
+    "Agents::TwitterStreamAgent": [
+      "Agent"
+    ],
+    "Agents::WebsiteAgent::ResponseDrop": [
+      "Agents::WebsiteAgent::HeaderDrop"
+    ],
+    "Agents::WebsiteAgent::ResponseFromEventDrop": [
+      "Agents::WebsiteAgent::HeaderDrop"
+    ],
+    "Admin::UsersController": [
+      "User"
+    ],
+    "Agents::DryRunsController": [
+      "Event"
+    ],
+    "ScenariosController": [
+      "Scenario"
+    ],
+    "AgentCheckJob": [
+      "Agent"
+    ],
+    "AgentReceiveJob": [
+      "Agent",
+      "Event"
+    ],
+    "Agent::Drop": [
+
+    ],
+    "Agents::AdiosoAgent": [
+
+    ],
+    "Agents::AftershipAgent": [
+
+    ],
+    "Agents::AttributeDifferenceAgent": [
+
+    ],
+    "Agents::ChangeDetectorAgent": [
+
+    ],
+    "Agents::CommanderAgent": [
+
+    ],
+    "Agents::CsvAgent": [
+
+    ],
+    "Agents::DataOutputAgent": [
+
+    ],
+    "Agents::DataOutputAgent::XMLNode": [
+
+    ],
+    "Agents::DeDuplicationAgent": [
+
+    ],
+    "Agents::DelayAgent": [
+
+    ],
+    "Agents::DigestAgent": [
+
+    ],
+    "Agents::DropboxFileUrlAgent": [
+
+    ],
+    "Agents::DropboxWatchAgent": [
+
+    ],
+    "Agents::DropboxWatchAgent::DropboxDirDiff": [
+
+    ],
+    "Agents::EmailAgent": [
+
+    ],
+    "Agents::EmailDigestAgent": [
+
+    ],
+    "Agents::EventFormattingAgent": [
+
+    ],
+    "Agents::EvernoteAgent": [
+
+    ],
+    "Agents::EvernoteAgent::NoteStore::Search": [
+
+    ],
+    "Agents::EvernoteAgent::Note": [
+
+    ],
+    "Agents::FtpsiteAgent": [
+
+    ],
+    "Agents::GapDetectorAgent": [
+
+    ],
+    "Agents::GoogleCalendarPublishAgent": [
+
+    ],
+    "Agents::GoogleTranslationAgent": [
+
+    ],
+    "Agents::HipchatAgent": [
+
+    ],
+    "Agents::HttpStatusAgent": [
+
+    ],
+    "Agents::HumanTaskAgent": [
+
+    ],
+    "Agents::HumanTaskAgent::AgentQuestionForm": [
+
+    ],
+    "Agents::ImapFolderAgent": [
+
+    ],
+    "Agents::ImapFolderAgent::Seen": [
+
+    ],
+    "Agents::ImapFolderAgent::Notified": [
+
+    ],
+    "Agents::ImapFolderAgent::Message": [
+
+    ],
+    "Agents::JabberAgent": [
+
+    ],
+    "Agents::JabberAgent::Worker": [
+
+    ],
+    "Agents::JiraAgent": [
+
+    ],
+    "Agents::JqAgent": [
+
+    ],
+    "Agents::JsonParseAgent": [
+
+    ],
+    "Agents::KeyValueStoreAgent": [
+
+    ],
+    "Agents::LiquidOutputAgent": [
+
+    ],
+    "Agents::LocalFileAgent": [
+
+    ],
+    "Agents::LocalFileAgent::Worker": [
+
+    ],
+    "Agents::ManualEventAgent": [
+
+    ],
+    "Agents::MqttAgent": [
+
+    ],
+    "Agents::OpenaiImageGenerationAgent": [
+
+    ],
+    "Agents::OpenaiLlmAgent": [
+
+    ],
+    "Agents::OpenaiSpeechAgent": [
+
+    ],
+    "Agents::OpenaiVideoGenerationAgent": [
+
+    ],
+    "Agents::PdfInfoAgent": [
+
+    ],
+    "Agents::PeakDetectorAgent": [
+
+    ],
+    "Agents::PhantomJsCloudAgent": [
+
+    ],
+    "Agents::PostAgent": [
+
+    ],
+    "Agents::PublicTransportAgent": [
+
+    ],
+    "Agents::PushbulletAgent": [
+
+    ],
+    "Agents::PushoverAgent": [
+
+    ],
+    "Agents::ReadFileAgent": [
+
+    ],
+    "Agents::S3Agent": [
+
+    ],
+    "Agents::SchedulerAgent": [
+
+    ],
+    "Agents::SentimentAgent": [
+
+    ],
+    "Agents::ShellCommandAgent": [
+
+    ],
+    "Agents::SlackAgent": [
+
+    ],
+    "Agents::StubhubAgent": [
+
+    ],
+    "Agents::StubhubAgent::StubhubFetcher": [
+
+    ],
+    "Agents::TelegramAgent": [
+
+    ],
+    "Agents::ThreadsPublishAgent": [
+
+    ],
+    "Agents::ThreadsUserAgent": [
+
+    ],
+    "Agents::TriggerAgent": [
+
+    ],
+    "Agents::TumblrLikesAgent": [
+
+    ],
+    "Agents::TumblrPublishAgent": [
+
+    ],
+    "Agents::TwilioAgent": [
+
+    ],
+    "Agents::TwilioReceiveTextAgent": [
+
+    ],
+    "Agents::TwitterActionAgent": [
+
+    ],
+    "Agents::TwitterFavorites": [
+
+    ],
+    "Agents::TwitterPublishAgent": [
+
+    ],
+    "Agents::TwitterSearchAgent": [
+
+    ],
+    "Agents::TwitterStreamAgent::Worker": [
+
+    ],
+    "Agents::TwitterUserAgent": [
+
+    ],
+    "Agents::UserLocationAgent": [
+
+    ],
+    "Agents::WeatherAgent": [
+
+    ],
+    "Agents::WebhookAgent": [
+
+    ],
+    "Agents::WebsiteAgent": [
+
+    ],
+    "Agents::WebsiteAgent::Output": [
+
+    ],
+    "Agents::WebsiteAgent::Repeater": [
+
+    ],
+    "Agents::WebsiteAgent::HeaderDrop": [
+
+    ],
+    "Agents::WeiboPublishAgent": [
+
+    ],
+    "Agents::WeiboUserAgent": [
+
+    ],
+    "Agents::WitaiAgent": [
+
+    ],
+    "Event::Drop": [
+
+    ],
+    "AgentsController": [
+
+    ],
+    "ApplicationController": [
+
+    ],
+    "DiagramsController": [
+
+    ],
+    "EventsController": [
+
+    ],
+    "JobsController": [
+
+    ],
+    "LogsController": [
+
+    ],
+    "OmniauthCallbacksController": [
+
+    ],
+    "ScenarioImportsController": [
+
+    ],
+    "ServicesController": [
+
+    ],
+    "UserCredentialsController": [
+
+    ],
+    "WebRequestsController": [
+
+    ],
+    "WorkerStatusController": [
+
+    ],
+    "DotHelper::DotDrawer": [
+
+    ],
+    "SystemMailer": [
+
+    ],
+    "AgentCleanupExpiredJob": [
+
+    ],
+    "AgentPropagateJob": [
+
+    ],
+    "AgentReemitJob": [
+
+    ],
+    "AgentRunScheduleJob": [
+
+    ],
+    "FormConfigurableAgentPresenter": [
+
+    ]
+  },
+  "clusters": [
+    {
+      "id": 1,
+      "name": "Cluster243",
+      "classes": [
+        "JobsController",
+        "AgentPropagateJob",
+        "AgentReemitJob",
+        "OmniauthCallbacksController",
+        "ServicesController",
+        "DiagramsController",
+        "Agents::WeatherAgent",
+        "Agents::PushbulletAgent",
+        "Agents::JabberAgent",
+        "Agents::UserLocationAgent",
+        "Agents::SlackAgent",
+        "WebRequestsController",
+        "Agents::TwitterActionAgent",
+        "Agents::TriggerAgent",
+        "Agents::GoogleTranslationAgent",
+        "Agents::GoogleCalendarPublishAgent",
+        "Agents::TwilioReceiveTextAgent",
+        "Agents::HipchatAgent",
+        "Agents::TwitterUserAgent",
+        "Agents::TwilioAgent",
+        "ControlLink",
+        "Link",
+        "AgentCheckJob",
+        "Agents::S3Agent",
+        "Agents::PostAgent",
+        "UserCredential",
+        "Agents::TwitterStreamAgent",
+        "ScenarioMembership",
+        "Scenario",
+        "ScenariosController",
+        "AgentsController",
+        "Service",
+        "User",
+        "Admin::UsersController",
+        "Agents::DryRunsController",
+        "Agents::RssAgent",
+        "AgentReceiveJob",
+        "AgentLog",
+        "Event",
+        "Agents::WebsiteAgent",
+        "Agent",
+        "Agents::ImapFolderAgent"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cluster14",
+      "classes": [
+        "Agents::DropboxFileUrlAgent"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cluster221",
+      "classes": [
+        "Agents::TwitterSearchAgent",
+        "Agents::TwitterFavorites",
+        "Agents::GapDetectorAgent",
+        "Event::Drop",
+        "ScenarioImportsController",
+        "UserCredentialsController"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cluster228",
+      "classes": [
+        "Agents::JsonParseAgent",
+        "Agents::AdiosoAgent",
+        "Agents::EmailDigestAgent",
+        "Agents::EmailAgent",
+        "SystemMailer"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cluster242",
+      "classes": [
+        "AgentRunScheduleJob",
+        "Agents::TwitterStreamAgent::Worker",
+        "Agents::JabberAgent::Worker",
+        "Agents::ShellCommandAgent",
+        "Agents::JqAgent",
+        "Agents::LocalFileAgent",
+        "Agents::LocalFileAgent::Worker"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cluster234",
+      "classes": [
+        "Agents::ReadFileAgent",
+        "FormConfigurableAgentPresenter",
+        "Agents::LiquidOutputAgent",
+        "Agents::ThreadsPublishAgent",
+        "Agents::ImapFolderAgent::Client",
+        "Agents::ImapFolderAgent::Message",
+        "ApplicationController",
+        "EventsController"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cluster230",
+      "classes": [
+        "Agents::ManualEventAgent",
+        "Agents::WebhookAgent",
+        "Agents::WitaiAgent",
+        "Agents::WebsiteAgent::HeaderDrop",
+        "Agents::HttpStatusAgent",
+        "Agents::WebsiteAgent::ResponseDrop",
+        "Agents::WebsiteAgent::ResponseFromEventDrop",
+        "Agents::StubhubAgent",
+        "Agents::StubhubAgent::StubhubFetcher"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Cluster237",
+      "classes": [
+        "Agents::SentimentAgent",
+        "Agents::DataOutputAgent::XMLNode",
+        "Agents::WeiboUserAgent",
+        "Agents::TumblrLikesAgent",
+        "Agents::ChangeDetectorAgent",
+        "Agents::PushoverAgent",
+        "Agents::PdfInfoAgent",
+        "Agents::HumanTaskAgent::AgentQuestionForm",
+        "Agents::FtpsiteAgent",
+        "Agents::OpenaiSpeechAgent",
+        "Agents::AttributeDifferenceAgent",
+        "Agents::PhantomJsCloudAgent",
+        "Agents::OpenaiLlmAgent",
+        "Agents::OpenaiImageGenerationAgent",
+        "Agents::TelegramAgent",
+        "Agents::HumanTaskAgent",
+        "Agents::DataOutputAgent",
+        "Agents::ImapFolderAgent::Seen",
+        "Agents::TumblrPublishAgent",
+        "Agents::WebsiteAgent::Output",
+        "Agents::ThreadsUserAgent",
+        "LogsController"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cluster238",
+      "classes": [
+        "Agents::SchedulerAgent",
+        "Agents::AftershipAgent",
+        "Agents::JiraAgent",
+        "Agents::JavaScriptAgent",
+        "Agents::KeyValueStoreAgent"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Cluster240",
+      "classes": [
+        "WorkerStatusController",
+        "Agents::MqttAgent",
+        "Agents::PublicTransportAgent",
+        "Agents::DigestAgent",
+        "Agents::DelayAgent",
+        "DotHelper::DotDrawer",
+        "Agents::CsvAgent",
+        "Agents::ImapFolderAgent::Notified",
+        "Agents::PeakDetectorAgent",
+        "Agents::OpenaiVideoGenerationAgent",
+        "Agents::WebsiteAgent::Repeater",
+        "Agents::EvernoteAgent::NoteStore::Search",
+        "Agents::EvernoteAgent",
+        "Agents::EvernoteAgent::NoteStore",
+        "Agents::EvernoteAgent::Note",
+        "Agents::DropboxWatchAgent",
+        "Agents::DropboxWatchAgent::DropboxDirDiff"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Cluster11",
+      "classes": [
+        "Agents::DeDuplicationAgent"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Cluster241",
+      "classes": [
+        "AgentCleanupExpiredJob",
+        "Agents::TwitterPublishAgent",
+        "Agents::WeiboPublishAgent",
+        "Agents::EventFormattingAgent",
+        "Agent::Drop",
+        "Agents::CommanderAgent"
+      ]
+    }
+  ],
+  "cluster_metrics": [
+    {
+      "cluster_id": 1,
+      "num_classes": 42,
+      "intra_dependencies": 402.0,
+      "inter_dependencies": 107.0,
+      "f_struct": 0.789784,
+      "f_data": 0.039645,
+      "f_quality": 0.414714
+    },
+    {
+      "cluster_id": 2,
+      "num_classes": 1,
+      "intra_dependencies": 0,
+      "inter_dependencies": 5,
+      "f_struct": 0.0,
+      "f_data": 0.0,
+      "f_quality": 0.0
+    },
+    {
+      "cluster_id": 3,
+      "num_classes": 6,
+      "intra_dependencies": 6.0,
+      "inter_dependencies": 29.0,
+      "f_struct": 0.171429,
+      "f_data": 0.0,
+      "f_quality": 0.085714
+    },
+    {
+      "cluster_id": 4,
+      "num_classes": 5,
+      "intra_dependencies": 6,
+      "inter_dependencies": 24.0,
+      "f_struct": 0.2,
+      "f_data": 0.0,
+      "f_quality": 0.1
+    },
+    {
+      "cluster_id": 5,
+      "num_classes": 7,
+      "intra_dependencies": 10.0,
+      "inter_dependencies": 35.0,
+      "f_struct": 0.222222,
+      "f_data": 0.0,
+      "f_quality": 0.111111
+    },
+    {
+      "cluster_id": 6,
+      "num_classes": 8,
+      "intra_dependencies": 11.0,
+      "inter_dependencies": 30.0,
+      "f_struct": 0.268293,
+      "f_data": 0.0,
+      "f_quality": 0.134146
+    },
+    {
+      "cluster_id": 7,
+      "num_classes": 9,
+      "intra_dependencies": 13.4167,
+      "inter_dependencies": 27.5833,
+      "f_struct": 0.327236,
+      "f_data": 0.027778,
+      "f_quality": 0.177507
+    },
+    {
+      "cluster_id": 8,
+      "num_classes": 22,
+      "intra_dependencies": 99.0,
+      "inter_dependencies": 137.0,
+      "f_struct": 0.419492,
+      "f_data": 0.0,
+      "f_quality": 0.209746
+    },
+    {
+      "cluster_id": 9,
+      "num_classes": 5,
+      "intra_dependencies": 5.0,
+      "inter_dependencies": 33.0,
+      "f_struct": 0.131579,
+      "f_data": 0.0,
+      "f_quality": 0.065789
+    },
+    {
+      "cluster_id": 10,
+      "num_classes": 17,
+      "intra_dependencies": 55.0,
+      "inter_dependencies": 70.0,
+      "f_struct": 0.44,
+      "f_data": 0.0,
+      "f_quality": 0.22
+    },
+    {
+      "cluster_id": 11,
+      "num_classes": 1,
+      "intra_dependencies": 0,
+      "inter_dependencies": 4,
+      "f_struct": 0.0,
+      "f_data": 0.0,
+      "f_quality": 0.0
+    },
+    {
+      "cluster_id": 12,
+      "num_classes": 6,
+      "intra_dependencies": 7.25,
+      "inter_dependencies": 21.75,
+      "f_struct": 0.25,
+      "f_data": 0.0,
+      "f_quality": 0.125
+    }
+  ],
+  "isolated_classes": [
+    "Agents::PushbulletAgent::Unauthorized",
+    "Agents::WebsiteAgent::UnevenSizeError",
+    "HomeController",
+    "Users::RegistrationsController",
+    "Decorator",
+    "OwnedByValidator"
+  ]
+}

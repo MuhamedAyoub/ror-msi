@@ -1,0 +1,4214 @@
+{
+  "parameters": {
+    "alpha": 0.9,
+    "beta": 0.1,
+    "n_top": 8,
+    "min_cluster_size": 3,
+    "gamma": 0.1,
+    "mode": "hierarchical",
+    "resolver": "v2",
+    "classes_dir": "./input/classes",
+    "data_dir": "./input/data"
+  },
+  "summary": {
+    "total_classes_original": 344,
+    "total_classes_active": 321,
+    "isolated_classes": 23,
+    "total_data_entities": 131,
+    "num_microservices": 35
+  },
+  "resolver_report": {
+    "l2_self_unknown": 2615,
+    "noise_filtered": 1497,
+    "l2_self_internal": 1141,
+    "l4_fanout_sites": 1035,
+    "l4_no_owner": 4036,
+    "l0_const": 733,
+    "l4_noise_suppressed": 254,
+    "l0_internal_or_external": 1502,
+    "l3_naming": 407,
+    "l0_chain_base": 133,
+    "l0_chain_typed": 205,
+    "l1_var_typed": 170,
+    "l4_cap_suppressed": 188,
+    "l1_typed_no_method": 291,
+    "l2_mixin": 124,
+    "l1_union": 12,
+    "polymorphic_resolved": 1,
+    "assoc_target_missing": 1
+  },
+  "dependency_graph": {
+    "AccountMigration": {
+      "CrawlData": 1.0,
+      "FeedCrawler::EntryFilter": 1.0,
+      "User": 2,
+      "AccountMigrationItem": 2
+    },
+    "AccountMigrationItem": {
+      "AccountMigrator::ImportFeed": 1,
+      "AccountMigration": 2
+    },
+    "Action": {
+      "Search::PercolateCreate": 1,
+      "Search::PercolateDestroy": 1,
+      "CrawlData": 2.0,
+      "Search::ActionsBulk": 1,
+      "Entry": 3,
+      "Subscription": 1,
+      "Feed": 1.1666666666666665,
+      "User": 3.1666666666666665,
+      "Tag": 0.3333333333333333,
+      "TagEditor": 0.3333333333333333,
+      "Search::Connection": 2.0,
+      "Search::Response": 2
+    },
+    "ApiClient": {
+      "CrawlData": 3.0,
+      "ApiClient::Error": 6,
+      "Import": 0.2,
+      "MercuryParser": 0.2,
+      "Opml::Parser": 0.4,
+      "FeedCrawler::Downloader": 0.2
+    },
+    "AppStoreNotification": {
+      "CrawlData": 4.0,
+      "User": 2
+    },
+    "AppStoreNotificationData": {
+      "SubscriptionPresenter": 1.0
+    },
+    "AuthConstraint": {
+      "User": 2
+    },
+    "BillingEvent": {
+      "CrawlData": 13.0,
+      "User": 5.0,
+      "UserMailer": 9,
+      "AppStoreNotification": 0.5,
+      "Settings::Newsletters::AddressesController": 0.5,
+      "UpdateStatementDescriptor": 1
+    },
+    "Colors": {
+      "IframeEmbed": 1.0
+    },
+    "ContentFilters::Attributes": {
+      "DeletedUser": 0.75,
+      "Feed": 0.75,
+      "Search::Connection": 0.75,
+      "User": 0.75
+    },
+    "ContentFilters::FigureControls": {
+      "DeletedUser": 0.25,
+      "Feed": 0.25,
+      "Search::Connection": 0.25,
+      "User": 0.25
+    },
+    "ContentFilters::GhostCard": {
+      "DeletedUser": 0.25,
+      "Feed": 0.25,
+      "Search::Connection": 0.25,
+      "User": 0.25
+    },
+    "ContentFilters::Scrub": {
+      "CrawlData": 5.0,
+      "EmailNewsletter": 1.75,
+      "IframeEmbed::Twitter": 1.5,
+      "Newsletter": 1.75,
+      "SavedSearchPresenter": 1.5,
+      "SearchData": 0.25,
+      "Api::V2::EntriesController": 0.25
+    },
+    "ContentFilters::Substack": {
+      "DeletedUser": 0.25,
+      "Feed": 0.25,
+      "Search::Connection": 0.25,
+      "User": 0.25
+    },
+    "ContentFormatter": {
+      "ContentFilters::Scrub": 1.0,
+      "IframeEmbed::Youtube": 0.5,
+      "SearchData": 0.5,
+      "Entry": 25,
+      "EntryPresenter": 1.0,
+      "ImageFallback": 3
+    },
+    "CrawlData": {
+      "FeedCrawler::Throttle": 3.0,
+      "FeedCrawler::RedirectCache": 2,
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "EmailNewsletter": 0.5833333333333333,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.5833333333333333,
+      "SavedSearchPresenter": 0.25,
+      "UrlCache": 0.3333333333333333,
+      "FeedFinder": 1.0
+    },
+    "CrawlDataType": {
+      "CrawlData": 5
+    },
+    "Customer": {
+      "CrawlData": 2.0,
+      "Feed": 0.5,
+      "User": 0.5
+    },
+    "Download": {
+      "UrlCache": 1.0
+    },
+    "EmailNewsletter": {
+      "IframeEmbed::Twitter": 1.6666666666666665,
+      "Newsletter": 2.1666666666666665,
+      "SavedSearchPresenter": 0.6666666666666666,
+      "MercuryParser": 0.5,
+      "Download": 1.0
+    },
+    "Embed": {
+      "TextToChapters": 1
+    },
+    "Entry": {
+      "CrawlData": 6.0,
+      "Feed": 4.333333333333334,
+      "EmailNewsletter": 0.8333333333333333,
+      "Newsletter": 0.8333333333333333,
+      "ContentFormatter": 3,
+      "Micropost": 3,
+      "MercuryParser": 3,
+      "SearchData": 3,
+      "SubscriptionPresenter": 1.0,
+      "Tweet": 8.0,
+      "ImageCrawler::MetaImagesCache": 1.0,
+      "FeedCrawler::EntryFilter": 1.0,
+      "Embed": 2,
+      "ApplicationController": 1,
+      "FeedbinUtils": 1,
+      "Subscription": 4,
+      "UnreadEntry": 5,
+      "Search::SearchIndexStore": 2,
+      "IframeEmbed::Twitter": 0.5,
+      "SavedSearchPresenter": 0.5,
+      "PodcastSubscription": 3.0,
+      "QueuedEntry": 3,
+      "ChapterParser": 1,
+      "FeedStat": 6,
+      "ImportItem": 1.0,
+      "ImageCrawler::EntryImage": 1,
+      "ImageCrawler::ItunesImage": 1,
+      "HarvestEmbeds": 1,
+      "HarvestLinks": 1,
+      "CacheEntryViews": 2,
+      "StarredEntry": 2,
+      "RecentlyReadEntry": 2,
+      "Image": 4
+    },
+    "Favicon": {
+      "TouchFeeds": 1
+    },
+    "Feed": {
+      "EmailNewsletter": 0.5,
+      "ImportItem": 0.5,
+      "Newsletter": 0.5,
+      "SavePage": 0.5,
+      "CrawlDataType": 2,
+      "Tagging": 6,
+      "Tag": 5,
+      "CrawlData": 9.0,
+      "User": 5.0,
+      "FeedStat": 3,
+      "FeedCrawler::DownloaderCritical": 1,
+      "Search::FeedMetadataFinder": 1,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "WebSub::Subscribe": 1,
+      "Sourceable": 2,
+      "IframeEmbed::Twitter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "CrawlingError": 1,
+      "FeedSearchData": 3,
+      "FeedSearch": 3,
+      "FeedCrawler::UpdateYoutubeVideos": 1,
+      "FaviconCrawler::Finder": 1,
+      "ImageCrawler::ItunesFeedImage": 1,
+      "Subscription": 2,
+      "PodcastSubscription": 2,
+      "Entry": 2,
+      "UnreadEntry": 2,
+      "StarredEntry": 2,
+      "DiscoveredFeed": 2,
+      "Favicon": 2,
+      "NewsletterSender": 2,
+      "Image": 2
+    },
+    "FeedFinder": {
+      "Feed": 5,
+      "Source::ExistingFeed": 2,
+      "Source::Xml": 2,
+      "Source::MetaLinks": 3,
+      "Source::KnownPattern": 2,
+      "Source::BodyLinks": 3,
+      "Source::Guess": 2
+    },
+    "FeedSearch": {
+      "Search::Connection": 1.0,
+      "Feed": 1,
+      "Search::Response": 1
+    },
+    "FeedSearchData": {
+      "Feed": 3,
+      "EmailNewsletter": 0.25,
+      "ImportItem": 0.25,
+      "Newsletter": 0.25,
+      "SavePage": 0.25,
+      "Source": 0.2,
+      "Source::BodyLinks": 0.2,
+      "Source::MetaLinks": 0.2,
+      "Extension::V1::ApiController": 0.2,
+      "PagesController": 0.2
+    },
+    "FeedStat": {
+      "FeedStat::Stat": 1,
+      "Feed": 2
+    },
+    "FeedStat::Stat": {
+      "CrawlData": 1.0
+    },
+    "FeedbinUtils": {
+      "ImageCrawler::FixImage": 1.0
+    },
+    "IframeEmbed": {
+      "EmailNewsletter": 0.5,
+      "IframeEmbed::Twitter": 0.5,
+      "Newsletter": 0.5,
+      "SavedSearchPresenter": 0.5,
+      "UrlCache": 3,
+      "IframeEmbed::Default": 1.6666666666666665,
+      "ImageCrawler::Download": 0.6666666666666666,
+      "ImageCrawler::Download::Default": 0.6666666666666666
+    },
+    "IframeEmbed::Default": {
+      "UrlCache": 3.0,
+      "EmailNewsletter": 0.25,
+      "Newsletter": 0.25,
+      "SearchData": 0.25,
+      "Api::V2::EntriesController": 0.25,
+      "IframeEmbed": 1,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "IframeEmbed::Instagram": {
+      "IframeEmbed::Twitter": 1.0,
+      "UrlCache": 6
+    },
+    "IframeEmbed::Kickstarter": {
+      "IframeEmbed": 2,
+      "UrlCache": 3
+    },
+    "IframeEmbed::Spotify": {
+      "Download": 1.0
+    },
+    "IframeEmbed::Twitter": {
+      "EmailNewsletter": 0.8333333333333333,
+      "Newsletter": 0.8333333333333333,
+      "SavedSearchPresenter": 0.3333333333333333,
+      "SearchData": 0.5,
+      "Api::V2::EntriesController": 0.5,
+      "DeletedUser": 0.75,
+      "Feed": 0.75,
+      "Search::Connection": 0.75,
+      "User": 0.75,
+      "TwitterUser": 4,
+      "UrlCache": 6
+    },
+    "IframeEmbed::Vimeo": {
+      "IframeEmbed": 1
+    },
+    "IframeEmbed::Youtube": {
+      "CrawlData": 1.0,
+      "IframeEmbed": 1.5,
+      "Embed": 5.5
+    },
+    "ImageFallback": {
+      "DeletedUser": 0.25,
+      "Feed": 0.25,
+      "Search::Connection": 0.25,
+      "User": 0.25,
+      "Download": 3
+    },
+    "Import": {
+      "User": 3.0,
+      "Opml::Parser": 1,
+      "ImportItem": 4,
+      "Tag": 3,
+      "CrawlData": 4.0
+    },
+    "ImportItem": {
+      "FeedImporter": 1,
+      "CrawlingError": 1,
+      "Import": 2,
+      "DiscoveredFeed": 2,
+      "Favicon": 2
+    },
+    "InAppPurchase": {
+      "Plan": 1,
+      "Feed": 0.5,
+      "User": 2.5
+    },
+    "JwsVerifier": {
+      "WebSubController": 1.0,
+      "CrawlData": 1.0,
+      "Turnstile": 1.0
+    },
+    "MercuryParser": {
+      "UrlCache": 2.0,
+      "Import": 0.25,
+      "Opml::Parser": 0.5,
+      "FeedCrawler::Downloader": 0.25
+    },
+    "Micropost": {
+      "Source": 0.8,
+      "Source::BodyLinks": 0.8,
+      "Source::MetaLinks": 0.8,
+      "Extension::V1::ApiController": 0.8,
+      "PagesController": 0.8,
+      "CrawlData": 3.0
+    },
+    "Newsletter": {
+      "CrawlData": 2.0,
+      "EmailNewsletter": 1.1666666666666665,
+      "IframeEmbed::Twitter": 0.6666666666666666,
+      "SavedSearchPresenter": 0.6666666666666666,
+      "MercuryParser": 0.5
+    },
+    "Opml::Parser": {
+      "Import": 0.3333333333333333,
+      "MercuryParser": 0.3333333333333333,
+      "FeedCrawler::Downloader": 0.3333333333333333,
+      "Tag": 0.5,
+      "User": 0.5,
+      "CrawlData": 1.0,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "Opml::Outline": 3
+    },
+    "PodcastSubscription": {
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "User": 2,
+      "Feed": 2,
+      "Playlist": 2,
+      "QueuedEntry": 2
+    },
+    "RemoteFile": {
+      "ImportItem": 0.5,
+      "FeedCrawler::ConcurrencyLimit": 0.5,
+      "FeedCrawler::Throttle": 0.5,
+      "SavePage": 0.5,
+      "CrawlData": 1.0
+    },
+    "SavedSearch": {
+      "Sourceable": 2,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "User": 2
+    },
+    "Search::Connection": {
+      "Search::Response": 7.0,
+      "CrawlData": 1.0,
+      "Import": 0.2,
+      "MercuryParser": 0.2,
+      "Opml::Parser": 0.4,
+      "FeedCrawler::Downloader": 0.2
+    },
+    "SearchData": {
+      "EmailNewsletter": 0.75,
+      "Newsletter": 0.75,
+      "Entry": 18,
+      "MercuryParser": 1.0,
+      "IframeEmbed::Instagram": 1.0,
+      "IframeEmbed::Twitter": 1.25,
+      "Tweet": 7.0,
+      "SavedSearchPresenter": 0.25,
+      "EntryPresenter": 3.0,
+      "ContentFormatter": 2
+    },
+    "Share::AppDotNet": {
+      "Entry": 3
+    },
+    "Share::Buffer": {
+      "Entry": 3
+    },
+    "Share::Email": {
+      "EntryMailer": 3,
+      "SupportedSharingService": 1.0
+    },
+    "Share::EvernoteShare": {
+      "Share::Service": 2,
+      "Entry": 6,
+      "ContentFormatter": 1,
+      "ApplicationController": 1,
+      "CrawlData": 1.0,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25
+    },
+    "Share::Facebook": {
+      "Entry": 3
+    },
+    "Share::Instapaper": {
+      "CrawlData": 1.0,
+      "Share::Service": 1
+    },
+    "Share::Kindle": {
+      "MakeEpub": 1,
+      "CrawlData": 1.0,
+      "SupportedSharingService": 2.0
+    },
+    "Share::Mastodon": {
+      "OauthServer": 6,
+      "ImportItem": 2.25,
+      "FeedCrawler::ConcurrencyLimit": 2.25,
+      "FeedCrawler::Throttle": 2.25,
+      "SavePage": 2.25,
+      "EmailNewsletter": 0.3333333333333333,
+      "Newsletter": 0.3333333333333333,
+      "UrlCache": 0.3333333333333333,
+      "Search::Connection": 1.0,
+      "ImageSaver": 1.0,
+      "Share::Service": 1,
+      "Share::Service::AuthError": 2,
+      "Share::Pocket": 1.0
+    },
+    "Share::MicroBlog": {
+      "CrawlData": 1.0,
+      "Share::Service": 1
+    },
+    "Share::Pinboard": {
+      "CrawlData": 2.0,
+      "UrlCache": 1.0,
+      "Share::Service": 1
+    },
+    "Share::Pocket": {
+      "CrawlData": 2.0,
+      "UrlCache": 1.3333333333333333,
+      "EmailNewsletter": 0.3333333333333333,
+      "Newsletter": 0.3333333333333333,
+      "Share::Service": 1
+    },
+    "Share::Raindrop": {
+      "Entry": 3,
+      "ImageCrawler::Timer": 1.0,
+      "EmailNewsletter": 0.3333333333333333,
+      "Newsletter": 0.3333333333333333,
+      "UrlCache": 0.3333333333333333,
+      "Search::Connection": 1.0,
+      "ImageSaver": 1.0,
+      "Share::Service": 1,
+      "Share::Pocket": 1.0
+    },
+    "Share::Readability": {
+      "Share::Service": 1
+    },
+    "Share::Service": {
+      "Entry": 6,
+      "SharingService": 0.25,
+      "SupportedSharingService": 6.25,
+      "User": 0.25,
+      "NewsletterReceiver": 0.25,
+      "CrawlData": 3.0,
+      "ShareRetry": 1,
+      "MercuryParser": 1,
+      "ApplicationController": 1
+    },
+    "Share::Tumblr": {
+      "UrlCache": 1.0,
+      "CrawlData": 2.0,
+      "Share::Service": 1
+    },
+    "Share::Twitter": {
+      "Entry": 3
+    },
+    "Source": {
+      "Tag": 0.5,
+      "User": 0.5,
+      "Source::BodyLinks": 0.25,
+      "Source::MetaLinks": 0.25,
+      "Extension::V1::ApiController": 0.25,
+      "PagesController": 0.25,
+      "Opml::Parser": 1.0666666666666667,
+      "ImageCrawler::MetaImages": 0.3333333333333333,
+      "IframeEmbed::Twitter": 0.5,
+      "SearchData": 1.0,
+      "Feed": 8,
+      "Micropost": 0.5,
+      "ImageCrawler::Download": 1.0,
+      "FeedCrawler::Parser": 2,
+      "Download": 1.0,
+      "Import": 0.2,
+      "MercuryParser": 0.2,
+      "FeedCrawler::Downloader": 0.2
+    },
+    "Source::BodyLinks": {
+      "Source": 4,
+      "Micropost": 0.5,
+      "SearchData": 0.5
+    },
+    "Source::ExistingFeed": {
+      "Feed": 5,
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "Source": 1
+    },
+    "Source::Guess": {
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25,
+      "Source": 1
+    },
+    "Source::KnownPattern": {
+      "Micropost": 1.5,
+      "SearchData": 1.5,
+      "Source": 6,
+      "EmailNewsletter": 0.6666666666666666,
+      "Newsletter": 0.6666666666666666,
+      "UrlCache": 1.6666666666666665
+    },
+    "Source::MetaLinks": {
+      "Source": 4,
+      "Micropost": 0.5,
+      "SearchData": 0.5
+    },
+    "Source::TwitterData": {
+      "IframeEmbed::Instagram": 0.5,
+      "IframeEmbed::Twitter": 0.5,
+      "AppStoreNotificationData": 0.3333333333333333,
+      "EmailNewsletter": 0.3333333333333333,
+      "Newsletter": 0.3333333333333333,
+      "Feed": 5,
+      "Micropost": 0.5,
+      "SearchData": 0.5
+    },
+    "Source::Xml": {
+      "Source": 1
+    },
+    "Sparkline": {
+      "CrawlData": 4.0
+    },
+    "StarredEntry": {
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "MercuryParser": 1.0,
+      "User": 2,
+      "Feed": 2,
+      "Entry": 2
+    },
+    "Subscription": {
+      "Feed": 6.5,
+      "CrawlData": 2.0,
+      "User": 3,
+      "Entry": 6,
+      "UnreadEntry": 6,
+      "Search::AddFeedToAction": 1,
+      "Search::RemoveFeedFromAction": 1,
+      "Tagging": 0.5,
+      "FaviconCrawler::Finder": 1,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25,
+      "ImageCrawler::ItunesFeedImage": 1
+    },
+    "SupportedSharingService": {
+      "SharingService": 3.0,
+      "Throttle": 1,
+      "CrawlData": 3.0,
+      "AuthenticationToken": 1.0,
+      "User": 2
+    },
+    "Tag": {
+      "User": 1,
+      "Search::ActionTags": 2,
+      "Tagging": 6,
+      "Sourceable": 2,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "Feed": 2
+    },
+    "TagEditor": {
+      "User": 2.0
+    },
+    "Tagging": {
+      "User": 3.0,
+      "Search::TouchActions": 1,
+      "Feed": 7,
+      "Tag": 2
+    },
+    "Throttle": {
+      "CrawlData": 1.0
+    },
+    "Turnstile": {
+      "CrawlData": 1.0
+    },
+    "Tweet": {
+      "EntryPresenter": 3.0,
+      "Entry": 3.0,
+      "ImageCrawler::MetaImagesCache": 3.0,
+      "CrawlData": 3.0,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "TweetPage": {
+      "Entry": 7
+    },
+    "UnreadEntry": {
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "MercuryParser": 1.0,
+      "CrawlData": 1.0,
+      "User": 2,
+      "Feed": 2,
+      "Entry": 2
+    },
+    "UpdatedEntry": {
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "MercuryParser": 1.0,
+      "User": 2,
+      "Entry": 2,
+      "Feed": 2
+    },
+    "UrlCache": {
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5
+    },
+    "User": {
+      "NewsletterSender": 4,
+      "AppStoreNotificationData": 0.6666666666666666,
+      "EmailNewsletter": 2.1666666666666665,
+      "Newsletter": 2.1666666666666665,
+      "CrawlData": 14.0,
+      "Coupon": 6,
+      "Plan": 34,
+      "TrialSendExpiration": 1,
+      "SubscriptionPresenter": 1.0,
+      "Tag": 5,
+      "IframeEmbed::Twitter": 0.5,
+      "SavedSearchPresenter": 0.5,
+      "UserMailer": 3,
+      "Customer": 7.0,
+      "CancelBilling": 1,
+      "Feed": 4.0,
+      "DeletedUser": 2,
+      "AuthenticationToken": 4.0,
+      "Entry": 9,
+      "SharingService": 4,
+      "SupportedSharingService": 3.0,
+      "RecentlyPlayedEntriesController": 1.0,
+      "IframeEmbed": 0.5,
+      "IframeEmbed::Youtube": 0.5,
+      "Subscription": 2,
+      "PodcastSubscription": 2,
+      "Import": 2,
+      "ImportItem": 2,
+      "BillingEvent": 2,
+      "Tagging": 2,
+      "UnreadEntry": 2,
+      "StarredEntry": 2,
+      "SavedSearch": 2,
+      "Action": 2,
+      "RecentlyReadEntry": 2,
+      "RecentlyPlayedEntry": 2,
+      "QueuedEntry": 2,
+      "Playlist": 2,
+      "UpdatedEntry": 2,
+      "Device": 2,
+      "AccountMigration": 2,
+      "AppStoreNotification": 2
+    },
+    "AccountMigrationsController": {
+      "User": 2,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "AccountMigrator::Setup": 1
+    },
+    "ActionsController": {
+      "User": 6
+    },
+    "Admin::FeedsController": {
+      "CrawlData": 1.0,
+      "Feed": 2
+    },
+    "Admin::UsersController": {
+      "User": 12,
+      "DeletedUser": 4,
+      "UserDeleter": 1,
+      "ApplicationController": 1
+    },
+    "Api::Podcasts::V1::ApiController": {
+      "Colors": 1.3333333333333333,
+      "IframeEmbed": 0.6666666666666666,
+      "CrawlData": 1.0,
+      "EntryPresenter": 1.0
+    },
+    "Api::Podcasts::V1::FeedsController": {
+      "Api::Podcasts::V1::ApiController": 3,
+      "Feed": 1,
+      "FeedStatus": 2,
+      "FeedUpdate": 2,
+      "FeedFinder": 1
+    },
+    "Api::Podcasts::V1::PlaylistsController": {
+      "User": 4,
+      "Api::Podcasts::V1::ApiController": 1
+    },
+    "Api::Podcasts::V1::QueuedEntries::BulkController": {
+      "CrawlData": 1.0,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "Api::Podcasts::V1::ApiController": 1,
+      "User": 1
+    },
+    "Api::Podcasts::V1::QueuedEntriesController": {
+      "User": 4,
+      "Entry": 3,
+      "Api::Podcasts::V1::ApiController": 2
+    },
+    "Api::Podcasts::V1::SubscriptionsController": {
+      "User": 4,
+      "Feed": 3,
+      "CrawlData": 2.0,
+      "FeedFinder": 1,
+      "Api::Podcasts::V1::ApiController": 3
+    },
+    "Api::V2::ActionsController": {
+      "User": 5.0,
+      "Action": 2,
+      "CrawlData": 1.0,
+      "Entry": 2,
+      "Search::Response": 2.0
+    },
+    "Api::V2::ApiController": {
+      "CrawlData": 6.0,
+      "User": 4.5,
+      "Entry": 3,
+      "Api::V2::SavedSearchesController": 1.0,
+      "EntryPresenter": 1.0,
+      "Plan": 1.0,
+      "AppStoreNotification": 0.5
+    },
+    "Api::V2::AuthenticationController": {
+      "Plan": 1.0,
+      "AppStoreNotification": 0.5,
+      "User": 0.5,
+      "Api::V2::ApiController": 1
+    },
+    "Api::V2::AuthenticationTokensController": {
+      "User": 1
+    },
+    "Api::V2::DevicesController": {
+      "User": 3,
+      "Entry": 16,
+      "EmailNewsletter": 1.0,
+      "Newsletter": 1.0,
+      "DevicePushNotificationSend": 1,
+      "WebPushNotificationSend": 1
+    },
+    "Api::V2::EntriesController": {
+      "User": 6,
+      "Entry": 17,
+      "Api::V2::ApiController": 5,
+      "ApplicationController": 1
+    },
+    "Api::V2::EntryCountsController": {
+      "User": 1,
+      "SubscriptionPresenter": 1.0
+    },
+    "Api::V2::FaviconsController": {
+      "User": 1,
+      "Feed": 4,
+      "Favicon": 4
+    },
+    "Api::V2::FeedsController": {
+      "Feed": 2,
+      "User": 1.0,
+      "ApplicationController": 1
+    },
+    "Api::V2::FeedsEntriesController": {
+      "Entry": 7,
+      "Api::V2::ApiController": 5,
+      "CrawlData": 2.0,
+      "Feed": 4,
+      "User": 2.0
+    },
+    "Api::V2::IconsController": {
+      "User": 1,
+      "Feed": 4,
+      "Favicon": 2
+    },
+    "Api::V2::ImportsController": {
+      "User": 3,
+      "CrawlData": 1.0
+    },
+    "Api::V2::InAppPurchasesController": {
+      "CrawlData": 2.0,
+      "InAppPurchase": 1,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25,
+      "ApiClient": 0.5,
+      "FeedCrawler::Downloader": 0.5,
+      "UrlCache": 1.0
+    },
+    "Api::V2::PagesController": {
+      "ApplicationController": 1,
+      "Api::V2::ApiController": 2,
+      "SavePage": 3,
+      "User": 1,
+      "Entry": 1,
+      "EntryDeleter": 2,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5
+    },
+    "Api::V2::RecentlyReadEntriesController": {
+      "User": 3
+    },
+    "Api::V2::SavedSearchesController": {
+      "User": 5,
+      "CrawlData": 2.0,
+      "Entry": 1,
+      "Search::Response": 3.0,
+      "Api::V2::ApiController": 6
+    },
+    "Api::V2::StarredEntriesController": {
+      "User": 4,
+      "Entry": 6,
+      "StarredEntry": 1,
+      "RecentlyPlayedEntriesController": 0.5,
+      "RecentlyReadEntriesController": 0.5,
+      "Api::V2::ApiController": 2
+    },
+    "Api::V2::SubscriptionsController": {
+      "User": 9,
+      "Api::V2::ApiController": 6,
+      "ApplicationController": 1,
+      "FeedFinder": 1,
+      "Feed": 1.5,
+      "CrawlData": 2.0,
+      "Tagging": 0.5,
+      "Subscription": 1
+    },
+    "Api::V2::SuggestedCategoriesController": {
+      "SuggestedCategory": 2
+    },
+    "Api::V2::SuggestedFeedsController": {
+      "SuggestedFeed": 10,
+      "User": 4,
+      "RecentlyPlayedEntriesController": 0.5,
+      "RecentlyReadEntriesController": 0.5
+    },
+    "Api::V2::TaggingsController": {
+      "User": 4,
+      "Api::V2::ApiController": 4,
+      "Tagging": 6,
+      "Feed": 1
+    },
+    "Api::V2::TagsController": {
+      "User": 3,
+      "Tag": 4
+    },
+    "Api::V2::UnreadEntriesController": {
+      "User": 4,
+      "UnreadEntry": 2,
+      "Entry": 4,
+      "Api::V2::ApiController": 2
+    },
+    "Api::V2::UpdatedEntriesController": {
+      "User": 2
+    },
+    "Api::V2::UsersController": {
+      "User": 2,
+      "Plan": 1,
+      "CrawlData": 1.0,
+      "UserDeleter": 1
+    },
+    "AppStore::NotificationsV2Controller": {
+      "JwsVerifier": 1,
+      "AppStoreNotificationProcessor": 1
+    },
+    "AppStoreNotificationsController": {
+      "User": 1
+    },
+    "ApplicationController": {
+      "EmailNewsletter": 2.5,
+      "Newsletter": 2.5,
+      "UrlCache": 1.0,
+      "User": 36,
+      "Subscription": 2,
+      "UserPresenter": 1.0,
+      "Entry": 15.5,
+      "SettingsController": 1.0,
+      "Sourceable": 3,
+      "Tagging": 2.0,
+      "CrawlData": 2.0,
+      "UnreadEntry": 0.5,
+      "Turnstile": 1.0,
+      "Throttle": 2
+    },
+    "AppsController": {
+      "User": 5
+    },
+    "BillingEventsController": {
+      "User": 1
+    },
+    "DevicesController": {
+      "User": 3
+    },
+    "EmbedsController": {
+      "IframeEmbed::Twitter": 1,
+      "IframeEmbed::Instagram": 1,
+      "IframeEmbed": 1
+    },
+    "EntriesController": {
+      "User": 22,
+      "ApplicationController": 8,
+      "Entry": 18.5,
+      "UnreadEntry": 64.5,
+      "UpdatedEntry": 8,
+      "EmailNewsletter": 1.5,
+      "Newsletter": 1.5,
+      "ViewLinkCacheMultiple": 1,
+      "CrawlData": 16.0,
+      "Search::Response": 3.0,
+      "EntryDeleter": 2,
+      "Search::Connection": 1.0
+    },
+    "ErrorsController": {
+      "ApplicationController": 1
+    },
+    "Extension::V1::AddressesController": {
+      "AuthenticationToken": 5.0,
+      "User": 3,
+      "CrawlData": 1.0
+    },
+    "Extension::V1::ApiController": {
+      "User": 6,
+      "CrawlData": 1.0,
+      "EntryPresenter": 1.0
+    },
+    "Extension::V1::PagesController": {
+      "SavePageFromExtension": 1
+    },
+    "Extension::V1::SubscriptionsController": {
+      "FeedFinder": 1,
+      "User": 1,
+      "Feed": 4.5,
+      "Subscription": 2,
+      "Tagging": 0.5
+    },
+    "ExtractsController": {
+      "Entry": 3,
+      "CrawlData": 1.0,
+      "MercuryParser": 2,
+      "ContentFormatter": 2,
+      "ViewLinkCache": 1,
+      "Expires": 1
+    },
+    "FeedsController": {
+      "Feed": 5,
+      "User": 4.0,
+      "ApplicationController": 3,
+      "FeedFinder": 1,
+      "TagEditor": 3
+    },
+    "FeedsEntriesController": {
+      "ApplicationController": 2,
+      "User": 2.0,
+      "Subscription": 1
+    },
+    "FixFeedsController": {
+      "User": 4.0,
+      "Feed": 2.5,
+      "ImportItem": 0.5,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "FeedReplacer": 4
+    },
+    "InAppPurchasesController": {
+      "User": 1
+    },
+    "MicropostsController": {
+      "Entry": 2,
+      "Micropost": 2,
+      "User": 1.0
+    },
+    "MutesController": {
+      "User": 4,
+      "CrawlData": 2.0,
+      "Action": 2,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5
+    },
+    "NewslettersController": {
+      "NewsletterReceiver": 1
+    },
+    "PagesController": {
+      "SavePage": 1,
+      "User": 6
+    },
+    "PagesEntriesController": {
+      "User": 3,
+      "CrawlData": 2.0,
+      "Entry": 17.0,
+      "ApplicationController": 3,
+      "Feed": 1
+    },
+    "PagesInternalController": {
+      "SavePage": 2,
+      "ApplicationController": 1
+    },
+    "PasswordResetsController": {
+      "User": 7,
+      "Turnstile": 1
+    },
+    "PublicSettingsController": {
+      "User": 2,
+      "ApplicationController": 1
+    },
+    "QueuedEntriesController": {
+      "User": 1,
+      "Entry": 5,
+      "Search::Connection": 1.0
+    },
+    "RecentlyPlayedEntriesController": {
+      "User": 7,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "Entry": 5,
+      "Search::Connection": 1.0
+    },
+    "RecentlyReadEntriesController": {
+      "User": 3,
+      "Entry": 5,
+      "Search::Connection": 1.0,
+      "RecentlyReadEntry": 2
+    },
+    "RemoteFilesController": {
+      "RemoteFile": 5,
+      "EmailNewsletter": 1.6666666666666665,
+      "Newsletter": 1.6666666666666665,
+      "UrlCache": 1.6666666666666665,
+      "ImageCrawler::CacheRemoteFile": 1,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "SavedSearchesController": {
+      "SavedSearch": 9,
+      "Entry": 2,
+      "Search::Response": 2.0,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "User": 3,
+      "ApplicationController": 3
+    },
+    "SessionsController": {
+      "User": 4,
+      "ImageCrawler::Timer": 1.0
+    },
+    "Settings::BillingsController": {
+      "User": 8,
+      "Plan": 9,
+      "FeedbinUtils": 2,
+      "Customer": 5,
+      "BillingEvent": 3.0,
+      "CrawlData": 1.0,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "ApplicationController": 1
+    },
+    "Settings::ImportItemsController": {
+      "User": 1,
+      "FeedImportFixer": 1
+    },
+    "Settings::ImportsController": {
+      "User": 5,
+      "EmailNewsletter": 0.75,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.75,
+      "SavedSearchPresenter": 0.25,
+      "ApplicationController": 1,
+      "FeedCrawler::Cache": 0.3333333333333333,
+      "FeedCrawler::RedirectCache": 0.3333333333333333,
+      "ImageCrawler::Cache": 0.3333333333333333,
+      "Import": 1,
+      "FeedImportFixer": 1
+    },
+    "Settings::Newsletters::AddressesController": {
+      "User": 5.0,
+      "CrawlData": 3.0,
+      "AuthenticationToken": 2
+    },
+    "Settings::Newsletters::SendersController": {
+      "User": 8,
+      "EmailNewsletter": 1.5,
+      "Newsletter": 1.5,
+      "CrawlData": 1.0,
+      "NewsletterSender": 4.333333333333334,
+      "Entry": 0.3333333333333333,
+      "Feed": 0.3333333333333333
+    },
+    "Settings::NewslettersController": {
+      "User": 1
+    },
+    "Settings::SubscriptionsController": {
+      "User": 16.0,
+      "EmailNewsletter": 2.083333333333333,
+      "Newsletter": 2.083333333333333,
+      "FaviconCrawler::Finder": 1,
+      "ImportItem": 0.5,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.5,
+      "Subscription": 7,
+      "CrawlData": 6.0,
+      "RecentlyPlayedEntriesController": 0.5,
+      "RecentlyReadEntriesController": 0.5,
+      "SubscriptionPresenter": 1.0,
+      "FeedStat": 1,
+      "Feed": 2.8333333333333335,
+      "FeedStat::Stat": 1.5,
+      "Entry": 1.0
+    },
+    "SettingsController": {
+      "User": 6,
+      "SubscriptionPresenter": 1.0,
+      "EmailNewsletter": 1.0,
+      "Newsletter": 1.0
+    },
+    "SharingServicesController": {
+      "User": 5,
+      "CrawlData": 2.0,
+      "SharingService": 2.0,
+      "SupportedSharingService": 1.0,
+      "AuthenticationToken": 1.0
+    },
+    "SiteController": {
+      "ApplicationController": 4,
+      "Colors": 1,
+      "User": 2.5,
+      "Plan": 1.0,
+      "AppStoreNotification": 0.5
+    },
+    "StarredEntriesController": {
+      "User": 3,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "Entry": 6,
+      "Search::Connection": 1.0,
+      "ApplicationController": 1,
+      "StarredEntriesExport": 1,
+      "StarredEntry": 3
+    },
+    "SubscriptionsController": {
+      "CrawlData": 1.0,
+      "User": 10,
+      "Tag": 2,
+      "Subscription": 5,
+      "Feed": 2.0,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "ApplicationController": 2,
+      "TagEditor": 3,
+      "FeedStat": 1,
+      "Tagging": 1
+    },
+    "SupportedSharingServicesController": {
+      "CrawlData": 6.0,
+      "User": 8,
+      "SupportedSharingService": 15.0,
+      "SharingService": 2.0,
+      "Share::EvernoteShare": 1.0,
+      "Share::Pocket": 1.3333333333333333,
+      "Share::Tumblr": 1.0,
+      "AppStoreNotificationData": 1.6666666666666665,
+      "EmailNewsletter": 1.6666666666666665,
+      "Newsletter": 1.6666666666666665,
+      "UrlCache": 2.0,
+      "ApiClient": 0.6666666666666666,
+      "ChapterParser": 0.6666666666666666,
+      "FeedCrawler::Downloader": 0.6666666666666666,
+      "Share::Mastodon": 0.8333333333333333,
+      "Share::Raindrop": 0.8333333333333333,
+      "Share::Instapaper": 0.25,
+      "Share::MicroBlog": 0.25,
+      "Share::Pinboard": 0.25,
+      "Share::Readability": 0.25
+    },
+    "TagsController": {
+      "User": 2,
+      "Tag": 10,
+      "Tagging": 6,
+      "ApplicationController": 4
+    },
+    "UnreadEntriesController": {
+      "Entry": 2,
+      "UnreadEntry": 3
+    },
+    "UpdatedEntriesController": {
+      "User": 1,
+      "Entry": 4,
+      "Search::Connection": 1.0
+    },
+    "UsersController": {
+      "User": 9,
+      "CrawlData": 2.0,
+      "UserDeleter": 1,
+      "ApplicationController": 1
+    },
+    "WebSubController": {
+      "CrawlData": 6.0,
+      "Feed": 5,
+      "EmailNewsletter": 1.0,
+      "Newsletter": 1.0,
+      "UrlCache": 1.0,
+      "FeedCrawler::Parser": 2,
+      "ApplicationController": 1
+    },
+    "EntryMailer": {
+      "Entry": 2,
+      "Share::Service": 1
+    },
+    "MarketingMailer": {
+      "User": 2
+    },
+    "UserMailer": {
+      "BillingEvent": 9,
+      "User": 24.0
+    },
+    "AccountMigrator::ImportFeed": {
+      "AccountMigrationItem": 3,
+      "AccountMigration": 4,
+      "ApiClient": 4,
+      "FeedFinder": 1,
+      "Feed": 5,
+      "User": 2,
+      "StarredEntry": 2,
+      "Search::Response": 2.0,
+      "UnreadEntry": 2
+    },
+    "AccountMigrator::Setup": {
+      "AccountMigration": 3,
+      "ApiClient": 4
+    },
+    "AppStoreNotificationProcessor": {
+      "User": 4.5,
+      "CrawlData": 6.0,
+      "Settings::Newsletters::AddressesController": 0.5,
+      "Plan": 1,
+      "AppStoreNotification": 6,
+      "AuthenticationToken": 7
+    },
+    "BackfillGuid": {
+      "Feed": 2,
+      "Entry": 4,
+      "EmailNewsletter": 1.5,
+      "Newsletter": 1.5,
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "Download": 1.0,
+      "CrawlData": 1.0
+    },
+    "BackfillProviderIds": {
+      "Entry": 12,
+      "IframeEmbed::Instagram": 0.5,
+      "IframeEmbed::Twitter": 0.5,
+      "Tweet": 1.0,
+      "Embed": 6
+    },
+    "CacheEntryViews": {
+      "Entry": 4,
+      "ApplicationController": 2
+    },
+    "ChapterParser": {
+      "Entry": 3,
+      "UrlCache": 1.0,
+      "Download": 2.0,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "DevicePushNotificationSend": {
+      "Entry": 8,
+      "UnreadEntry": 4,
+      "Device": 10,
+      "CrawlData": 3.0,
+      "UrlCache": 2.333333333333333,
+      "EmailNewsletter": 0.6666666666666666,
+      "Newsletter": 0.6666666666666666,
+      "AppStoreNotificationData": 0.6666666666666666,
+      "Subscription": 4,
+      "RemoteFile": 0.3333333333333333,
+      "AppStoreNotificationProcessor": 0.3333333333333333,
+      "ContentFormatter": 0.5,
+      "EntryPresenter": 0.5,
+      "MercuryParser": 1.0
+    },
+    "EntryDeleter": {
+      "Feed": 4,
+      "SubscriptionPresenter": 1.0,
+      "UnreadLimiter": 2,
+      "Entry": 24,
+      "ImageDeleter": 1,
+      "Search::SearchIndexRemove": 1,
+      "UnreadEntry": 4,
+      "UpdatedEntry": 4,
+      "RecentlyReadEntry": 4,
+      "StarredEntry": 4
+    },
+    "EntryDeleterScheduler": {
+      "Search::SearchServerSetup": 2,
+      "Feed": 3
+    },
+    "FaviconCrawler::Finder": {
+      "Favicon": 6,
+      "Image": 1,
+      "Download": 2.0,
+      "FaviconCrawler::Processor": 4,
+      "ImportItem": 1.0,
+      "FeedCrawler::ConcurrencyLimit": 1.0,
+      "FeedCrawler::Throttle": 1.0,
+      "SavePage": 1.0,
+      "CrawlData": 2.0
+    },
+    "FaviconCrawler::Image": {
+      "CrawlData": 1.0
+    },
+    "FeedCrawler::Downloader": {
+      "CrawlData": 21,
+      "UpdateRedirect": 1,
+      "EmailNewsletter": 0.6666666666666666,
+      "Newsletter": 0.6666666666666666,
+      "UrlCache": 0.6666666666666666,
+      "FeedFinder": 1.0,
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "ImageCrawler::Download": 1.0,
+      "Download": 2.0
+    },
+    "FeedCrawler::DownloaderCritical": {
+      "FeedCrawler::Downloader": 1
+    },
+    "FeedCrawler::Cache": {
+      "ImageCrawler::Cache": 3.0
+    },
+    "FeedCrawler::ConcurrencyLimit": {
+      "FeedbinUtils": 1,
+      "RedisLock": 1.0,
+      "FeedCrawler::ConcurrencyLimit::TimeoutError": 1
+    },
+    "FeedCrawler::EntryFilter": {
+      "SavePage": 3.0,
+      "ImageCrawler::Processor::Processed": 1.0,
+      "MercuryParser": 4.0,
+      "Entry": 5
+    },
+    "FeedCrawler::EntryUpdate": {
+      "Entry": 1.3333333333333333,
+      "MercuryParser": 1.3333333333333333,
+      "EntryPresenter": 0.3333333333333333,
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "EmailNewsletter": 1.0,
+      "Newsletter": 1.0,
+      "ImageCrawler::Processor::Processed": 1.0,
+      "SavePage": 1.0,
+      "CrawlData": 1.0,
+      "Subscription": 4,
+      "UnreadEntry": 4,
+      "UpdatedEntry": 6
+    },
+    "FeedCrawler::RedirectCache": {
+      "FeedCrawler::Cache": 6,
+      "EmailNewsletter": 1.0
+    },
+    "FeedCrawler::Throttle": {
+      "CrawlData": 1.0,
+      "FeedbinUtils": 1
+    },
+    "FeedCrawler::Parser": {
+      "Feed": 3.5,
+      "CrawlData": 2.0,
+      "FeedCrawler::EntryFilter": 4,
+      "User": 1.5,
+      "HarvestEmbeds": 2,
+      "FeedCrawler::YoutubeReceiver": 1,
+      "FeedCrawler::Receiver": 3
+    },
+    "FeedCrawler::ParserCritical": {
+      "FeedCrawler::Parser": 2
+    },
+    "FeedCrawler::PersistCrawlData": {
+      "Feed": 1
+    },
+    "FeedCrawler::Receiver": {
+      "Feed": 3,
+      "Entry": 3,
+      "FeedCrawler::EntryUpdate": 1,
+      "FeedbinUtils": 1
+    },
+    "FeedCrawler::Schedule": {
+      "Subscription": 4,
+      "Feed": 10,
+      "CrawlData": 2.0,
+      "EmailNewsletter": 0.5,
+      "ImportItem": 0.5,
+      "Newsletter": 0.5,
+      "SavePage": 0.5
+    },
+    "FeedCrawler::UpdateYoutubeVideos": {
+      "Feed": 3,
+      "Embed": 6,
+      "CrawlData": 1.0
+    },
+    "FeedCrawler::YoutubeReceiver": {
+      "Embed": 6,
+      "CrawlData": 1.0,
+      "FeedCrawler::Receiver": 2
+    },
+    "FeedFixer": {
+      "Feed": 23.0,
+      "FeedFinder": 3,
+      "Subscription": 16,
+      "CrawlData": 1.0,
+      "EmailNewsletter": 0.5,
+      "ImportItem": 0.5,
+      "Newsletter": 0.5,
+      "SavePage": 0.5,
+      "DiscoveredFeed": 10,
+      "User": 2.0,
+      "FaviconCrawler::Finder": 1
+    },
+    "FeedFixerScheduler": {
+      "FeedFixer": 2
+    },
+    "FeedImportFixer": {
+      "User": 4,
+      "DiscoveredFeed": 2,
+      "ImportItem": 1.25,
+      "FeedFinder": 1,
+      "EmailNewsletter": 0.25,
+      "Newsletter": 0.25,
+      "SavePage": 0.25,
+      "Feed": 1
+    },
+    "FeedImporter": {
+      "ImportItem": 5.5,
+      "Import": 2,
+      "FeedFinder": 4,
+      "EmailNewsletter": 0.75,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.75,
+      "SavedSearchPresenter": 0.25,
+      "User": 1,
+      "Feed": 1,
+      "FaviconCrawler::Finder": 2,
+      "FeedFixer": 2,
+      "CrawlData": 1.0,
+      "SavePage": 0.5,
+      "DiscoveredFeed": 2
+    },
+    "FeedReplacer": {
+      "User": 7,
+      "DiscoveredFeed": 2,
+      "Feed": 1,
+      "Subscription": 4,
+      "FeedFinder": 3,
+      "EmailNewsletter": 0.25,
+      "ImportItem": 0.25,
+      "Newsletter": 0.25,
+      "SavePage": 0.25,
+      "CrawlData": 1.0
+    },
+    "FeedStatus": {
+      "Feed": 3,
+      "FeedbinUtils": 1
+    },
+    "FeedUpdate": {
+      "Feed": 2.5,
+      "Micropost": 0.5,
+      "SearchData": 0.5,
+      "Opml::Parser": 0.6666666666666666,
+      "ImageCrawler::MetaImages": 0.3333333333333333,
+      "User": 0.5,
+      "Entry": 1
+    },
+    "HarvestEmbeds": {
+      "Entry": 2,
+      "IframeEmbed::Youtube": 1,
+      "Embed": 5,
+      "Download": 1
+    },
+    "HarvestEmbeds::Download": {
+      "Embed": 16.0,
+      "Feed": 1,
+      "IframeEmbed::Youtube": 4.0,
+      "Entry": 4,
+      "HarvestEmbeds::Download::Redownload": 1,
+      "CrawlData": 1.0,
+      "UrlCache": 3
+    },
+    "HarvestLinks": {
+      "Entry": 11.5,
+      "MercuryParser": 1,
+      "CrawlData": 2.0,
+      "ImageCrawler::TwitterLinkImage": 1,
+      "ApplicationController": 1,
+      "EmailNewsletter": 0.25,
+      "Newsletter": 0.25,
+      "SearchData": 0.25,
+      "Api::V2::EntriesController": 0.25,
+      "Tweet": 3.0,
+      "EntryPresenter": 2.0,
+      "ImageCrawler::MetaImagesCache": 0.5,
+      "Download": 1.0,
+      "ImportItem": 0.5,
+      "FeedCrawler::ConcurrencyLimit": 0.5,
+      "FeedCrawler::Throttle": 0.5,
+      "SavePage": 0.5
+    },
+    "ImageCrawler::CacheRemoteFile": {
+      "RemoteFile": 3,
+      "Image": 3,
+      "ImageCrawler::Pipeline::Find": 1
+    },
+    "ImageCrawler::EntryImage": {
+      "Entry": 14.5,
+      "ImageCrawler::Pipeline::Find": 1,
+      "Tweet": 3.0,
+      "EntryPresenter": 2.5,
+      "CrawlDataType": 0.2,
+      "IframeEmbed": 0.2,
+      "IframeEmbed::Default": 0.2,
+      "IframeEmbed::Kickstarter": 0.2,
+      "SearchData": 0.7,
+      "Micropost": 0.5,
+      "Image": 4,
+      "SavePage": 1.25,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "CrawlData": 1.0,
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25
+    },
+    "ImageCrawler::FixImage": {
+      "Entry": 2,
+      "UnreadEntry": 4,
+      "ImageCrawler::EntryImage": 1,
+      "Download": 1.0
+    },
+    "ImageCrawler::ItunesFeedImage": {
+      "Feed": 3,
+      "Image": 3,
+      "ImageCrawler::Pipeline::Find": 1
+    },
+    "ImageCrawler::ItunesImage": {
+      "Entry": 4,
+      "Image": 3,
+      "SavePage": 1.0,
+      "ImageCrawler::Pipeline::Find": 1
+    },
+    "ImageCrawler::Cache": {
+      "FeedCrawler::Cache": 3.0
+    },
+    "ImageCrawler::Download": {
+      "RemoteFile": 1,
+      "Download": 1.0,
+      "CrawlData": 1.0,
+      "Search::Connection": 1.0,
+      "EmailNewsletter": 0.3333333333333333,
+      "Newsletter": 0.3333333333333333,
+      "UrlCache": 0.3333333333333333,
+      "IframeEmbed": 0.6666666666666666,
+      "IframeEmbed::Default": 0.6666666666666666,
+      "ImageCrawler::Download::Default": 0.6666666666666666
+    },
+    "ImageCrawler::DownloadCache": {
+      "ImageCrawler::Cache": 6,
+      "Image": 2,
+      "Download": 1.0,
+      "ImageCrawler::Image": 4.0
+    },
+    "ImageCrawler::Image": {
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "Image": 3
+    },
+    "ImageCrawler::MetaImages": {
+      "Entry": 1.0,
+      "ImageCrawler::MetaImagesCache": 5.0,
+      "FeedCrawler::Cache": 0.3333333333333333,
+      "FeedCrawler::RedirectCache": 0.3333333333333333,
+      "ImageCrawler::Cache": 0.3333333333333333,
+      "CrawlData": 1.0,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "ImageCrawler::MetaImagesCache": {
+      "ImageCrawler::Cache": 4,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "ImageCrawler::Processor::Cropper": {
+      "ImageCrawler::Processor::Processed": 21.0,
+      "Download": 1.0,
+      "CrawlData": 2.0
+    },
+    "ImageCrawler::Processor::Processed": {
+      "Source": 0.2,
+      "Source::BodyLinks": 0.2,
+      "Source::MetaLinks": 0.2,
+      "Extension::V1::ApiController": 0.2,
+      "PagesController": 0.2
+    },
+    "ImageCrawler::Timer": {
+      "ImageCrawler::Pipeline::Process": 1
+    },
+    "ImageCrawler::Pipeline::Find": {
+      "Image": 2,
+      "ImageCrawler::Timer": 3,
+      "ImageCrawler::DownloadCache": 4,
+      "Download": 2,
+      "ImageCrawler::Download": 3.0,
+      "ImageCrawler::Pipeline::Process": 1,
+      "ImageCrawler::MetaImages": 1
+    },
+    "ImageCrawler::Pipeline::FindCritical": {
+      "ImageCrawler::Pipeline::Find": 2
+    },
+    "ImageCrawler::Pipeline::Process": {
+      "Image": 3,
+      "ImageCrawler::Processor::Cropper": 3,
+      "ImageCrawler::Processor::Processed": 5.5,
+      "Entry": 0.5,
+      "Download": 1.0,
+      "ImageCrawler::Pipeline::Upload": 1,
+      "ImageCrawler::Pipeline::FindCritical": 1
+    },
+    "ImageCrawler::Pipeline::Upload": {
+      "Image": 2,
+      "ImageCrawler::DownloadCache": 1
+    },
+    "ImageCrawler::TwitterLinkImage": {
+      "Entry": 1,
+      "Image": 3,
+      "SavePage": 1.0,
+      "ImageCrawler::Pipeline::Find": 1
+    },
+    "ImageSaver": {
+      "Entry": 2,
+      "Download": 4.5,
+      "ContentFormatter": 1,
+      "EmailNewsletter": 0.7,
+      "IframeEmbed::Twitter": 0.2,
+      "MercuryParser": 0.2,
+      "Newsletter": 0.2,
+      "EntryPresenter": 0.2,
+      "Micropost": 0.5,
+      "SearchData": 0.5
+    },
+    "MakeEpub": {
+      "Entry": 6.333333333333333,
+      "User": 3,
+      "Subscription": 1,
+      "CrawlData": 2.0,
+      "UserMailer": 3,
+      "MercuryParser": 2.3333333333333335,
+      "ApplicationController": 2,
+      "Download": 7.0,
+      "ImageCrawler::Processor::Processed": 3.0,
+      "EntryPresenter": 0.3333333333333333
+    },
+    "NewsletterReceiver": {
+      "SharingService": 0.3333333333333333,
+      "SupportedSharingService": 0.3333333333333333,
+      "User": 2.6666666666666665,
+      "SavePage": 2.25,
+      "ImportItem": 1.25,
+      "FeedCrawler::ConcurrencyLimit": 0.5,
+      "FeedCrawler::Throttle": 0.5,
+      "Feed": 7.166666666666666,
+      "Tagging": 0.5,
+      "Tag": 0.3333333333333333,
+      "EmailNewsletter": 9.916666666666666,
+      "Newsletter": 8.916666666666666,
+      "UrlCache": 1.0,
+      "Download": 1.0,
+      "AuthenticationToken": 5,
+      "IframeEmbed::Twitter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "NewsletterSender": 4,
+      "SearchData": 0.25,
+      "Api::V2::EntriesController": 0.25,
+      "SettingsController": 0.3333333333333333,
+      "NewsletterSaver": 1
+    },
+    "NewsletterSaver": {
+      "Entry": 3,
+      "CrawlData": 1.0,
+      "ContentFormatter": 1
+    },
+    "NewsletterUpdater": {
+      "Entry": 4,
+      "EntriesController": 2.0
+    },
+    "OnboardingMessage": {
+      "User": 13,
+      "MarketingMailer": 6
+    },
+    "PodcastClearUnused": {
+      "PodcastSubscription": 4.333333333333334,
+      "Playlist": 0.3333333333333333,
+      "User": 0.3333333333333333
+    },
+    "PodcastPushNotification": {
+      "Entry": 4,
+      "Device": 10,
+      "CrawlData": 4.0,
+      "UrlCache": 1.0,
+      "AppStoreNotificationData": 0.3333333333333333,
+      "RemoteFile": 0.3333333333333333,
+      "AppStoreNotificationProcessor": 0.3333333333333333,
+      "ContentFormatter": 0.5,
+      "EntryPresenter": 0.5,
+      "Source": 0.2,
+      "Source::BodyLinks": 0.2,
+      "Source::MetaLinks": 0.2,
+      "Extension::V1::ApiController": 0.2,
+      "PagesController": 0.2,
+      "EmailNewsletter": 1.0,
+      "Newsletter": 1.0
+    },
+    "QueuedEntryLimiter": {
+      "User": 4,
+      "Entry": 6
+    },
+    "SavePage": {
+      "User": 3.5,
+      "Embed": 11,
+      "ImageSaver": 1,
+      "FaviconCrawler::Finder": 1,
+      "SavePage::MissingPage": 1,
+      "IframeEmbed::Youtube": 2,
+      "HarvestEmbeds::Download": 2,
+      "Feed": 3.0,
+      "Subscription": 2,
+      "MercuryParser": 3.3333333333333335,
+      "ImportItem": 0.3333333333333333,
+      "FeedCrawler::ConcurrencyLimit": 0.3333333333333333,
+      "FeedCrawler::Throttle": 0.3333333333333333,
+      "Tag": 0.5,
+      "TweetPage": 1,
+      "Entry": 0.3333333333333333,
+      "EntryPresenter": 0.3333333333333333
+    },
+    "SavePageFromExtension": {
+      "SavePage": 2
+    },
+    "SaveTwitterUsers": {
+      "Entry": 5,
+      "Tweet": 3.0,
+      "EntryPresenter": 2.0,
+      "TwitterUser": 5,
+      "IframeEmbed::Instagram": 1.0,
+      "IframeEmbed::Twitter": 1.0
+    },
+    "Search::ActionTags": {
+      "User": 3
+    },
+    "Search::ActionsBulk": {
+      "User": 4,
+      "Search::Connection": 1.0,
+      "Entry": 1,
+      "Action": 1
+    },
+    "Search::ActionsPerform": {
+      "Action": 4,
+      "Entry": 2,
+      "CrawlData": 4.0,
+      "UnreadEntry": 4,
+      "UpdatedEntry": 4,
+      "DevicePushNotificationSend": 1,
+      "WebPushNotificationSend": 1,
+      "User": 2,
+      "Throttle": 1,
+      "StarredEntry": 1,
+      "ImageCrawler::EntryImage": 3,
+      "ImageCrawler::Pipeline::FindCritical": 1
+    },
+    "Search::AddFeedToAction": {
+      "User": 3,
+      "Action": 4
+    },
+    "Search::FeedMetadataFinder": {
+      "Feed": 3,
+      "EmailNewsletter": 0.25,
+      "Newsletter": 0.25,
+      "SearchData": 0.25,
+      "Api::V2::EntriesController": 0.25
+    },
+    "Search::PercolateCreate": {
+      "Action": 4,
+      "Search::Connection": 0.5,
+      "Search::SearchIndexStore": 0.5,
+      "Search::PercolateDestroy": 1
+    },
+    "Search::PercolateDestroy": {
+      "Action": 1
+    },
+    "Search::ReindexFeeds": {
+      "Search::Connection": 2.0,
+      "Feed": 11.333333333333334,
+      "EmailNewsletter": 0.8333333333333333,
+      "Newsletter": 0.8333333333333333,
+      "ImportItem": 0.5,
+      "SavePage": 0.5,
+      "Entry": 4,
+      "Colors": 0.6666666666666666,
+      "IframeEmbed": 0.3333333333333333,
+      "Search::BulkRecord": 2
+    },
+    "Search::RemoveFeedFromAction": {
+      "User": 3,
+      "Action": 4
+    },
+    "Search::SearchIndexRemove": {
+      "Search::BulkRecord": 2,
+      "Entry": 1,
+      "Search::Connection": 1.0
+    },
+    "Search::SearchIndexStore": {
+      "Entry": 4,
+      "Search::Connection": 2.0,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "Action": 1,
+      "Search::ActionsPerform": 1
+    },
+    "Search::SearchServerSetup": {
+      "Entry": 9,
+      "Search::BulkRecord": 2,
+      "Search::Connection": 1.0,
+      "Action": 1
+    },
+    "Search::TouchActions": {
+      "Action": 2
+    },
+    "SendStats": {
+      "EmailNewsletter": 0.25,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 0.25,
+      "SavedSearchPresenter": 0.25,
+      "AuthenticationToken": 1.0,
+      "User": 10,
+      "Plan": 7,
+      "SupportedSharingService": 0.5,
+      "Api::V2::UsersController": 0.5
+    },
+    "ShareRetry": {
+      "SupportedSharingService": 3
+    },
+    "StarredEntriesExport": {
+      "User": 3,
+      "UserMailer": 3,
+      "Search::Connection": 3.0,
+      "Entry": 6,
+      "Download": 3.0,
+      "StarredExportUploader": 1,
+      "ContentFormatter": 1,
+      "MercuryParser": 1.0
+    },
+    "TouchFeeds": {
+      "Feed": 9
+    },
+    "TrialExpiration": {
+      "UserMailer": 3,
+      "Plan": 2,
+      "User": 11,
+      "Subscription": 4
+    },
+    "TrialSendExpiration": {
+      "User": 4,
+      "CrawlData": 1.0,
+      "UserMailer": 3
+    },
+    "UnreadLimiter": {
+      "Subscription": 5,
+      "UnreadEntry": 12,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5
+    },
+    "UpdateDefaultColumn": {
+      "Colors": 2.6666666666666665,
+      "IframeEmbed": 1.3333333333333333
+    },
+    "UpdateRedirect": {
+      "Feed": 2
+    },
+    "UpdateStatementDescriptor": {
+      "BillingEvent": 3,
+      "CrawlData": 1.0
+    },
+    "UserDeleter": {
+      "User": 6,
+      "BillingEvent": 1,
+      "SubscriptionsController": 1,
+      "UserMailer": 3
+    },
+    "ViewLinkCache": {
+      "Expires": 1,
+      "MercuryParser": 2
+    },
+    "ViewLinkCacheMultiple": {
+      "User": 4,
+      "Entry": 7,
+      "EmailNewsletter": 0.5,
+      "Newsletter": 0.5,
+      "Expires": 1
+    },
+    "WebPushNotificationSend": {
+      "Device": 6,
+      "Entry": 8,
+      "UnreadEntry": 4,
+      "Tweet": 2.0,
+      "EmailNewsletter": 1.2499999999999998,
+      "IframeEmbed::Twitter": 0.25,
+      "Newsletter": 1.2499999999999998,
+      "SavedSearchPresenter": 0.25,
+      "AppStoreNotificationData": 0.6666666666666666,
+      "CrawlData": 3.0,
+      "UrlCache": 1.3333333333333333,
+      "Subscription": 4,
+      "ApplicationController": 4,
+      "FeedFinder": 1.0,
+      "ImportItem": 0.25,
+      "FeedCrawler::ConcurrencyLimit": 0.25,
+      "FeedCrawler::Throttle": 0.25,
+      "SavePage": 0.25
+    },
+    "WebSub::Hub": {
+      "Api::V2::SuggestedFeedsController": 0.75,
+      "SiteController": 0.25,
+      "NewsletterReceiver": 0.25,
+      "WebSub::Maintenance": 0.75,
+      "Feed": 8
+    },
+    "WebSub::Maintenance": {
+      "WebSub::Subscribe": 1,
+      "WebSub::Unsubscribe": 1,
+      "Feed": 25
+    },
+    "WebSub::Subscribe": {
+      "Feed": 2,
+      "WebSub::Hub": 1
+    },
+    "WebSub::Unsubscribe": {
+      "Feed": 2,
+      "WebSub::Hub": 1
+    },
+    "EntryPresenter": {
+      "BasePresenter": 2,
+      "ContentFormatter": 18.0,
+      "EmailNewsletter": 4.766666666666667,
+      "Newsletter": 4.2666666666666675,
+      "MercuryParser": 17.43333333333333,
+      "Entry": 44.0,
+      "TweetPage": 17.0,
+      "Tweet": 19.5,
+      "CrawlData": 16.0,
+      "ApplicationController": 1,
+      "IframeEmbed::Twitter": 5.1000000000000005,
+      "ImageSaver": 1.5999999999999999,
+      "AppStoreNotificationData": 1.6666666666666665,
+      "RemoteFile": 4.666666666666666,
+      "AppStoreNotificationProcessor": 1.6666666666666665,
+      "Feed": 0.3333333333333333,
+      "ImportItem": 0.5,
+      "FeedCrawler::ConcurrencyLimit": 0.5,
+      "FeedCrawler::Throttle": 0.5,
+      "SavePage": 0.5,
+      "ImageCrawler::Processor::Processed": 0.5,
+      "DevicePushNotificationSend": 4.0,
+      "Micropost": 6.5,
+      "ImageCrawler::MetaImagesCache": 1.0,
+      "IframeEmbed::Instagram": 3.0,
+      "SavedSearchPresenter": 0.5,
+      "SearchData": 2.6,
+      "CrawlDataType": 0.6000000000000001,
+      "IframeEmbed": 0.6000000000000001,
+      "IframeEmbed::Default": 0.6000000000000001,
+      "IframeEmbed::Kickstarter": 0.6000000000000001,
+      "Download": 0.5,
+      "FeedSearchData": 2.0
+    },
+    "FeedPresenter": {
+      "BasePresenter": 1,
+      "Feed": 0.3333333333333333,
+      "SavedSearch": 0.3333333333333333,
+      "Tag": 0.3333333333333333
+    },
+    "MercuryParserPresenter": {
+      "BasePresenter": 1
+    },
+    "SavedSearchPresenter": {
+      "BasePresenter": 1,
+      "EmailNewsletter": 0.6666666666666666,
+      "IframeEmbed::Twitter": 0.6666666666666666,
+      "Newsletter": 0.6666666666666666
+    },
+    "SubscriptionPresenter": {
+      "BasePresenter": 1,
+      "CrawlData": 3.0,
+      "Feed": 1.0,
+      "Sparkline": 2,
+      "FeedStat": 5
+    },
+    "UserPresenter": {
+      "BasePresenter": 1,
+      "CrawlData": 2.0,
+      "User": 1.0
+    },
+    "ImportFileValidator": {
+      "Download": 1.0
+    },
+    "AuthenticationToken": {
+      "User": 2,
+      "NewsletterSender": 2
+    },
+    "Coupon": {
+      "User": 2
+    },
+    "Device": {
+      "User": 2
+    },
+    "NewsletterSender": {
+      "Feed": 2
+    },
+    "Plan": {
+      "User": 2
+    },
+    "Playlist": {
+      "User": 2,
+      "PodcastSubscription": 2,
+      "QueuedEntry": 2
+    },
+    "QueuedEntry": {
+      "User": 2,
+      "Entry": 2,
+      "Feed": 2,
+      "Playlist": 2
+    },
+    "RecentlyPlayedEntry": {
+      "User": 2,
+      "Entry": 2
+    },
+    "RecentlyReadEntry": {
+      "User": 2,
+      "Entry": 2
+    },
+    "SharingService": {
+      "User": 2
+    },
+    "SuggestedCategory": {
+      "SuggestedFeed": 2
+    },
+    "SuggestedFeed": {
+      "SuggestedCategory": 2,
+      "Feed": 2
+    },
+    "ApiClient::Error": {
+    },
+    "CrawlingError": {
+    },
+    "DeletedUser": {
+    },
+    "DiscoveredFeed": {
+    },
+    "Expires": {
+    },
+    "Image": {
+    },
+    "OauthServer": {
+    },
+    "Opml::Outline": {
+    },
+    "RedisLock": {
+    },
+    "Search::BulkRecord": {
+    },
+    "Search::Response": {
+    },
+    "Share::Service::AuthError": {
+    },
+    "Sourceable": {
+    },
+    "TextToChapters": {
+    },
+    "TwitterUser": {
+    },
+    "CancelBilling": {
+    },
+    "FaviconCrawler::Processor": {
+    },
+    "FeedCrawler::ConcurrencyLimit::TimeoutError": {
+    },
+    "HarvestEmbeds::Download::Redownload": {
+    },
+    "ImageCrawler::Download::Default": {
+    },
+    "ImageDeleter": {
+    },
+    "SavePage::MissingPage": {
+    },
+    "BasePresenter": {
+    },
+    "StarredExportUploader": {
+    }
+  },
+  "data_associations": {
+    "AccountMigration": [
+      "User",
+      "AccountMigrationItem"
+    ],
+    "AccountMigrationItem": [
+      "AccountMigration"
+    ],
+    "Action": [
+      "User"
+    ],
+    "AppStoreNotification": [
+      "User"
+    ],
+    "AuthenticationToken": [
+      "User",
+      "NewsletterSender"
+    ],
+    "BillingEvent": [
+      "User"
+    ],
+    "Coupon": [
+      "User"
+    ],
+    "Device": [
+      "User"
+    ],
+    "Entry": [
+      "Feed",
+      "UnreadEntry",
+      "StarredEntry",
+      "RecentlyReadEntry",
+      "Image",
+      "Micropost",
+      "MercuryParser",
+      "SearchData",
+      "Tweet",
+      "Subscription",
+      "PodcastSubscription",
+      "QueuedEntry",
+      "FeedStat"
+    ],
+    "Feed": [
+      "Subscription",
+      "PodcastSubscription",
+      "Entry",
+      "User",
+      "UnreadEntry",
+      "StarredEntry",
+      "FeedStat",
+      "DiscoveredFeed",
+      "Tagging",
+      "Tag",
+      "Favicon",
+      "NewsletterSender",
+      "Image",
+      "CrawlDataType",
+      "Sourceable",
+      "FeedSearchData",
+      "FeedSearch"
+    ],
+    "FeedStat": [
+      "Feed"
+    ],
+    "Import": [
+      "User",
+      "ImportItem",
+      "Tag"
+    ],
+    "ImportItem": [
+      "Import",
+      "DiscoveredFeed",
+      "Favicon"
+    ],
+    "InAppPurchase": [
+      "User"
+    ],
+    "NewsletterSender": [
+      "Feed"
+    ],
+    "Plan": [
+      "User"
+    ],
+    "Playlist": [
+      "User",
+      "PodcastSubscription",
+      "QueuedEntry"
+    ],
+    "PodcastSubscription": [
+      "User",
+      "Feed",
+      "Playlist",
+      "QueuedEntry"
+    ],
+    "QueuedEntry": [
+      "User",
+      "Entry",
+      "Feed",
+      "Playlist"
+    ],
+    "RecentlyPlayedEntry": [
+      "User",
+      "Entry"
+    ],
+    "RecentlyReadEntry": [
+      "User",
+      "Entry"
+    ],
+    "SavedSearch": [
+      "User",
+      "Sourceable"
+    ],
+    "SharingService": [
+      "User"
+    ],
+    "StarredEntry": [
+      "User",
+      "Feed",
+      "Entry"
+    ],
+    "Subscription": [
+      "User",
+      "Feed",
+      "Entry",
+      "UnreadEntry"
+    ],
+    "SuggestedCategory": [
+      "SuggestedFeed"
+    ],
+    "SuggestedFeed": [
+      "SuggestedCategory",
+      "Feed"
+    ],
+    "SupportedSharingService": [
+      "User"
+    ],
+    "Tag": [
+      "Tagging",
+      "Feed",
+      "Sourceable"
+    ],
+    "Tagging": [
+      "Tag",
+      "Feed",
+      "User"
+    ],
+    "UnreadEntry": [
+      "User",
+      "Feed",
+      "Entry"
+    ],
+    "UpdatedEntry": [
+      "User",
+      "Entry",
+      "Feed"
+    ],
+    "User": [
+      "Coupon",
+      "Subscription",
+      "PodcastSubscription",
+      "Feed",
+      "Entry",
+      "Import",
+      "ImportItem",
+      "BillingEvent",
+      "Tagging",
+      "Tag",
+      "SharingService",
+      "SupportedSharingService",
+      "UnreadEntry",
+      "StarredEntry",
+      "SavedSearch",
+      "Action",
+      "RecentlyReadEntry",
+      "RecentlyPlayedEntry",
+      "QueuedEntry",
+      "Playlist",
+      "UpdatedEntry",
+      "Device",
+      "AuthenticationToken",
+      "AccountMigration",
+      "AppStoreNotification",
+      "Plan",
+      "NewsletterSender",
+      "Customer",
+      "DeletedUser"
+    ],
+    "ApiClient": [
+      "ApiClient::Error"
+    ],
+    "ContentFormatter": [
+      "ImageFallback"
+    ],
+    "CrawlDataType": [
+      "CrawlData"
+    ],
+    "FeedFinder": [
+      "Feed",
+      "Source::ExistingFeed",
+      "Source::Xml",
+      "Source::MetaLinks",
+      "Source::KnownPattern",
+      "Source::BodyLinks",
+      "Source::Guess"
+    ],
+    "IframeEmbed": [
+      "UrlCache"
+    ],
+    "IframeEmbed::Default": [
+      "UrlCache"
+    ],
+    "IframeEmbed::Instagram": [
+      "UrlCache"
+    ],
+    "IframeEmbed::Kickstarter": [
+      "UrlCache"
+    ],
+    "IframeEmbed::Twitter": [
+      "TwitterUser",
+      "UrlCache"
+    ],
+    "ImageFallback": [
+      "Download"
+    ],
+    "Opml::Parser": [
+      "Opml::Outline"
+    ],
+    "Search::Connection": [
+      "Search::Response"
+    ],
+    "Share::AppDotNet": [
+      "Entry"
+    ],
+    "Share::Buffer": [
+      "Entry"
+    ],
+    "Share::EvernoteShare": [
+      "Entry"
+    ],
+    "Share::Facebook": [
+      "Entry"
+    ],
+    "Share::Mastodon": [
+      "OauthServer"
+    ],
+    "Share::Raindrop": [
+      "Entry"
+    ],
+    "Share::Service": [
+      "Entry"
+    ],
+    "Share::Twitter": [
+      "Entry"
+    ],
+    "Source": [
+      "Feed"
+    ],
+    "Source::ExistingFeed": [
+      "Feed"
+    ],
+    "Source::TwitterData": [
+      "Feed"
+    ],
+    "TweetPage": [
+      "Entry"
+    ],
+    "Admin::FeedsController": [
+      "Feed"
+    ],
+    "Admin::UsersController": [
+      "User",
+      "DeletedUser"
+    ],
+    "Api::Podcasts::V1::QueuedEntriesController": [
+      "Entry"
+    ],
+    "Api::Podcasts::V1::SubscriptionsController": [
+      "Feed"
+    ],
+    "Api::V2::ApiController": [
+      "Entry"
+    ],
+    "Api::V2::DevicesController": [
+      "Entry"
+    ],
+    "Api::V2::EntriesController": [
+      "Entry"
+    ],
+    "Api::V2::FaviconsController": [
+      "Feed",
+      "Favicon"
+    ],
+    "Api::V2::FeedsController": [
+      "Feed"
+    ],
+    "Api::V2::FeedsEntriesController": [
+      "Entry",
+      "Feed"
+    ],
+    "Api::V2::IconsController": [
+      "Feed",
+      "Favicon"
+    ],
+    "Api::V2::StarredEntriesController": [
+      "Entry"
+    ],
+    "Api::V2::SuggestedCategoriesController": [
+      "SuggestedCategory"
+    ],
+    "Api::V2::SuggestedFeedsController": [
+      "SuggestedFeed"
+    ],
+    "Api::V2::TaggingsController": [
+      "Tagging"
+    ],
+    "Api::V2::UnreadEntriesController": [
+      "UnreadEntry",
+      "Entry"
+    ],
+    "Api::V2::UsersController": [
+      "User"
+    ],
+    "ApplicationController": [
+      "Entry",
+      "Sourceable"
+    ],
+    "AppsController": [
+      "User"
+    ],
+    "EntriesController": [
+      "UnreadEntry",
+      "UpdatedEntry",
+      "User",
+      "Entry"
+    ],
+    "Extension::V1::ApiController": [
+      "User"
+    ],
+    "Extension::V1::SubscriptionsController": [
+      "Feed"
+    ],
+    "ExtractsController": [
+      "Entry"
+    ],
+    "FeedsController": [
+      "Feed",
+      "TagEditor"
+    ],
+    "MicropostsController": [
+      "Entry",
+      "Micropost"
+    ],
+    "PagesController": [
+      "User"
+    ],
+    "PagesEntriesController": [
+      "Entry"
+    ],
+    "PublicSettingsController": [
+      "User"
+    ],
+    "QueuedEntriesController": [
+      "Entry"
+    ],
+    "RecentlyPlayedEntriesController": [
+      "Entry"
+    ],
+    "RecentlyReadEntriesController": [
+      "Entry",
+      "RecentlyReadEntry"
+    ],
+    "RemoteFilesController": [
+      "RemoteFile"
+    ],
+    "SavedSearchesController": [
+      "SavedSearch"
+    ],
+    "SessionsController": [
+      "User"
+    ],
+    "Settings::BillingsController": [
+      "Plan"
+    ],
+    "Settings::Newsletters::SendersController": [
+      "NewsletterSender"
+    ],
+    "SiteController": [
+      "User"
+    ],
+    "StarredEntriesController": [
+      "Entry",
+      "StarredEntry"
+    ],
+    "SubscriptionsController": [
+      "Tag",
+      "TagEditor"
+    ],
+    "TagsController": [
+      "Tag",
+      "Tagging"
+    ],
+    "UnreadEntriesController": [
+      "Entry",
+      "UnreadEntry"
+    ],
+    "UpdatedEntriesController": [
+      "Entry"
+    ],
+    "UsersController": [
+      "User"
+    ],
+    "WebSubController": [
+      "Feed"
+    ],
+    "EntryMailer": [
+      "Entry"
+    ],
+    "MarketingMailer": [
+      "User"
+    ],
+    "UserMailer": [
+      "BillingEvent",
+      "User"
+    ],
+    "AccountMigrator::ImportFeed": [
+      "AccountMigrationItem",
+      "ApiClient",
+      "Feed"
+    ],
+    "AccountMigrator::Setup": [
+      "AccountMigration",
+      "ApiClient"
+    ],
+    "AppStoreNotificationProcessor": [
+      "AppStoreNotification",
+      "AuthenticationToken"
+    ],
+    "BackfillGuid": [
+      "Feed",
+      "Entry"
+    ],
+    "BackfillProviderIds": [
+      "Entry",
+      "Embed"
+    ],
+    "CacheEntryViews": [
+      "Entry"
+    ],
+    "ChapterParser": [
+      "Entry"
+    ],
+    "DevicePushNotificationSend": [
+      "Entry",
+      "UnreadEntry",
+      "Device",
+      "Subscription"
+    ],
+    "EntryDeleter": [
+      "Feed",
+      "Entry",
+      "UnreadEntry",
+      "UpdatedEntry",
+      "RecentlyReadEntry",
+      "StarredEntry"
+    ],
+    "EntryDeleterScheduler": [
+      "Feed"
+    ],
+    "FaviconCrawler::Finder": [
+      "Favicon"
+    ],
+    "FeedCrawler::Downloader": [
+      "CrawlData"
+    ],
+    "FeedCrawler::EntryFilter": [
+      "Entry"
+    ],
+    "FeedCrawler::EntryUpdate": [
+      "Subscription",
+      "UnreadEntry",
+      "UpdatedEntry"
+    ],
+    "FeedCrawler::Parser": [
+      "Feed"
+    ],
+    "FeedCrawler::Receiver": [
+      "Feed",
+      "Entry"
+    ],
+    "FeedCrawler::Schedule": [
+      "Subscription",
+      "Feed"
+    ],
+    "FeedCrawler::UpdateYoutubeVideos": [
+      "Feed",
+      "Embed"
+    ],
+    "FeedCrawler::YoutubeReceiver": [
+      "Embed"
+    ],
+    "FeedFixer": [
+      "Feed",
+      "FeedFinder",
+      "DiscoveredFeed",
+      "Subscription"
+    ],
+    "FeedImportFixer": [
+      "User",
+      "DiscoveredFeed"
+    ],
+    "FeedImporter": [
+      "ImportItem",
+      "FeedFinder",
+      "DiscoveredFeed"
+    ],
+    "FeedReplacer": [
+      "User",
+      "DiscoveredFeed",
+      "FeedFinder"
+    ],
+    "FeedStatus": [
+      "Feed"
+    ],
+    "FeedUpdate": [
+      "Feed"
+    ],
+    "HarvestEmbeds": [
+      "Entry",
+      "Embed"
+    ],
+    "HarvestEmbeds::Download": [
+      "Embed",
+      "Entry",
+      "UrlCache"
+    ],
+    "HarvestLinks": [
+      "Entry"
+    ],
+    "ImageCrawler::CacheRemoteFile": [
+      "RemoteFile"
+    ],
+    "ImageCrawler::FixImage": [
+      "Entry",
+      "UnreadEntry"
+    ],
+    "ImageCrawler::ItunesFeedImage": [
+      "Feed"
+    ],
+    "ImageCrawler::DownloadCache": [
+      "Image"
+    ],
+    "ImageCrawler::Image": [
+      "Image"
+    ],
+    "ImageCrawler::Pipeline::Find": [
+      "Image"
+    ],
+    "ImageCrawler::Pipeline::Process": [
+      "Image"
+    ],
+    "ImageCrawler::Pipeline::Upload": [
+      "Image"
+    ],
+    "ImageSaver": [
+      "Entry",
+      "Download"
+    ],
+    "MakeEpub": [
+      "Entry",
+      "User",
+      "Download"
+    ],
+    "NewsletterReceiver": [
+      "EmailNewsletter",
+      "AuthenticationToken",
+      "NewsletterSender",
+      "Feed"
+    ],
+    "NewsletterSaver": [
+      "Entry"
+    ],
+    "NewsletterUpdater": [
+      "Entry"
+    ],
+    "OnboardingMessage": [
+      "User"
+    ],
+    "PodcastClearUnused": [
+      "PodcastSubscription"
+    ],
+    "PodcastPushNotification": [
+      "Entry",
+      "Device"
+    ],
+    "QueuedEntryLimiter": [
+      "User",
+      "Entry"
+    ],
+    "SavePage": [
+      "User",
+      "Embed"
+    ],
+    "SaveTwitterUsers": [
+      "Entry",
+      "TwitterUser"
+    ],
+    "Search::ActionTags": [
+      "User"
+    ],
+    "Search::ActionsBulk": [
+      "User"
+    ],
+    "Search::ActionsPerform": [
+      "Action",
+      "Entry",
+      "UnreadEntry",
+      "UpdatedEntry",
+      "User"
+    ],
+    "Search::AddFeedToAction": [
+      "User"
+    ],
+    "Search::FeedMetadataFinder": [
+      "Feed"
+    ],
+    "Search::PercolateCreate": [
+      "Action"
+    ],
+    "Search::ReindexFeeds": [
+      "Feed",
+      "Entry",
+      "Search::BulkRecord"
+    ],
+    "Search::RemoveFeedFromAction": [
+      "User"
+    ],
+    "Search::SearchIndexRemove": [
+      "Search::BulkRecord"
+    ],
+    "Search::SearchIndexStore": [
+      "Entry"
+    ],
+    "Search::SearchServerSetup": [
+      "Entry",
+      "Search::BulkRecord"
+    ],
+    "Search::TouchActions": [
+      "Action"
+    ],
+    "SendStats": [
+      "User",
+      "Plan"
+    ],
+    "ShareRetry": [
+      "SupportedSharingService"
+    ],
+    "StarredEntriesExport": [
+      "User",
+      "Entry"
+    ],
+    "TouchFeeds": [
+      "Feed"
+    ],
+    "TrialExpiration": [
+      "Plan",
+      "User",
+      "Subscription"
+    ],
+    "TrialSendExpiration": [
+      "User"
+    ],
+    "UnreadLimiter": [
+      "Subscription",
+      "UnreadEntry"
+    ],
+    "UpdateRedirect": [
+      "Feed"
+    ],
+    "UpdateStatementDescriptor": [
+      "BillingEvent"
+    ],
+    "UserDeleter": [
+      "User"
+    ],
+    "ViewLinkCacheMultiple": [
+      "User",
+      "Entry"
+    ],
+    "WebPushNotificationSend": [
+      "Device",
+      "Entry",
+      "UnreadEntry",
+      "Subscription"
+    ],
+    "WebSub::Maintenance": [
+      "Feed"
+    ],
+    "WebSub::Subscribe": [
+      "Feed"
+    ],
+    "WebSub::Unsubscribe": [
+      "Feed"
+    ],
+    "EntryPresenter": [
+      "MercuryParser"
+    ],
+    "SubscriptionPresenter": [
+      "Sparkline",
+      "FeedStat"
+    ],
+    "ApiClient::Error": [
+
+    ],
+    "AppStoreNotificationData": [
+
+    ],
+    "AuthConstraint": [
+
+    ],
+    "Colors": [
+
+    ],
+    "ContentFilters::Attributes": [
+
+    ],
+    "ContentFilters::FigureControls": [
+
+    ],
+    "ContentFilters::GhostCard": [
+
+    ],
+    "ContentFilters::Scrub": [
+
+    ],
+    "ContentFilters::Substack": [
+
+    ],
+    "CrawlData": [
+
+    ],
+    "CrawlingError": [
+
+    ],
+    "Customer": [
+
+    ],
+    "DeletedUser": [
+
+    ],
+    "DiscoveredFeed": [
+
+    ],
+    "Download": [
+
+    ],
+    "EmailNewsletter": [
+
+    ],
+    "Embed": [
+
+    ],
+    "Expires": [
+
+    ],
+    "Favicon": [
+
+    ],
+    "FeedSearch": [
+
+    ],
+    "FeedSearchData": [
+
+    ],
+    "FeedStat::Stat": [
+
+    ],
+    "FeedbinUtils": [
+
+    ],
+    "IframeEmbed::Spotify": [
+
+    ],
+    "IframeEmbed::Vimeo": [
+
+    ],
+    "IframeEmbed::Youtube": [
+
+    ],
+    "Image": [
+
+    ],
+    "JwsVerifier": [
+
+    ],
+    "MercuryParser": [
+
+    ],
+    "Micropost": [
+
+    ],
+    "Newsletter": [
+
+    ],
+    "OauthServer": [
+
+    ],
+    "Opml::Outline": [
+
+    ],
+    "RedisLock": [
+
+    ],
+    "RemoteFile": [
+
+    ],
+    "Search::BulkRecord": [
+
+    ],
+    "Search::Response": [
+
+    ],
+    "SearchData": [
+
+    ],
+    "Share::Email": [
+
+    ],
+    "Share::Instapaper": [
+
+    ],
+    "Share::Kindle": [
+
+    ],
+    "Share::MicroBlog": [
+
+    ],
+    "Share::Pinboard": [
+
+    ],
+    "Share::Pocket": [
+
+    ],
+    "Share::Readability": [
+
+    ],
+    "Share::Service::AuthError": [
+
+    ],
+    "Share::Tumblr": [
+
+    ],
+    "Source::BodyLinks": [
+
+    ],
+    "Source::Guess": [
+
+    ],
+    "Source::KnownPattern": [
+
+    ],
+    "Source::MetaLinks": [
+
+    ],
+    "Source::Xml": [
+
+    ],
+    "Sourceable": [
+
+    ],
+    "Sparkline": [
+
+    ],
+    "TagEditor": [
+
+    ],
+    "TextToChapters": [
+
+    ],
+    "Throttle": [
+
+    ],
+    "Turnstile": [
+
+    ],
+    "Tweet": [
+
+    ],
+    "TwitterUser": [
+
+    ],
+    "UrlCache": [
+
+    ],
+    "AccountMigrationsController": [
+
+    ],
+    "ActionsController": [
+
+    ],
+    "Api::Podcasts::V1::ApiController": [
+
+    ],
+    "Api::Podcasts::V1::FeedsController": [
+
+    ],
+    "Api::Podcasts::V1::PlaylistsController": [
+
+    ],
+    "Api::Podcasts::V1::QueuedEntries::BulkController": [
+
+    ],
+    "Api::V2::ActionsController": [
+
+    ],
+    "Api::V2::AuthenticationController": [
+
+    ],
+    "Api::V2::AuthenticationTokensController": [
+
+    ],
+    "Api::V2::EntryCountsController": [
+
+    ],
+    "Api::V2::ImportsController": [
+
+    ],
+    "Api::V2::InAppPurchasesController": [
+
+    ],
+    "Api::V2::PagesController": [
+
+    ],
+    "Api::V2::RecentlyReadEntriesController": [
+
+    ],
+    "Api::V2::SavedSearchesController": [
+
+    ],
+    "Api::V2::SubscriptionsController": [
+
+    ],
+    "Api::V2::TagsController": [
+
+    ],
+    "Api::V2::UpdatedEntriesController": [
+
+    ],
+    "AppStore::NotificationsV2Controller": [
+
+    ],
+    "AppStoreNotificationsController": [
+
+    ],
+    "BillingEventsController": [
+
+    ],
+    "DevicesController": [
+
+    ],
+    "EmbedsController": [
+
+    ],
+    "ErrorsController": [
+
+    ],
+    "Extension::V1::AddressesController": [
+
+    ],
+    "Extension::V1::PagesController": [
+
+    ],
+    "FeedsEntriesController": [
+
+    ],
+    "FixFeedsController": [
+
+    ],
+    "InAppPurchasesController": [
+
+    ],
+    "MutesController": [
+
+    ],
+    "NewslettersController": [
+
+    ],
+    "PagesInternalController": [
+
+    ],
+    "PasswordResetsController": [
+
+    ],
+    "Settings::ImportItemsController": [
+
+    ],
+    "Settings::ImportsController": [
+
+    ],
+    "Settings::Newsletters::AddressesController": [
+
+    ],
+    "Settings::NewslettersController": [
+
+    ],
+    "Settings::SubscriptionsController": [
+
+    ],
+    "SettingsController": [
+
+    ],
+    "SharingServicesController": [
+
+    ],
+    "SupportedSharingServicesController": [
+
+    ],
+    "CancelBilling": [
+
+    ],
+    "FaviconCrawler::Image": [
+
+    ],
+    "FaviconCrawler::Processor": [
+
+    ],
+    "FeedCrawler::DownloaderCritical": [
+
+    ],
+    "FeedCrawler::Cache": [
+
+    ],
+    "FeedCrawler::ConcurrencyLimit": [
+
+    ],
+    "FeedCrawler::ConcurrencyLimit::TimeoutError": [
+
+    ],
+    "FeedCrawler::RedirectCache": [
+
+    ],
+    "FeedCrawler::Throttle": [
+
+    ],
+    "FeedCrawler::ParserCritical": [
+
+    ],
+    "FeedCrawler::PersistCrawlData": [
+
+    ],
+    "FeedFixerScheduler": [
+
+    ],
+    "HarvestEmbeds::Download::Redownload": [
+
+    ],
+    "ImageCrawler::EntryImage": [
+
+    ],
+    "ImageCrawler::ItunesImage": [
+
+    ],
+    "ImageCrawler::Cache": [
+
+    ],
+    "ImageCrawler::Download": [
+
+    ],
+    "ImageCrawler::Download::Default": [
+
+    ],
+    "ImageCrawler::MetaImages": [
+
+    ],
+    "ImageCrawler::MetaImagesCache": [
+
+    ],
+    "ImageCrawler::Processor::Cropper": [
+
+    ],
+    "ImageCrawler::Processor::Processed": [
+
+    ],
+    "ImageCrawler::Timer": [
+
+    ],
+    "ImageCrawler::Pipeline::FindCritical": [
+
+    ],
+    "ImageCrawler::TwitterLinkImage": [
+
+    ],
+    "ImageDeleter": [
+
+    ],
+    "SavePage::MissingPage": [
+
+    ],
+    "SavePageFromExtension": [
+
+    ],
+    "Search::PercolateDestroy": [
+
+    ],
+    "UpdateDefaultColumn": [
+
+    ],
+    "ViewLinkCache": [
+
+    ],
+    "WebSub::Hub": [
+
+    ],
+    "BasePresenter": [
+
+    ],
+    "FeedPresenter": [
+
+    ],
+    "MercuryParserPresenter": [
+
+    ],
+    "SavedSearchPresenter": [
+
+    ],
+    "UserPresenter": [
+
+    ],
+    "ImportFileValidator": [
+
+    ],
+    "StarredExportUploader": [
+
+    ]
+  },
+  "clusters": [
+    {
+      "id": 1,
+      "name": "Cluster589",
+      "classes": [
+        "Settings::NewslettersController",
+        "FeedCrawler::ParserCritical",
+        "FeedCrawler::Receiver",
+        "FeedCrawler::EntryFilter",
+        "FeedCrawler::Parser"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cluster581",
+      "classes": [
+        "Extension::V1::PagesController",
+        "SavePageFromExtension",
+        "PagesInternalController",
+        "PagesController",
+        "Api::V2::PagesController",
+        "FeedCrawler::UpdateYoutubeVideos",
+        "FeedCrawler::YoutubeReceiver",
+        "HarvestEmbeds",
+        "BackfillProviderIds",
+        "IframeEmbed::Youtube",
+        "SavePage",
+        "Embed",
+        "HarvestEmbeds::Download"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cluster594",
+      "classes": [
+        "ImportFileValidator",
+        "IframeEmbed::Spotify",
+        "ChapterParser",
+        "ImageFallback",
+        "ImageSaver",
+        "Download",
+        "MakeEpub"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cluster600",
+      "classes": [
+        "HarvestEmbeds::Download::Redownload",
+        "Share::AppDotNet",
+        "SaveTwitterUsers",
+        "TwitterUser"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cluster597",
+      "classes": [
+        "RedisLock",
+        "IframeEmbed::Vimeo",
+        "EmbedsController",
+        "IframeEmbed",
+        "IframeEmbed::Default",
+        "IframeEmbed::Kickstarter",
+        "IframeEmbed::Twitter",
+        "IframeEmbed::Instagram",
+        "UrlCache",
+        "Colors",
+        "UpdateDefaultColumn"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cluster591",
+      "classes": [
+        "ImageCrawler::Download::Default",
+        "ImageCrawler::Pipeline::FindCritical",
+        "ImageCrawler::Timer",
+        "ImageCrawler::Download",
+        "ImageCrawler::Pipeline::Find",
+        "ImageCrawler::Cache",
+        "ImageCrawler::DownloadCache"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cluster555",
+      "classes": [
+        "ContentFilters::FigureControls",
+        "Settings::ImportsController",
+        "FeedCrawler::Cache",
+        "FeedCrawler::RedirectCache"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Cluster575",
+      "classes": [
+        "Api::V2::EntryCountsController",
+        "ImageCrawler::TwitterLinkImage",
+        "EntryDeleterScheduler",
+        "ImageCrawler::ItunesFeedImage",
+        "ImageCrawler::Pipeline::Upload",
+        "ImageCrawler::Image",
+        "Image",
+        "ImageCrawler::Pipeline::Process",
+        "ImageCrawler::Processor::Cropper",
+        "ImageCrawler::Processor::Processed"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cluster513",
+      "classes": [
+        "FeedStatus",
+        "Api::Podcasts::V1::SubscriptionsController",
+        "Api::Podcasts::V1::ApiController",
+        "Api::Podcasts::V1::FeedsController"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Cluster598",
+      "classes": [
+        "TextToChapters",
+        "Search::PercolateDestroy",
+        "Search::ActionsBulk",
+        "Search::RemoveFeedFromAction",
+        "Search::AddFeedToAction",
+        "Action",
+        "Search::PercolateCreate"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Cluster590",
+      "classes": [
+        "MercuryParserPresenter",
+        "BasePresenter",
+        "SavedSearchPresenter",
+        "Sourceable",
+        "SavedSearch",
+        "SavedSearchesController"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Cluster587",
+      "classes": [
+        "ErrorsController",
+        "Share::Kindle",
+        "Share::Pocket",
+        "Share::Raindrop",
+        "ShareRetry",
+        "Share::EvernoteShare",
+        "SharingService",
+        "Share::Service",
+        "SupportedSharingService",
+        "SupportedSharingServicesController",
+        "Share::Tumblr",
+        "Share::Email",
+        "EntryMailer"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cluster574",
+      "classes": [
+        "StarredExportUploader",
+        "FeedSearch",
+        "Search::SearchIndexStore",
+        "StarredEntriesExport",
+        "Search::Connection",
+        "Search::Response"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Cluster595",
+      "classes": [
+        "CancelBilling",
+        "DevicesController",
+        "MutesController",
+        "Api::Podcasts::V1::PlaylistsController",
+        "SharingServicesController",
+        "Api::V2::ActionsController",
+        "DeletedUser",
+        "ActionsController",
+        "Extension::V1::ApiController",
+        "SettingsController",
+        "PasswordResetsController",
+        "SiteController",
+        "Coupon",
+        "RecentlyPlayedEntriesController",
+        "UsersController",
+        "SubscriptionsController",
+        "Customer",
+        "Admin::UsersController",
+        "TrialExpiration",
+        "Settings::SubscriptionsController",
+        "SendStats",
+        "Settings::BillingsController",
+        "Plan",
+        "User",
+        "ApplicationController",
+        "Turnstile",
+        "PublicSettingsController",
+        "Throttle",
+        "TagEditor",
+        "FeedsController"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Cluster573",
+      "classes": [
+        "Api::V2::AuthenticationTokensController",
+        "InAppPurchase",
+        "MarketingMailer",
+        "OnboardingMessage"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Cluster601",
+      "classes": [
+        "SavePage::MissingPage",
+        "ContentFilters::Substack",
+        "AppsController",
+        "Api::V2::UsersController",
+        "TrialSendExpiration",
+        "UserDeleter",
+        "UpdateStatementDescriptor",
+        "BillingEvent",
+        "UserMailer"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Cluster584",
+      "classes": [
+        "NewslettersController",
+        "Api::Podcasts::V1::QueuedEntries::BulkController",
+        "Share::Facebook",
+        "ContentFilters::Scrub",
+        "BackfillGuid",
+        "Settings::Newsletters::SendersController",
+        "NewsletterSender",
+        "Newsletter",
+        "EmailNewsletter",
+        "NewsletterReceiver"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Cluster564",
+      "classes": [
+        "Api::V2::AuthenticationController",
+        "AppStore::NotificationsV2Controller",
+        "Settings::Newsletters::AddressesController",
+        "Extension::V1::AddressesController",
+        "AppStoreNotification",
+        "AppStoreNotificationProcessor",
+        "AuthenticationToken"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Cluster588",
+      "classes": [
+        "InAppPurchasesController",
+        "AuthConstraint",
+        "ImageCrawler::CacheRemoteFile",
+        "RemoteFile",
+        "RemoteFilesController"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Cluster563",
+      "classes": [
+        "Share::MicroBlog",
+        "Admin::FeedsController",
+        "Api::V2::SuggestedCategoriesController",
+        "SuggestedCategory",
+        "Api::V2::SuggestedFeedsController",
+        "SuggestedFeed"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Cluster596",
+      "classes": [
+        "CrawlingError",
+        "FeedCrawler::DownloaderCritical",
+        "FeedsEntriesController",
+        "FeedFixerScheduler",
+        "FeedUpdate",
+        "WebSub::Unsubscribe",
+        "Search::FeedMetadataFinder",
+        "WebSub::Subscribe",
+        "Source::ExistingFeed",
+        "FeedSearchData",
+        "Extension::V1::SubscriptionsController",
+        "WebSub::Hub",
+        "TouchFeeds",
+        "Search::ReindexFeeds",
+        "DiscoveredFeed",
+        "FeedCrawler::Schedule",
+        "Subscription",
+        "FeedFixer",
+        "Feed",
+        "WebSub::Maintenance",
+        "FixFeedsController",
+        "FeedReplacer",
+        "Search::SearchIndexRemove",
+        "Search::BulkRecord"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Cluster566",
+      "classes": [
+        "FeedPresenter",
+        "SessionsController",
+        "Search::TouchActions",
+        "Search::ActionTags",
+        "Api::V2::TagsController",
+        "Api::V2::TaggingsController",
+        "Tagging",
+        "Tag",
+        "TagsController"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Cluster585",
+      "classes": [
+        "Settings::ImportItemsController",
+        "Source::Xml",
+        "Source::Guess",
+        "FeedImportFixer",
+        "FeedFinder",
+        "Import",
+        "ImportItem",
+        "FeedImporter",
+        "Opml::Parser",
+        "Opml::Outline"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Cluster562",
+      "classes": [
+        "Share::Instapaper",
+        "Api::V2::IconsController",
+        "FaviconCrawler::Processor",
+        "Api::V2::FaviconsController",
+        "Favicon",
+        "FaviconCrawler::Finder"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Cluster593",
+      "classes": [
+        "FeedCrawler::PersistCrawlData",
+        "AppStoreNotificationsController",
+        "Share::Readability",
+        "ImageDeleter",
+        "Expires",
+        "ViewLinkCache",
+        "ImageCrawler::ItunesImage",
+        "UpdatedEntriesController",
+        "QueuedEntriesController",
+        "CacheEntryViews",
+        "ExtractsController",
+        "QueuedEntryLimiter",
+        "ViewLinkCacheMultiple",
+        "RecentlyReadEntriesController",
+        "Search::SearchServerSetup",
+        "RecentlyReadEntry",
+        "StarredEntriesController",
+        "StarredEntry",
+        "Api::V2::DevicesController",
+        "PagesEntriesController",
+        "Api::V2::EntriesController",
+        "HarvestLinks",
+        "MercuryParser",
+        "ImageCrawler::EntryImage",
+        "TweetPage",
+        "EntryDeleter",
+        "SearchData",
+        "Tweet",
+        "ContentFormatter",
+        "Entry",
+        "EntryPresenter"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Cluster535",
+      "classes": [
+        "FeedStat::Stat",
+        "Sparkline",
+        "FeedStat",
+        "SubscriptionPresenter"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Cluster577",
+      "classes": [
+        "Api::V2::RecentlyReadEntriesController",
+        "Share::Buffer",
+        "PodcastSubscription",
+        "PodcastClearUnused",
+        "Playlist",
+        "QueuedEntry"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Cluster556",
+      "classes": [
+        "ContentFilters::GhostCard",
+        "AccountMigrationsController",
+        "AccountMigrator::Setup",
+        "ApiClient",
+        "ApiClient::Error"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Cluster542",
+      "classes": [
+        "ContentFilters::Attributes",
+        "Source::TwitterData",
+        "AccountMigrationItem",
+        "AccountMigration",
+        "AccountMigrator::ImportFeed"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Cluster586",
+      "classes": [
+        "BillingEventsController",
+        "FeedCrawler::Throttle",
+        "ImageCrawler::MetaImages",
+        "ImageCrawler::MetaImagesCache"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Cluster553",
+      "classes": [
+        "FeedbinUtils",
+        "Share::Service::AuthError",
+        "FeedCrawler::ConcurrencyLimit",
+        "Share::Mastodon",
+        "OauthServer"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Cluster599",
+      "classes": [
+        "FeedCrawler::ConcurrencyLimit::TimeoutError",
+        "UserPresenter",
+        "Share::Pinboard",
+        "JwsVerifier",
+        "Api::V2::InAppPurchasesController",
+        "UpdateRedirect",
+        "NewsletterSaver",
+        "NewsletterUpdater",
+        "Api::V2::UnreadEntriesController",
+        "UnreadEntriesController",
+        "CrawlDataType",
+        "ImageCrawler::FixImage",
+        "WebSubController",
+        "FeedCrawler::EntryUpdate",
+        "UpdatedEntry",
+        "Search::ActionsPerform",
+        "UnreadLimiter",
+        "FeedCrawler::Downloader",
+        "CrawlData",
+        "UnreadEntry",
+        "EntriesController",
+        "FaviconCrawler::Image"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Cluster576",
+      "classes": [
+        "Api::V2::ImportsController",
+        "Api::Podcasts::V1::QueuedEntriesController",
+        "RecentlyPlayedEntry",
+        "AppStoreNotificationData",
+        "WebPushNotificationSend",
+        "PodcastPushNotification",
+        "DevicePushNotificationSend",
+        "Device"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Cluster579",
+      "classes": [
+        "Api::V2::UpdatedEntriesController",
+        "Share::Twitter",
+        "Api::V2::StarredEntriesController",
+        "Api::V2::FeedsEntriesController",
+        "Api::V2::SubscriptionsController",
+        "Api::V2::ApiController",
+        "Api::V2::SavedSearchesController"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Cluster506",
+      "classes": [
+        "Api::V2::FeedsController",
+        "Source::MetaLinks",
+        "Source::BodyLinks",
+        "Source",
+        "Source::KnownPattern",
+        "Micropost",
+        "MicropostsController"
+      ]
+    }
+  ],
+  "cluster_metrics": [
+    {
+      "cluster_id": 1,
+      "num_classes": 5,
+      "intra_dependencies": 9,
+      "inter_dependencies": 32.0,
+      "f_struct": 0.219512,
+      "f_data": 0.1,
+      "f_quality": 0.207561
+    },
+    {
+      "cluster_id": 2,
+      "num_classes": 13,
+      "intra_dependencies": 73.5,
+      "inter_dependencies": 70.5,
+      "f_struct": 0.510417,
+      "f_data": 0.094017,
+      "f_quality": 0.468777
+    },
+    {
+      "cluster_id": 3,
+      "num_classes": 7,
+      "intra_dependencies": 18.5,
+      "inter_dependencies": 35.5,
+      "f_struct": 0.342593,
+      "f_data": 0.111111,
+      "f_quality": 0.319444
+    },
+    {
+      "cluster_id": 4,
+      "num_classes": 4,
+      "intra_dependencies": 5,
+      "inter_dependencies": 15.0,
+      "f_struct": 0.25,
+      "f_data": 0.083333,
+      "f_quality": 0.233333
+    },
+    {
+      "cluster_id": 5,
+      "num_classes": 11,
+      "intra_dependencies": 36.1667,
+      "inter_dependencies": 15.8333,
+      "f_struct": 0.695513,
+      "f_data": 0.145455,
+      "f_quality": 0.640507
+    },
+    {
+      "cluster_id": 6,
+      "num_classes": 7,
+      "intra_dependencies": 18.6667,
+      "inter_dependencies": 23.3333,
+      "f_struct": 0.444444,
+      "f_data": 0.047619,
+      "f_quality": 0.404762
+    },
+    {
+      "cluster_id": 7,
+      "num_classes": 4,
+      "intra_dependencies": 6.6667,
+      "inter_dependencies": 15.3333,
+      "f_struct": 0.30303,
+      "f_data": 0.0,
+      "f_quality": 0.272727
+    },
+    {
+      "cluster_id": 8,
+      "num_classes": 10,
+      "intra_dependencies": 44.5,
+      "inter_dependencies": 22.5,
+      "f_struct": 0.664179,
+      "f_data": 0.088889,
+      "f_quality": 0.60665
+    },
+    {
+      "cluster_id": 9,
+      "num_classes": 4,
+      "intra_dependencies": 8,
+      "inter_dependencies": 22.0,
+      "f_struct": 0.266667,
+      "f_data": 0.166667,
+      "f_quality": 0.256667
+    },
+    {
+      "cluster_id": 10,
+      "num_classes": 7,
+      "intra_dependencies": 18,
+      "inter_dependencies": 28.0,
+      "f_struct": 0.391304,
+      "f_data": 0.285714,
+      "f_quality": 0.380745
+    },
+    {
+      "cluster_id": 11,
+      "num_classes": 6,
+      "intra_dependencies": 13.5,
+      "inter_dependencies": 15.5,
+      "f_struct": 0.465517,
+      "f_data": 0.0,
+      "f_quality": 0.418966
+    },
+    {
+      "cluster_id": 12,
+      "num_classes": 13,
+      "intra_dependencies": 47.6667,
+      "inter_dependencies": 74.3333,
+      "f_struct": 0.39071,
+      "f_data": 0.089744,
+      "f_quality": 0.360614
+    },
+    {
+      "cluster_id": 13,
+      "num_classes": 6,
+      "intra_dependencies": 15.0,
+      "inter_dependencies": 27.0,
+      "f_struct": 0.357143,
+      "f_data": 0.033333,
+      "f_quality": 0.324762
+    },
+    {
+      "cluster_id": 14,
+      "num_classes": 30,
+      "intra_dependencies": 283.5,
+      "inter_dependencies": 231.5,
+      "f_struct": 0.550485,
+      "f_data": 0.060273,
+      "f_quality": 0.501464
+    },
+    {
+      "cluster_id": 15,
+      "num_classes": 4,
+      "intra_dependencies": 6,
+      "inter_dependencies": 20.0,
+      "f_struct": 0.230769,
+      "f_data": 0.5,
+      "f_quality": 0.257692
+    },
+    {
+      "cluster_id": 16,
+      "num_classes": 9,
+      "intra_dependencies": 30,
+      "inter_dependencies": 66.0,
+      "f_struct": 0.3125,
+      "f_data": 0.361111,
+      "f_quality": 0.317361
+    },
+    {
+      "cluster_id": 17,
+      "num_classes": 10,
+      "intra_dependencies": 42.0,
+      "inter_dependencies": 68.0,
+      "f_struct": 0.381818,
+      "f_data": 0.037778,
+      "f_quality": 0.347414
+    },
+    {
+      "cluster_id": 18,
+      "num_classes": 7,
+      "intra_dependencies": 22.0,
+      "inter_dependencies": 37.0,
+      "f_struct": 0.372881,
+      "f_data": 0.02381,
+      "f_quality": 0.337974
+    },
+    {
+      "cluster_id": 19,
+      "num_classes": 5,
+      "intra_dependencies": 9,
+      "inter_dependencies": 16.0,
+      "f_struct": 0.36,
+      "f_data": 0.1,
+      "f_quality": 0.334
+    },
+    {
+      "cluster_id": 20,
+      "num_classes": 6,
+      "intra_dependencies": 16,
+      "inter_dependencies": 12.0,
+      "f_struct": 0.571429,
+      "f_data": 0.133333,
+      "f_quality": 0.527619
+    },
+    {
+      "cluster_id": 21,
+      "num_classes": 24,
+      "intra_dependencies": 183.0833,
+      "inter_dependencies": 136.9167,
+      "f_struct": 0.572135,
+      "f_data": 0.15115,
+      "f_quality": 0.530037
+    },
+    {
+      "cluster_id": 22,
+      "num_classes": 9,
+      "intra_dependencies": 37.3333,
+      "inter_dependencies": 45.6667,
+      "f_struct": 0.449799,
+      "f_data": 0.088889,
+      "f_quality": 0.413708
+    },
+    {
+      "cluster_id": 23,
+      "num_classes": 10,
+      "intra_dependencies": 30.3333,
+      "inter_dependencies": 57.6667,
+      "f_struct": 0.344697,
+      "f_data": 0.025556,
+      "f_quality": 0.312783
+    },
+    {
+      "cluster_id": 24,
+      "num_classes": 6,
+      "intra_dependencies": 16,
+      "inter_dependencies": 22.0,
+      "f_struct": 0.421053,
+      "f_data": 0.133333,
+      "f_quality": 0.392281
+    },
+    {
+      "cluster_id": 25,
+      "num_classes": 31,
+      "intra_dependencies": 409.7333,
+      "inter_dependencies": 245.2667,
+      "f_struct": 0.625547,
+      "f_data": 0.170596,
+      "f_quality": 0.580052
+    },
+    {
+      "cluster_id": 26,
+      "num_classes": 4,
+      "intra_dependencies": 8,
+      "inter_dependencies": 12.0,
+      "f_struct": 0.4,
+      "f_data": 0.0,
+      "f_quality": 0.36
+    },
+    {
+      "cluster_id": 27,
+      "num_classes": 6,
+      "intra_dependencies": 14.6667,
+      "inter_dependencies": 19.3333,
+      "f_struct": 0.431373,
+      "f_data": 0.116667,
+      "f_quality": 0.399902
+    },
+    {
+      "cluster_id": 28,
+      "num_classes": 5,
+      "intra_dependencies": 11,
+      "inter_dependencies": 11.0,
+      "f_struct": 0.5,
+      "f_data": 0.0,
+      "f_quality": 0.45
+    },
+    {
+      "cluster_id": 29,
+      "num_classes": 5,
+      "intra_dependencies": 12,
+      "inter_dependencies": 33.0,
+      "f_struct": 0.266667,
+      "f_data": 0.058333,
+      "f_quality": 0.245833
+    },
+    {
+      "cluster_id": 30,
+      "num_classes": 4,
+      "intra_dependencies": 5.5,
+      "inter_dependencies": 11.5,
+      "f_struct": 0.323529,
+      "f_data": 0.0,
+      "f_quality": 0.291176
+    },
+    {
+      "cluster_id": 31,
+      "num_classes": 5,
+      "intra_dependencies": 11.25,
+      "inter_dependencies": 14.75,
+      "f_struct": 0.432692,
+      "f_data": 0.0,
+      "f_quality": 0.389423
+    },
+    {
+      "cluster_id": 32,
+      "num_classes": 22,
+      "intra_dependencies": 179.0,
+      "inter_dependencies": 170.0,
+      "f_struct": 0.512894,
+      "f_data": 0.101948,
+      "f_quality": 0.471799
+    },
+    {
+      "cluster_id": 33,
+      "num_classes": 8,
+      "intra_dependencies": 27.6667,
+      "inter_dependencies": 90.3333,
+      "f_struct": 0.234463,
+      "f_data": 0.169048,
+      "f_quality": 0.227922
+    },
+    {
+      "cluster_id": 34,
+      "num_classes": 7,
+      "intra_dependencies": 20.0,
+      "inter_dependencies": 75.0,
+      "f_struct": 0.210526,
+      "f_data": 0.214286,
+      "f_quality": 0.210902
+    },
+    {
+      "cluster_id": 35,
+      "num_classes": 7,
+      "intra_dependencies": 21.9,
+      "inter_dependencies": 34.1,
+      "f_struct": 0.391071,
+      "f_data": 0.047619,
+      "f_quality": 0.356726
+    }
+  ],
+  "isolated_classes": [
+    "ActionName",
+    "ApplicationRecord",
+    "AttributeChange",
+    "ComponentFormBuilder",
+    "ConditionalHttp",
+    "FeedOption",
+    "Font",
+    "IframeEmbed::Soundcloud",
+    "IframeEmbed::Ted",
+    "JsonConverter",
+    "Push",
+    "Search::MultiSearchRecord",
+    "Theme",
+    "Api::Podcasts::V1::AuthenticationController",
+    "Api::V1::ApiController",
+    "BookmarkletController",
+    "Extension::V1::AuthenticationController",
+    "WellKnownController",
+    "ApplicationMailer",
+    "ImageCrawler::Download::Instagram",
+    "ImageCrawler::Download::Vimeo",
+    "ImageCrawler::Download::Youtube",
+    "EntryImageUploader"
+  ]
+}

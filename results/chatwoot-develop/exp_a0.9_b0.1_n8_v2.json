@@ -1,0 +1,6600 @@
+{
+  "parameters": {
+    "alpha": 0.9,
+    "beta": 0.1,
+    "n_top": 8,
+    "min_cluster_size": 3,
+    "gamma": 0.1,
+    "mode": "hierarchical",
+    "resolver": "v2",
+    "classes_dir": "./input/classes",
+    "data_dir": "./input/data"
+  },
+  "summary": {
+    "total_classes_original": 592,
+    "total_classes_active": 524,
+    "isolated_classes": 68,
+    "total_data_entities": 65,
+    "num_microservices": 76
+  },
+  "resolver_report": {
+    "l2_self_unknown": 4512,
+    "l4_no_owner": 6167,
+    "l4_noise_suppressed": 418,
+    "l0_internal_or_external": 2267,
+    "l2_self_internal": 3098,
+    "l4_cap_suppressed": 660,
+    "noise_filtered": 1927,
+    "l4_fanout_sites": 959,
+    "l0_const": 607,
+    "l3_naming": 493,
+    "l0_chain_typed": 249,
+    "l0_chain_base": 46,
+    "l2_mixin": 315,
+    "l1_var_typed": 128,
+    "l1_typed_no_method": 150,
+    "polymorphic_unresolved": 4,
+    "assoc_target_missing": 22,
+    "polymorphic_resolved": 2
+  },
+  "dependency_graph": {
+    "AccountUser": {
+      "Account": 2.3333333333333335,
+      "User": 4.333333333333334,
+      "Notification::PushNotificationService": 0.3333333333333333,
+      "Agents::DestroyJob": 2
+    },
+    "AgentBot": {
+      "SlackUploadsController": 0.5,
+      "AvatarField": 0.5,
+      "AgentBotInbox": 2,
+      "Inbox": 2,
+      "Message": 2,
+      "Conversation": 2,
+      "Account": 2
+    },
+    "AgentBotInbox": {
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Inbox": 2,
+      "AgentBot": 2,
+      "Account": 2
+    },
+    "Article": {
+      "Category": 3.0,
+      "Portal": 4.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Account": 2,
+      "User": 2
+    },
+    "Attachment": {
+      "Inbox": 2.0,
+      "Account": 2,
+      "Message": 2
+    },
+    "AutomationRule": {
+      "Account": 3.0
+    },
+    "Campaign": {
+      "Inbox": 6.0,
+      "Twilio::OneoffSmsCampaignService": 3,
+      "Sms::OneoffSmsCampaignService": 3,
+      "Whatsapp::OneoffCampaignService": 3,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Account": 2.5,
+      "Twitter::DirectMessageParserService": 0.5,
+      "User": 2,
+      "Conversation": 2
+    },
+    "Category": {
+      "Portal": 4.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Account": 2,
+      "Folder": 2,
+      "Article": 2,
+      "RelatedCategory": 2
+    },
+    "Channel::Email": {
+      "Account": 1.0
+    },
+    "Channel::FacebookPage": {
+      "ContactInboxWithContactBuilder": 3
+    },
+    "Channel::Instagram": {
+      "ContactInboxWithContactBuilder": 3,
+      "Instagram::RefreshOauthTokenService": 3
+    },
+    "Channel::Sms": {
+      "Message": 3
+    },
+    "Channel::Telegram": {
+      "Message": 5,
+      "Telegram::SendAttachmentsService": 3,
+      "MessageTemplates::Template::CsatSurvey": 1.0,
+      "Messages::MessageBuilder": 1.0
+    },
+    "Channel::Tiktok": {
+      "Tiktok::TokenService": 3
+    },
+    "Channel::TwitterProfile": {
+      "ContactInboxWithContactBuilder": 3
+    },
+    "Channel::WebWidget": {
+      "ContactInboxWithContactBuilder": 3,
+      "Portal": 2
+    },
+    "Channel::Whatsapp": {
+      "Whatsapp::Providers::WhatsappCloudService": 2.5,
+      "Whatsapp::Providers::Whatsapp360DialogService": 2.5,
+      "Whatsapp::WebhookSetupService": 3,
+      "Whatsapp::WebhookTeardownService": 3
+    },
+    "JsonSchemaValidator": {
+      "ContentAttributeValidator": 1.0
+    },
+    "Contact": {
+      "ContactIpLookupJob": 2,
+      "Contacts::SyncAttributes": 2,
+      "Account": 2,
+      "Conversation": 2,
+      "ContactInbox": 2,
+      "Inbox": 2,
+      "Message": 2,
+      "Note": 2
+    },
+    "ContactInbox": {
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 2.0,
+      "Contact": 2,
+      "Inbox": 2,
+      "Conversation": 2
+    },
+    "Conversation": {
+      "Conversations::MessageWindowService": 3,
+      "Message": 5.0,
+      "Inbox": 5.0,
+      "Webhooks::InstagramEventsJob": 0.5,
+      "Messages::Instagram::BaseMessageBuilder": 0.5,
+      "Account": 2,
+      "User": 2,
+      "AgentBot": 2,
+      "Contact": 2,
+      "ContactInbox": 2,
+      "Team": 2,
+      "Campaign": 2,
+      "Mention": 2,
+      "CsatSurveyResponse": 2,
+      "ConversationParticipant": 2,
+      "Notification": 2,
+      "Attachment": 2,
+      "ReportingEvent": 2
+    },
+    "ConversationParticipant": {
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Inbox": 0.5,
+      "Api::V1::Accounts::InboxesController": 0.5,
+      "Account": 2,
+      "Conversation": 2,
+      "User": 2
+    },
+    "CustomAttributeDefinition": {
+      "Inboxes::SyncWidgetPreChatCustomFieldsJob": 2,
+      "Inboxes::UpdateWidgetPreChatCustomFieldsJob": 2,
+      "Account": 2
+    },
+    "CustomFilter": {
+      "Account": 2.5,
+      "User": 2.5
+    },
+    "DataImport": {
+      "DataImportJob": 4,
+      "Account": 2
+    },
+    "EmailTemplate": {
+      "EmailTemplates::DbResolverService": 1,
+      "Account": 2
+    },
+    "Inbox": {
+      "Api::V1::Accounts::NotificationsController": 1.0,
+      "Instagram::ReadStatusService": 1.0,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 1.5,
+      "Account": 3.5,
+      "Twitter::DirectMessageParserService": 0.5,
+      "ContactPolicy": 1.0,
+      "Sms::IncomingMessageService": 0.5,
+      "Twilio::IncomingMessageService": 0.5,
+      "ContactDrop": 1.5,
+      "Contacts::BulkActionService": 1.0,
+      "AutoAssignment::InboxRoundRobinService": 3,
+      "Portal": 2,
+      "Campaign": 2,
+      "ContactInbox": 2,
+      "Contact": 2,
+      "InboxMember": 2,
+      "Conversation": 2,
+      "Message": 2,
+      "InboxAssignmentPolicy": 2,
+      "AssignmentPolicy": 2,
+      "AgentBotInbox": 2,
+      "AgentBot": 2,
+      "Webhook": 2,
+      "Integrations::Hook": 2
+    },
+    "InboxMember": {
+      "AutoAssignment::InboxRoundRobinService": 6,
+      "User": 2,
+      "Inbox": 2
+    },
+    "InstallationConfig": {
+      "User": 2
+    },
+    "Integrations::App": {
+      "Account": 3
+    },
+    "Integrations::Hook": {
+      "Integrations::App": 2,
+      "Crm::SetupJob": 2,
+      "Account": 2,
+      "Inbox": 2
+    },
+    "Label": {
+      "Conversation": 0.2,
+      "Team": 0.2,
+      "V2::Reports::BaseSummaryBuilder": 0.2,
+      "V2::Reports::TeamSummaryBuilder": 0.2,
+      "V2::Reports::Timeseries::AverageReportBuilder": 0.2,
+      "Labels::UpdateJob": 2,
+      "Account": 2
+    },
+    "Mention": {
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Account": 2,
+      "Conversation": 2,
+      "User": 2
+    },
+    "Message": {
+      "ConversationDrop": 1.0,
+      "Conversation": 4.2,
+      "Api::V1::Accounts::ConversationsController": 1.2,
+      "Public::Api::V1::Inboxes::ContactsController": 0.2,
+      "Base::SendOnChannelService": 0.2,
+      "Tiktok::MessageService": 0.2,
+      "AgentBot": 3.0,
+      "MessageContentPresenter": 6,
+      "Inbox": 5.0,
+      "Instagram::ReadStatusService": 1.0,
+      "Messages::SearchDataPresenter": 3,
+      "Messages::InReplyToMessageBuilder": 3,
+      "SendReplyJob": 6,
+      "MessageTemplates::HookExecutionService": 3,
+      "Account": 2,
+      "Contact": 2,
+      "User": 2,
+      "Attachment": 2,
+      "CsatSurveyResponse": 2,
+      "Notification": 2
+    },
+    "Note": {
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Account": 2,
+      "Contact": 2,
+      "User": 2
+    },
+    "Notification": {
+      "ConversationDrop": 3.0,
+      "Notification::PushNotificationJob": 2,
+      "Notification::EmailNotificationJob": 2,
+      "Notification::RemoveDuplicateNotificationJob": 2,
+      "Account": 2.3333333333333335,
+      "User": 2.3333333333333335,
+      "Notification::PushNotificationService": 0.3333333333333333,
+      "Conversation": 2,
+      "Message": 2
+    },
+    "Portal": {
+      "ApplicationRecord": 1,
+      "Account": 2,
+      "Category": 2,
+      "Folder": 2,
+      "Article": 2,
+      "Inbox": 2,
+      "Channel::WebWidget": 2
+    },
+    "Team": {
+      "Api::V1::Accounts::NotificationsController": 1.0,
+      "Conversation": 2.2,
+      "Label": 0.2,
+      "V2::Reports::BaseSummaryBuilder": 0.2,
+      "V2::Reports::TeamSummaryBuilder": 0.2,
+      "V2::Reports::Timeseries::AverageReportBuilder": 0.2,
+      "Account": 2,
+      "TeamMember": 2
+    },
+    "User": {
+      "Mfa::ManagementService": 2,
+      "Api::V1::Accounts::NotificationsController": 1.0,
+      "AccountUser": 2,
+      "Account": 2,
+      "Conversation": 2,
+      "CsatSurveyResponse": 2,
+      "ConversationParticipant": 2,
+      "InboxMember": 2,
+      "Inbox": 2,
+      "Message": 2,
+      "CustomFilter": 2,
+      "DashboardApp": 2,
+      "Mention": 2,
+      "Note": 2,
+      "NotificationSetting": 2,
+      "NotificationSubscription": 2,
+      "Notification": 2,
+      "TeamMember": 2,
+      "Team": 2,
+      "Article": 2,
+      "Macro": 2
+    },
+    "WorkingHour": {
+      "V2::Reports::Timeseries::BaseTimeseriesBuilder": 4.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Inbox": 2
+    },
+    "Api::BaseController": {
+      "Crm::Leadsquared::Api::BaseClient": 2.0,
+      "CsatTemplateUtilityAnalysisService": 1.0
+    },
+    "Api::V1::Accounts::Actions::ContactMergesController": {
+      "ContactMergeAction": 2
+    },
+    "Api::V1::Accounts::AgentBotsController": {
+      "AgentBot": 4,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Api::V1::Accounts::AgentsController": {
+      "AgentBuilder": 6,
+      "Account": 0.5,
+      "User": 0.5,
+      "DeleteObjectJob": 2
+    },
+    "Api::V1::Accounts::ArticlesController": {
+      "Portal": 3,
+      "Article": 6.333333333333333,
+      "Category": 0.3333333333333333,
+      "Api::V1::Accounts::SearchController": 0.3333333333333333
+    },
+    "Api::V1::Accounts::AssignableAgentsController": {
+      "Inbox": 1
+    },
+    "Api::V1::Accounts::AssignmentPolicies::InboxesController": {
+      "Api::BaseController": 1,
+      "AssignmentPolicy": 1
+    },
+    "Api::V1::Accounts::BulkActionsController": {
+      "BulkActionsJob": 2,
+      "Contacts::BulkActionJob": 2
+    },
+    "Api::V1::Accounts::CallbacksController": {
+      "Inbox": 1,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Api::V1::Accounts::CategoriesController": {
+      "Article": 0.3333333333333333,
+      "Category": 2.333333333333333,
+      "Api::V1::Accounts::SearchController": 0.3333333333333333,
+      "Portal": 4
+    },
+    "Api::V1::Accounts::Channels::TwilioChannelsController": {
+      "Inbox": 1.0,
+      "Messages::MarkdownRenderers::InstagramRenderer": 0.2,
+      "Messages::MarkdownRenderers::LineRenderer": 0.2,
+      "Messages::MarkdownRenderers::PlainTextRenderer": 0.2,
+      "Messages::MarkdownRenderers::TelegramRenderer": 0.2,
+      "Messages::MarkdownRenderers::WhatsAppRenderer": 0.2,
+      "Twilio::WebhookSetupService": 3
+    },
+    "Api::V1::Accounts::ContactInboxesController": {
+      "Inbox": 1,
+      "ContactInbox": 1
+    },
+    "Api::V1::Accounts::Contacts::ContactInboxesController": {
+      "ContactInboxBuilder": 3
+    },
+    "Api::V1::Accounts::Contacts::ConversationsController": {
+      "Conversations::PermissionFilterService": 3
+    },
+    "Api::V1::Accounts::Contacts::NotesController": {
+      "Mention": 0.5,
+      "Note": 0.5,
+      "Contact": 3
+    },
+    "Api::V1::Accounts::ContactsController": {
+      "Account::ContactsExportJob": 2,
+      "Contacts::FilterService": 3,
+      "Contacts::ContactableInboxesService": 3,
+      "Api::V1::Accounts::ConversationsController": 1.5,
+      "ContactIdentifyAction": 1.5,
+      "Contact": 1,
+      "Api::V1::Accounts::AgentBotsController": 0.5,
+      "Api::V1::Accounts::InboxesController": 0.5,
+      "Api::V1::ProfilesController": 0.5,
+      "Platform::Api::V1::AgentBotsController": 0.5,
+      "ContactInboxBuilder": 3,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Api::V1::Accounts::Conversations::AssignmentsController": {
+      "Conversations::AssignmentService": 3
+    },
+    "Api::V1::Accounts::Conversations::MessagesController": {
+      "Messages::MessageBuilder": 3,
+      "Messages::StatusUpdateService": 6,
+      "Api::V1::Accounts::NotificationsController": 1.0,
+      "SendReplyJob": 2,
+      "Conversation": 2,
+      "MessageFinder": 1,
+      "Inbox": 1.0
+    },
+    "Api::V1::Accounts::Conversations::ParticipantsController": {
+      "Conversation": 7
+    },
+    "Api::V1::Accounts::ConversationsController": {
+      "ConversationFinder": 2.0,
+      "Conversation": 13,
+      "ConversationBuilder": 3,
+      "Messages::MessageBuilder": 3,
+      "Conversations::FilterService": 3,
+      "ConversationReplyMailer": 4,
+      "Sms::DeliveryStatusService": 1.0,
+      "Twilio::DeliveryStatusService": 1.0,
+      "Conversations::TypingStatusManager": 2,
+      "Notification::MarkConversationReadService": 3,
+      "DeleteObjectJob": 2,
+      "ContactInbox": 3,
+      "ContactInboxBuilder": 3
+    },
+    "Api::V1::Accounts::CsatSurveyResponsesController": {
+      "Crm::Leadsquared::Api::BaseClient": 2.0,
+      "CsatSurveyResponse": 4.5,
+      "ReportingEvent": 0.5
+    },
+    "Api::V1::Accounts::Google::AuthorizationsController": {
+      "Tiktok::AuthClient": 1.0,
+      "Api::V1::Accounts::OauthAuthorizationController": 3
+    },
+    "Api::V1::Accounts::InboxCsatTemplatesController": {
+      "CsatTemplateManagementService": 6,
+      "CsatTemplateUtilityAnalysisService": 3,
+      "Inbox": 3
+    },
+    "Api::V1::Accounts::InboxMembersController": {
+      "Inbox": 6
+    },
+    "Api::V1::Accounts::Inboxes::AssignmentPoliciesController": {
+      "Api::BaseController": 1,
+      "Inbox": 4
+    },
+    "Api::V1::Accounts::InboxesController": {
+      "Inbox": 8,
+      "Api::V1::Accounts::AgentBotsController": 0.5,
+      "Api::V1::Accounts::ContactsController": 0.5,
+      "Api::V1::ProfilesController": 0.5,
+      "Platform::Api::V1::AgentBotsController": 0.5,
+      "AgentBotInbox": 2,
+      "DeleteObjectJob": 2,
+      "AgentBot": 2
+    },
+    "Api::V1::Accounts::Instagram::AuthorizationsController": {
+      "Tiktok::AuthClient": 1.0,
+      "Api::V1::Accounts::OauthAuthorizationController": 1
+    },
+    "Api::V1::Accounts::Integrations::AppsController": {
+      "Integrations::App": 7
+    },
+    "Api::V1::Accounts::Integrations::DyteController": {
+      "MessageTemplates::Template::CsatSurvey": 0.5,
+      "Messages::MessageBuilder": 0.5,
+      "Message": 1
+    },
+    "Api::V1::Accounts::Integrations::HooksController": {
+      "Integrations::Hook": 1
+    },
+    "Api::V1::Accounts::Integrations::LinearController": {
+      "Account": 0.3333333333333333,
+      "User": 0.3333333333333333,
+      "Api::V2::Accounts::ReportsController": 0.3333333333333333,
+      "Linear::ActivityMessageService": 9,
+      "ConversationDrop": 1.0,
+      "Integrations::Hook": 4
+    },
+    "Api::V1::Accounts::Integrations::NotionController": {
+      "Integrations::Hook": 4
+    },
+    "Api::V1::Accounts::Integrations::ShopifyController": {
+      "Integrations::Hook": 2,
+      "ContactDrop": 3.75,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.75,
+      "Sms::IncomingMessageService": 0.75,
+      "Twilio::IncomingMessageService": 0.75
+    },
+    "Api::V1::Accounts::Integrations::SlackController": {
+      "Integrations::Hook": 4
+    },
+    "Api::V1::Accounts::MacrosController": {
+      "Macro": 3,
+      "MacrosExecutionJob": 2
+    },
+    "Api::V1::Accounts::Microsoft::AuthorizationsController": {
+      "Tiktok::AuthClient": 1.0,
+      "Api::V1::Accounts::OauthAuthorizationController": 3
+    },
+    "Api::V1::Accounts::NotificationSettingsController": {
+      "User": 1
+    },
+    "Api::V1::Accounts::NotificationsController": {
+      "NotificationFinder": 3.0,
+      "Notification::DeleteNotificationJob": 4,
+      "Api::V1::Accounts::ConversationsController": 1.0
+    },
+    "Api::V1::Accounts::Notion::AuthorizationsController": {
+      "Tiktok::AuthClient": 1.0,
+      "Api::V1::Accounts::OauthAuthorizationController": 2
+    },
+    "Api::V1::Accounts::PortalsController": {
+      "Portal": 1,
+      "Article": 0.3333333333333333,
+      "Category": 0.3333333333333333,
+      "Api::V1::Accounts::SearchController": 0.3333333333333333,
+      "Integrations::App": 3.0,
+      "PortalInstructionsMailer": 3,
+      "Inbox": 3
+    },
+    "Api::V1::Accounts::SearchController": {
+      "SearchService": 3
+    },
+    "Api::V1::Accounts::TeamMembersController": {
+      "Team": 8
+    },
+    "Api::V1::Accounts::Tiktok::AuthorizationsController": {
+      "Tiktok::AuthClient": 1
+    },
+    "Api::V1::Accounts::Twitter::AuthorizationsController": {
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5
+    },
+    "Api::V1::Accounts::Whatsapp::AuthorizationsController": {
+      "Whatsapp::EmbeddedSignupService": 3
+    },
+    "Api::V1::AccountsController": {
+      "AccountBuilder": 3,
+      "Api::V1::Accounts::ConversationsController": 1.5,
+      "ContactIdentifyAction": 1.5,
+      "Label": 2,
+      "Inbox": 2,
+      "Team": 2,
+      "User": 1.0,
+      "Account": 1
+    },
+    "Api::V1::NotificationSubscriptionsController": {
+      "NotificationSubscriptionBuilder": 3,
+      "NotificationSubscription": 4
+    },
+    "Api::V1::Profile::MfaController": {
+      "User": 2.5,
+      "Mfa::ManagementService": 5.5,
+      "Mfa::AuthenticationService": 3
+    },
+    "Api::V1::ProfilesController": {
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 0.5,
+      "Api::V1::Accounts::AgentBotsController": 0.5,
+      "Api::V1::Accounts::ContactsController": 0.5,
+      "Api::V1::Accounts::InboxesController": 0.5,
+      "Platform::Api::V1::AgentBotsController": 0.5,
+      "User": 3,
+      "Channel::Instagram": 0.2,
+      "BaseRefreshOauthTokenService": 0.2,
+      "Instagram::RefreshOauthTokenService": 0.2,
+      "Tiktok::TokenService": 0.2,
+      "AgentBotPresenter": 0.2
+    },
+    "Api::V1::Widget::BaseController": {
+      "Contact": 2,
+      "ContactInbox": 1,
+      "Conversation": 2,
+      "Inbox": 2,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "ContactDrop": 1.25,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "NotificationSubscriptionBuilder": 1.0,
+      "WidgetTestsController": 1.0
+    },
+    "Api::V1::Widget::CampaignsController": {
+      "Account": 0.3333333333333333,
+      "Inbox": 0.3333333333333333,
+      "Api::V1::Accounts::InboxesController": 0.3333333333333333
+    },
+    "Api::V1::Widget::ConfigsController": {
+      "Contact": 0.5,
+      "Inbox": 0.5,
+      "ContactInbox": 2,
+      "Channel::WebWidget": 1,
+      "Widget::TokenService": 3
+    },
+    "Api::V1::Widget::ContactsController": {
+      "ContactInbox": 1,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 2.5,
+      "NotificationSubscriptionBuilder": 2.0
+    },
+    "Api::V1::Widget::ConversationsController": {
+      "Api::V1::Widget::BaseController": 31,
+      "ContactIdentifyAction": 2.5,
+      "Conversations::UpdateMessageStatusJob": 2,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactDrop": 2.0,
+      "ConversationReplyMailer": 4
+    },
+    "Api::V1::Widget::EventsController": {
+      "Api::V1::Widget::BaseController": 1
+    },
+    "Api::V1::Widget::InboxMembersController": {
+      "Inbox": 0.5,
+      "User": 0.5
+    },
+    "Api::V1::Widget::Integrations::DyteController": {
+      "MessageTemplates::Template::CsatSurvey": 0.5,
+      "Messages::MessageBuilder": 0.5,
+      "Conversation": 1,
+      "Message": 1
+    },
+    "Api::V1::Widget::LabelsController": {
+      "Api::V1::Widget::BaseController": 6,
+      "Account": 1
+    },
+    "Api::V1::Widget::MessagesController": {
+      "Api::V1::Widget::BaseController": 10,
+      "ContactIdentifyAction": 2,
+      "Message": 1,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Account": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.5,
+      "MessageFinder": 1
+    },
+    "Api::V2::Accounts::LiveReportsController": {
+      "Conversation": 4
+    },
+    "Api::V2::Accounts::ReportsController": {
+      "V2::Reports::Conversations::ReportBuilder": 3,
+      "V2::Reports::BotMetricsBuilder": 3,
+      "V2::Reports::InboxLabelMatrixBuilder": 3,
+      "V2::Reports::FirstResponseTimeDistributionBuilder": 3,
+      "V2::Reports::OutgoingMessagesCountBuilder": 3,
+      "Crm::Leadsquared::Api::BaseClient": 2.0,
+      "V2::ReportBuilder": 3
+    },
+    "Api::V2::Accounts::YearInReviewsController": {
+      "YearInReviewBuilder": 3
+    },
+    "Api::V2::AccountsController": {
+      "AccountBuilder": 3,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 0.5,
+      "User": 1.0,
+      "Account": 1
+    },
+    "DashboardController": {
+      "Portal": 3
+    },
+    "DeviseOverrides::ConfirmationsController": {
+      "User": 2
+    },
+    "DeviseOverrides::OmniauthCallbacksController": {
+      "ContactDrop": 2.0,
+      "Contact": 0.5,
+      "User": 0.5,
+      "Account::SignUpEmailValidationService": 3,
+      "AccountBuilder": 3,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "DeviseOverrides::PasswordsController": {
+      "User": 3
+    },
+    "DeviseOverrides::SessionsController": {
+      "User": 3,
+      "Mfa::TokenService": 6,
+      "Mfa::AuthenticationService": 3
+    },
+    "Google::CallbacksController": {
+      "Channel::Email": 4,
+      "OauthCallbackController": 4
+    },
+    "Instagram::CallbacksController": {
+      "Platform::Api::V1::UsersController": 1.0,
+      "Channel::Instagram": 4,
+      "Account": 2
+    },
+    "Installation::OnboardingController": {
+      "AccountBuilder": 3
+    },
+    "Linear::CallbacksController": {
+      "Account": 2.333333333333333,
+      "Inbox": 0.3333333333333333,
+      "Integrations::App": 0.3333333333333333
+    },
+    "MicrosoftController": {
+      "Crm::Leadsquared::Api::BaseClient": 1.0
+    },
+    "Notion::CallbacksController": {
+      "Account": 0.3333333333333333,
+      "Inbox": 0.3333333333333333,
+      "Integrations::App": 0.3333333333333333,
+      "OauthCallbackController": 9
+    },
+    "OauthCallbackController": {
+      "Channel::Email": 4
+    },
+    "Platform::Api::V1::AccountUsersController": {
+      "Account": 5
+    },
+    "Platform::Api::V1::AccountsController": {
+      "PlatformApp": 2,
+      "Account": 4,
+      "DeleteObjectJob": 2
+    },
+    "Platform::Api::V1::AgentBotsController": {
+      "Integrations::App": 1.0,
+      "PlatformApp": 2,
+      "AgentBot": 4,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Platform::Api::V1::EmailChannelMigrationsController": {
+      "Account": 3,
+      "PlatformApp": 1,
+      "Channel::Email": 2
+    },
+    "Platform::Api::V1::UsersController": {
+      "PlatformController": 1,
+      "User": 5,
+      "PlatformApp": 1,
+      "DeleteObjectJob": 2
+    },
+    "PlatformController": {
+      "Crm::Leadsquared::Api::BaseClient": 2.0,
+      "AccessToken": 2,
+      "PlatformApp": 1
+    },
+    "Public::Api::V1::CsatSurveyController": {
+      "Conversation": 3
+    },
+    "Public::Api::V1::Inboxes::ContactsController": {
+      "ContactInboxWithContactBuilder": 3,
+      "ContactIdentifyAction": 2,
+      "ContactInbox": 1,
+      "Contact": 0.5,
+      "Inbox": 0.5
+    },
+    "Public::Api::V1::Inboxes::ConversationsController": {
+      "ContactInbox": 6,
+      "Conversation": 2,
+      "Conversations::UpdateMessageStatusJob": 2,
+      "ConversationBuilder": 3
+    },
+    "Public::Api::V1::Inboxes::MessagesController": {
+      "Conversation": 2,
+      "Message": 1,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "MessageFinder": 1,
+      "ContactInbox": 1,
+      "WidgetTestsController": 1.0
+    },
+    "Public::Api::V1::InboxesController": {
+      "Channel::Api": 4,
+      "Contact": 0.5,
+      "Inbox": 0.5,
+      "ContactInbox": 2
+    },
+    "Public::Api::V1::Portals::ArticlesController": {
+      "Portal": 4,
+      "Article": 4,
+      "Crm::Leadsquared::Api::BaseClient": 1.0,
+      "Webhooks::TiktokEventsJob": 1.0
+    },
+    "Public::Api::V1::Portals::BaseController": {
+      "Portal": 3,
+      "Article": 5,
+      "Crm::Leadsquared::Api::BaseClient": 1.0
+    },
+    "Public::Api::V1::Portals::CategoriesController": {
+      "Portal": 2,
+      "Public::Api::V1::Portals::BaseController": 1
+    },
+    "Public::Api::V1::PortalsController": {
+      "Portal": 4
+    },
+    "PublicController": {
+      "Portal": 3
+    },
+    "Shopify::CallbacksController": {
+      "Account": 2.333333333333333,
+      "Inbox": 0.3333333333333333,
+      "Integrations::App": 0.3333333333333333
+    },
+    "SuperAdmin::AccountsController": {
+      "Internal::SeedAccountJob": 2,
+      "Account": 2,
+      "DeleteObjectJob": 2
+    },
+    "SuperAdmin::AgentBotsController": {
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2
+    },
+    "SuperAdmin::AppConfigsController": {
+      "InstallationConfig": 10.0
+    },
+    "SuperAdmin::DashboardController": {
+      "Conversation": 8,
+      "Account": 2,
+      "User": 2,
+      "Inbox": 2
+    },
+    "SuperAdmin::Devise::SessionsController": {
+      "SuperAdmin": 2
+    },
+    "SuperAdmin::InstallationConfigsController": {
+      "InstallationConfig": 1.0
+    },
+    "SuperAdmin::SettingsController": {
+      "Internal::CheckNewVersionsJob": 2
+    },
+    "SuperAdmin::UsersController": {
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2
+    },
+    "Tiktok::CallbacksController": {
+      "Tiktok::Client": 2.0,
+      "Channel::Tiktok": 4,
+      "Avatar::AvatarFromUrlJob": 2,
+      "Account": 2,
+      "Tiktok::AuthClient": 1
+    },
+    "Twilio::CallbackController": {
+      "Webhooks::TwilioEventsJob": 2
+    },
+    "Twilio::DeliveryStatusController": {
+      "Webhooks::TwilioDeliveryStatusJob": 2
+    },
+    "Twitter::CallbacksController": {
+      "Sms::DeliveryStatusService": 1.0,
+      "Twilio::DeliveryStatusService": 1.0,
+      "Twitter::WebhookSubscribeService": 3,
+      "Account": 3.0,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Webhooks::InstagramController": {
+      "Webhooks::InstagramEventsJob": 6
+    },
+    "Webhooks::LineController": {
+      "Webhooks::LineEventsJob": 2,
+      "Crm::Leadsquared::Api::BaseClient": 1.0
+    },
+    "Webhooks::ShopifyController": {
+      "Crm::Leadsquared::Api::BaseClient": 2.0,
+      "Integrations::Hook": 4
+    },
+    "Webhooks::SmsController": {
+      "Webhooks::SmsEventsJob": 2
+    },
+    "Webhooks::TelegramController": {
+      "Webhooks::TelegramEventsJob": 2
+    },
+    "Webhooks::TiktokController": {
+      "Webhooks::TiktokEventsJob": 6,
+      "Crm::Leadsquared::Api::BaseClient": 1.0
+    },
+    "Webhooks::WhatsappController": {
+      "Webhooks::WhatsappEventsJob": 2,
+      "Channel::Whatsapp": 2
+    },
+    "WidgetTestsController": {
+      "Channel::WebWidget": 4,
+      "Inbox": 2
+    },
+    "WidgetsController": {
+      "Channel::WebWidget": 2,
+      "Widget::TokenService": 3,
+      "ContactInbox": 4,
+      "ContactPolicy": 1.0,
+      "Crm::Leadsquared::Api::BaseClient": 3.0
+    },
+    "AdministratorNotifications::AccountComplianceMailer": {
+      "AdministratorNotifications::BaseMailer": 1,
+      "Api::V1::Accounts::ConversationsController": 1.0,
+      "ContactIdentifyAction": 1.0
+    },
+    "AdministratorNotifications::AccountNotificationMailer": {
+      "AdministratorNotifications::BaseMailer": 9,
+      "Api::V1::Accounts::ConversationsController": 1.0,
+      "ContactIdentifyAction": 1.0
+    },
+    "AdministratorNotifications::BaseMailer": {
+      "ApplicationMailer": 2
+    },
+    "AdministratorNotifications::ChannelNotificationsMailer": {
+      "AdministratorNotifications::BaseMailer": 10
+    },
+    "AdministratorNotifications::IntegrationsNotificationMailer": {
+      "AdministratorNotifications::BaseMailer": 3
+    },
+    "AgentNotifications::ConversationNotificationsMailer": {
+      "ApplicationMailer": 10,
+      "Inbox": 1.0,
+      "Conversation": 2,
+      "AgentBot": 2.5,
+      "UserDrop": 2.5,
+      "ConversationDrop": 10.0,
+      "Instagram::CallbacksController": 1.4,
+      "Linear::CallbacksController": 1.4,
+      "Shopify::CallbacksController": 1.4,
+      "Tiktok::CallbacksController": 1.4,
+      "Twitter::CallbacksController": 1.4,
+      "ContactDrop": 5.0
+    },
+    "ApplicationMailer": {
+      "EmailTemplate": 1,
+      "Conversation": 1
+    },
+    "ConversationReplyMailer": {
+      "ApplicationMailer": 4,
+      "Message": 7.25,
+      "Conversation": 14,
+      "ConversationDrop": 3.0,
+      "Inbox": 2,
+      "AgentBot": 1.0,
+      "UserDrop": 1.0,
+      "Campaign": 0.25,
+      "Messages::NewMessageNotificationService": 0.25,
+      "Messages::MessageBuilder": 1.75,
+      "Email::BaseBuilder": 1.0,
+      "Account": 5,
+      "ContactDrop": 3.0,
+      "MessageTemplates::Template::CsatSurvey": 1.5
+    },
+    "PortalInstructionsMailer": {
+      "ApplicationMailer": 2
+    },
+    "TeamNotifications::AutomationNotificationMailer": {
+      "ApplicationMailer": 2,
+      "Team": 1,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "ConversationDrop": 2.0,
+      "Conversation": 1
+    },
+    "Account::ContactsExportJob": {
+      "Account": 5,
+      "Contacts::FilterService": 3,
+      "Contact": 3,
+      "AdministratorNotifications::AccountNotificationMailer": 2.0
+    },
+    "Account::ConversationsResolutionSchedulerJob": {
+      "Account": 2,
+      "Conversations::ResolutionJob": 2
+    },
+    "ActionCableBroadcastJob": {
+      "Account": 3
+    },
+    "Agents::DestroyJob": {
+      "Integrations::App": 2.0,
+      "Account": 2,
+      "User": 4,
+      "Api::V1::Accounts::NotificationsController": 2.0
+    },
+    "AutoAssignment::AssignmentJob": {
+      "Inbox": 2,
+      "AutoAssignment::AssignmentService": 3
+    },
+    "AutoAssignment::PeriodicAssignmentJob": {
+      "Account": 2,
+      "Inbox": 1,
+      "AutoAssignment::AssignmentJob": 2
+    },
+    "Avatar::AvatarFromFaviconJob": {
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Avatar::AvatarFromGravatarJob": {
+      "SlackUploadsController": 0.5,
+      "AvatarField": 0.5,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Avatar::AvatarFromUrlJob": {
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2
+    },
+    "Campaigns::TriggerOneoffCampaignJob": {
+      "Campaign": 1
+    },
+    "Channels::Twilio::TemplatesSyncJob": {
+      "Twilio::TemplateSyncService": 4
+    },
+    "Channels::Whatsapp::TemplatesSyncJob": {
+      "Channel::Whatsapp": 0.3333333333333333,
+      "Whatsapp::Providers::Whatsapp360DialogService": 0.3333333333333333,
+      "Whatsapp::Providers::WhatsappCloudService": 0.3333333333333333
+    },
+    "Channels::Whatsapp::TemplatesSyncSchedulerJob": {
+      "Channel::Whatsapp": 7,
+      "Channels::Whatsapp::TemplatesSyncJob": 2
+    },
+    "Companies::FetchAvatarsJob": {
+      "Account": 2,
+      "Avatar::AvatarFromFaviconJob": 2
+    },
+    "ContactIpLookupJob": {
+      "IpLookupService": 3
+    },
+    "Contacts::BulkActionJob": {
+      "Account": 2,
+      "User": 2,
+      "Contacts::BulkActionService": 3
+    },
+    "ConversationReplyEmailJob": {
+      "Conversation": 6,
+      "ConversationReplyMailer": 8
+    },
+    "Conversations::ActivityMessageJob": {
+      "Conversation": 1
+    },
+    "Conversations::ReopenSnoozedConversationsJob": {
+      "Conversation": 7
+    },
+    "Conversations::ResolutionJob": {
+      "MessageTemplates::Template::AutoResolve": 2,
+      "Conversation": 5.0,
+      "Account": 2
+    },
+    "Conversations::UpdateMessageStatusJob": {
+      "Conversation": 3,
+      "Messages::StatusUpdateService": 3
+    },
+    "Conversations::UserMentionJob": {
+      "Mention": 4
+    },
+    "Crm::SetupJob": {
+      "Integrations::Hook": 3,
+      "Crm::Leadsquared::SetupService": 3.0
+    },
+    "DataImportJob": {
+      "DataImport::ContactManager": 2,
+      "DataImport": 3,
+      "Contact": 1,
+      "AdministratorNotifications::AccountNotificationMailer": 8,
+      "Crm::Leadsquared::Api::BaseClient": 1.0
+    },
+    "HookJob": {
+      "Message": 1,
+      "SendOnSlackJob": 6,
+      "Integrations::Hook": 1,
+      "MutexApplicationJob": 1,
+      "Crm::Leadsquared::ProcessorService": 5
+    },
+    "Inboxes::FetchImapEmailInboxesJob": {
+      "Inbox": 4,
+      "Inboxes::FetchImapEmailsJob": 2
+    },
+    "Inboxes::FetchImapEmailsJob": {
+      "MutexApplicationJob": 1,
+      "Channel::Email": 2.0,
+      "Imap::MicrosoftFetchEmailService": 3,
+      "Imap::GoogleFetchEmailService": 3,
+      "Imap::FetchEmailService": 3,
+      "Imap::ImapMailbox": 2,
+      "Tiktok::MessageService": 0.5,
+      "MailPresenter": 0.5
+    },
+    "Inboxes::SyncWidgetPreChatCustomFieldsJob": {
+      "Integrations::App": 1.0,
+      "Account": 1
+    },
+    "Inboxes::UpdateWidgetPreChatCustomFieldsJob": {
+      "Integrations::App": 1.0,
+      "Account": 1
+    },
+    "Internal::DeleteAccountsJob": {
+      "AccountDeletionService": 3,
+      "Account": 4,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 0.5
+    },
+    "Internal::ProcessStaleContactsJob": {
+      "Account": 5,
+      "Internal::RemoveStaleContactsJob": 4
+    },
+    "Internal::ProcessStaleRedisKeysJob": {
+      "Internal::RemoveStaleRedisKeysService": 3
+    },
+    "Internal::RemoveOrphanConversationsJob": {
+      "Internal::RemoveOrphanConversationsService": 3
+    },
+    "Internal::RemoveStaleContactInboxesJob": {
+      "Internal::RemoveStaleContactInboxesService": 3
+    },
+    "Internal::RemoveStaleContactsJob": {
+      "Internal::RemoveStaleContactsService": 3
+    },
+    "Internal::RemoveStaleRedisKeysJob": {
+      "Account": 1,
+      "Internal::ProcessStaleRedisKeysJob": 2
+    },
+    "Internal::TriggerDailyScheduledItemsJob": {
+      "Internal::CheckNewVersionsJob": 4
+    },
+    "Labels::UpdateJob": {
+      "Labels::UpdateService": 3
+    },
+    "MacrosExecutionJob": {
+      "Macro": 1,
+      "Account": 1,
+      "Macros::ExecutionService": 3
+    },
+    "Migration::ConversationCacheLabelJob": {
+      "Account": 1,
+      "Migration::ConversationBatchCacheLabelJob": 2
+    },
+    "Migration::ConversationsFirstReplySchedulerJob": {
+      "Account": 1,
+      "Conversation": 2
+    },
+    "Migration::RemoveMessageNotifications": {
+      "Notification": 5
+    },
+    "Migration::RemoveStaleNotificationsJob": {
+      "Message": 11,
+      "Inbox": 4
+    },
+    "Migration::UpdateFirstResponseTimeInReportingEventsJob": {
+      "Conversation": 3,
+      "Webhooks::InstagramEventsJob": 0.5,
+      "Messages::Instagram::BaseMessageBuilder": 0.5
+    },
+    "Notification::DeleteNotificationJob": {
+      "Api::V1::Accounts::NotificationsController": 2.0,
+      "User": 2
+    },
+    "Notification::EmailNotificationJob": {
+      "Notification::MarkConversationReadService": 1.0,
+      "Notification::EmailNotificationService": 3
+    },
+    "Notification::PushNotificationJob": {
+      "Notification::PushNotificationService": 3
+    },
+    "Notification::RemoveDuplicateNotificationJob": {
+      "Notification": 4
+    },
+    "Notification::RemoveOldNotificationJob": {
+      "Notification": 25
+    },
+    "Notification::ReopenSnoozedNotificationsJob": {
+      "Notification": 3,
+      "Api::V1::Accounts::ConversationsController": 1.0
+    },
+    "SendOnSlackJob": {
+      "Webhooks::TiktokEventsJob": 1.0,
+      "MutexApplicationJob": 1
+    },
+    "SendReplyJob": {
+      "Message": 4,
+      "Conversation": 1,
+      "Instagram::Messenger::SendOnInstagramService": 3,
+      "Facebook::SendOnFacebookService": 3
+    },
+    "SlackUnfurlJob": {
+      "Integrations::Hook": 2
+    },
+    "TriggerScheduledItemsJob": {
+      "Campaign": 7,
+      "Campaigns::TriggerOneoffCampaignJob": 2,
+      "Conversations::ReopenSnoozedConversationsJob": 2,
+      "Notification::ReopenSnoozedNotificationsJob": 2,
+      "Account::ConversationsResolutionSchedulerJob": 2,
+      "Channels::Whatsapp::TemplatesSyncSchedulerJob": 2
+    },
+    "Webhooks::FacebookEventsJob": {
+      "Webhooks::InstagramEventsJob": 0.5,
+      "Messages::Instagram::BaseMessageBuilder": 1.5,
+      "MutexApplicationJob": 1
+    },
+    "Webhooks::InstagramEventsJob": {
+      "MutexApplicationJob": 1,
+      "Instagram::TestEventService": 3,
+      "Channel::Instagram": 2,
+      "Channel::FacebookPage": 2,
+      "Instagram::MessageText": 2,
+      "Instagram::Messenger::MessageText": 2,
+      "Instagram::ReadStatusService": 3
+    },
+    "Webhooks::LineEventsJob": {
+      "Line::IncomingMessageService": 3,
+      "Channel::Line": 2
+    },
+    "Webhooks::SmsEventsJob": {
+      "Channel::Sms": 2,
+      "Sms::DeliveryStatusService": 3,
+      "Sms::IncomingMessageService": 3
+    },
+    "Webhooks::TelegramEventsJob": {
+      "Channel::Telegram": 2,
+      "ContactPolicy": 1.0,
+      "Telegram::UpdateMessageService": 3,
+      "Telegram::IncomingMessageService": 3
+    },
+    "Webhooks::TiktokEventsJob": {
+      "MutexApplicationJob": 1,
+      "ContactPolicy": 1.0,
+      "Channel::Tiktok": 2,
+      "Tiktok::MessageService": 6,
+      "Tiktok::ReadStatusService": 3
+    },
+    "Webhooks::TwilioDeliveryStatusJob": {
+      "Twilio::DeliveryStatusService": 3
+    },
+    "Webhooks::TwilioEventsJob": {
+      "Twilio::IncomingMessageService": 3
+    },
+    "Webhooks::WhatsappEventsJob": {
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "ContactDrop": 0.25,
+      "Whatsapp::IncomingMessageWhatsappCloudService": 6,
+      "Whatsapp::IncomingMessageService": 3,
+      "ContactPolicy": 1.0,
+      "Channel::Whatsapp": 4
+    },
+    "AccountPolicy": {
+      "ConversationPolicy": 8.0
+    },
+    "AgentBotPolicy": {
+      "ConversationPolicy": 7.0
+    },
+    "ArticlePolicy": {
+      "Account": 1,
+      "ConversationPolicy": 6.0
+    },
+    "AssignmentPolicyPolicy": {
+      "ConversationPolicy": 5.0
+    },
+    "AutomationRulePolicy": {
+      "ConversationPolicy": 6.0
+    },
+    "CampaignPolicy": {
+      "ConversationPolicy": 5.0
+    },
+    "CategoryPolicy": {
+      "Account": 1,
+      "ConversationPolicy": 6.0
+    },
+    "ContactPolicy": {
+      "ConversationPolicy": 3.0
+    },
+    "ConversationPolicy": {
+      "WidgetTestsController": 1.0,
+      "Account": 0.25,
+      "User": 0.75,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25,
+      "Api::V2::Accounts::ReportsController": 0.25,
+      "Conversation": 0.5
+    },
+    "CsatSurveyResponsePolicy": {
+      "ConversationPolicy": 3.0
+    },
+    "CustomFilterPolicy": {
+      "ConversationPolicy": 5.0
+    },
+    "HookPolicy": {
+      "ConversationPolicy": 3.0
+    },
+    "InboxPolicy": {
+      "ConversationPolicy": 8.0
+    },
+    "InboxPolicy::Scope": {
+      "User": 1.0
+    },
+    "LabelPolicy": {
+      "ConversationPolicy": 5.0
+    },
+    "MacroPolicy": {
+      "ConversationPolicy": 2.0,
+      "Macro": 2.0,
+      "AccountUser": 1
+    },
+    "PortalPolicy": {
+      "Account": 3,
+      "ConversationPolicy": 6.0
+    },
+    "ReportPolicy": {
+      "ConversationPolicy": 1.0
+    },
+    "TeamMemberPolicy": {
+      "ConversationPolicy": 3.0
+    },
+    "TeamPolicy": {
+      "ConversationPolicy": 3.0
+    },
+    "UserPolicy": {
+      "ConversationPolicy": 4.0
+    },
+    "WebhookPolicy": {
+      "ConversationPolicy": 4.0
+    },
+    "AccountDeletionService": {
+      "DeleteObjectJob": 2,
+      "AdministratorNotifications::AccountComplianceMailer": 4,
+      "Account": 0.5,
+      "Twitter::DirectMessageParserService": 0.5,
+      "User": 1,
+      "ContactDrop": 1.0
+    },
+    "ActionService": {
+      "Conversation": 3,
+      "Account": 2,
+      "ConversationReplyMailer": 4,
+      "Inbox": 0.5,
+      "Team": 0.5,
+      "Contacts::BulkActionService": 1.0
+    },
+    "AutoAssignment::AgentAssignmentService": {
+      "AutoAssignment::InboxRoundRobinService": 3.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0
+    },
+    "AutoAssignment::AssignmentService": {
+      "Inbox": 2.0,
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5,
+      "Conversation": 2.0,
+      "InboxAssignmentPolicy": 1.0,
+      "AutoAssignment::RoundRobinSelector": 2.0,
+      "Contacts::BulkActionService": 1.0,
+      "Team": 1,
+      "AutoAssignment::RateLimiter": 3
+    },
+    "AutoAssignment::InboxRoundRobinService": {
+      "Inbox": 1.5,
+      "User": 1.5
+    },
+    "AutoAssignment::RateLimiter": {
+      "Inbox": 0.5,
+      "InboxAssignmentPolicy": 0.5
+    },
+    "AutoAssignment::RoundRobinSelector": {
+      "AutoAssignment::InboxRoundRobinService": 3.0
+    },
+    "AutomationRules::ActionService": {
+      "ActionService": 3,
+      "Messages::MessageBuilder": 9,
+      "Webhooks::TiktokEventsJob": 0.5,
+      "V2::Reports::Timeseries::AverageReportBuilder": 0.5,
+      "WebhookJob": 2,
+      "Team": 2,
+      "TeamNotifications::AutomationNotificationMailer": 3
+    },
+    "AutomationRules::ConditionValidationService": {
+      "Account": 1
+    },
+    "AutomationRules::ConditionsFilterService": {
+      "Conversation": 7,
+      "AutomationRules::ConditionValidationService": 3,
+      "FilterService": 2
+    },
+    "BaseRefreshOauthTokenService": {
+      "Channel::Line": 0.3333333333333333,
+      "Channel::TwilioSms": 0.3333333333333333,
+      "Twilio::TemplateSyncService": 0.3333333333333333
+    },
+    "Contacts::BulkActionService": {
+      "Contacts::BulkAssignLabelsService": 3,
+      "Contacts::BulkDeleteService": 3
+    },
+    "Contacts::BulkAssignLabelsService": {
+      "Account": 1
+    },
+    "Contacts::BulkDeleteService": {
+      "Account": 1
+    },
+    "Contacts::ContactableInboxesService": {
+      "Account": 1,
+      "Inbox": 2,
+      "ContactDrop": 3.75,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 2.75,
+      "Sms::IncomingMessageService": 1.75,
+      "Twilio::IncomingMessageService": 1.75
+    },
+    "Contacts::FilterService": {
+      "FilterService": 2,
+      "Contact": 1.0,
+      "Account": 1
+    },
+    "Contacts::SyncAttributes": {
+      "ContactDrop": 1.25,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25
+    },
+    "Conversations::AssignmentService": {
+      "Account": 0.5,
+      "Twitter::DirectMessageParserService": 0.5,
+      "AgentBot": 3
+    },
+    "Conversations::FilterService": {
+      "FilterService": 3,
+      "Account": 1,
+      "Conversations::PermissionFilterService": 3
+    },
+    "Conversations::MessageWindowService": {
+      "Conversation": 5,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 1.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2
+    },
+    "Conversations::PermissionFilterService": {
+      "AccountUser": 2
+    },
+    "Crm::BaseProcessorService": {
+      "Integrations::Hook": 1,
+      "Crm::Leadsquared::ProcessorService": 1.0,
+      "ContactDrop": 1.25,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25
+    },
+    "Crm::Leadsquared::Api::ActivityClient": {
+      "Crm::Leadsquared::Api::BaseClient": 2
+    },
+    "Crm::Leadsquared::Api::BaseClient": {
+      "Crm::Leadsquared::Api::BaseClient::ApiError": 3
+    },
+    "Crm::Leadsquared::Api::LeadClient": {
+      "Crm::Leadsquared::Api::BaseClient": 3
+    },
+    "Crm::Leadsquared::LeadFinderService": {
+      "ContactDrop": 2.25,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "Crm::Leadsquared::Mappers::ContactMapper": 2,
+      "Crm::Leadsquared::Api::LeadClient": 2
+    },
+    "Crm::Leadsquared::Mappers::ContactMapper": {
+      "ContactDrop": 2.25,
+      "UserDrop": 0.5,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.75,
+      "Sms::IncomingMessageService": 0.75,
+      "Twilio::IncomingMessageService": 0.75
+    },
+    "Crm::Leadsquared::Mappers::ConversationMapper": {
+      "ConversationDrop": 3.0,
+      "Message": 5.0,
+      "Webhooks::InstagramEventsJob": 0.5,
+      "Messages::Instagram::BaseMessageBuilder": 0.5,
+      "Webhooks::TiktokEventsJob": 1.0
+    },
+    "Crm::Leadsquared::ProcessorService": {
+      "Crm::Leadsquared::Api::LeadClient": 3,
+      "Crm::Leadsquared::Api::ActivityClient": 2,
+      "Crm::Leadsquared::LeadFinderService": 3,
+      "Crm::BaseProcessorService": 7,
+      "Crm::Leadsquared::Mappers::ConversationMapper": 2,
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5,
+      "Crm::Leadsquared::Mappers::ContactMapper": 1,
+      "Conversation": 1
+    },
+    "Crm::Leadsquared::SetupService": {
+      "Crm::Leadsquared::Api::BaseClient": 2,
+      "Crm::Leadsquared::Api::ActivityClient": 4,
+      "Integrations::Hook": 2
+    },
+    "CsatSurveyService": {
+      "Inbox": 1.0,
+      "MessageTemplates::Template::CsatSurvey": 8.0,
+      "Conversation": 1.9,
+      "Conversations::MessageWindowService": 0.5,
+      "CsatTemplateNameService": 2,
+      "Twilio::CsatTemplateService": 3.333333333333333,
+      "Whatsapp::CsatTemplateService": 0.3333333333333333,
+      "Whatsapp::Providers::WhatsappCloudService": 0.5833333333333333,
+      "Channel::Whatsapp": 2.25,
+      "Api::V1::Accounts::ConversationsController": 0.4,
+      "Public::Api::V1::Inboxes::ContactsController": 0.4,
+      "Base::SendOnChannelService": 0.4,
+      "Tiktok::MessageService": 0.4,
+      "Whatsapp::Providers::BaseService": 0.25,
+      "Whatsapp::Providers::Whatsapp360DialogService": 0.25,
+      "Twilio::SendOnTwilioService": 3,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0,
+      "Conversations::ActivityMessageJob": 2
+    },
+    "CsatTemplateManagementService": {
+      "CsatSurveyService": 1.5,
+      "MessageTemplates::Template::CsatSurvey": 1.5,
+      "Inbox": 4,
+      "Twilio::CsatTemplateService": 9,
+      "Whatsapp::CsatTemplateService": 10,
+      "CsatTemplateNameService": 2
+    },
+    "DataImport::ContactManager": {
+      "Account": 4,
+      "Contact": 0.5,
+      "User": 0.5,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 0.5
+    },
+    "Email::SendOnEmailService": {
+      "Message": 1.0,
+      "ConversationReplyMailer": 4,
+      "Messages::StatusUpdateService": 3
+    },
+    "Facebook::SendOnFacebookService": {
+      "Webhooks::TiktokEventsJob": 2.0,
+      "Messages::StatusUpdateService": 12,
+      "Base::SendOnChannelService": 11,
+      "Contact": 2.0,
+      "MessageTemplates::Template::CsatSurvey": 1.0,
+      "Messages::MessageBuilder": 1.0,
+      "Message": 0.5,
+      "MessageContentPresenter": 0.5,
+      "Attachment": 1,
+      "Conversation": 0.5,
+      "Conversations::MessageWindowService": 0.5
+    },
+    "FilterService": {
+      "Conversation": 2
+    },
+    "Imap::BaseFetchEmailService": {
+      "Tiktok::MessageService": 0.5,
+      "MailPresenter": 0.5,
+      "ContactDrop": 5.0,
+      "Article": 0.3333333333333333,
+      "Category": 0.3333333333333333,
+      "Api::V1::Accounts::SearchController": 0.3333333333333333,
+      "Google::CallbacksController": 0.5,
+      "Microsoft::CallbacksController": 0.5
+    },
+    "Imap::FetchEmailService": {
+      "Imap::BaseFetchEmailService": 1.3333333333333333,
+      "Imap::GoogleFetchEmailService": 0.3333333333333333,
+      "Imap::MicrosoftFetchEmailService": 0.3333333333333333
+    },
+    "Imap::GoogleFetchEmailService": {
+      "BaseRefreshOauthTokenService": 1.0,
+      "Imap::BaseFetchEmailService": 1,
+      "Google::RefreshOauthTokenService": 3
+    },
+    "Imap::MicrosoftFetchEmailService": {
+      "BaseRefreshOauthTokenService": 1.0,
+      "Imap::BaseFetchEmailService": 1,
+      "Microsoft::RefreshOauthTokenService": 3
+    },
+    "Instagram::BaseMessageText": {
+      "Instagram::WebhooksBaseService": 1,
+      "Inbox": 2,
+      "Instagram::ReadStatusService": 1.0,
+      "Api::V1::Accounts::NotificationsController": 1.0
+    },
+    "Instagram::BaseSendService": {
+      "Webhooks::TiktokEventsJob": 1.0,
+      "Campaign": 0.25,
+      "Message": 0.75,
+      "Messages::NewMessageNotificationService": 0.25,
+      "Messages::MessageBuilder": 0.25,
+      "Contact": 2.0,
+      "Base::SendOnChannelService": 5,
+      "MessageContentPresenter": 0.5,
+      "Attachment": 1,
+      "Messages::StatusUpdateService": 3
+    },
+    "Instagram::MessageText": {
+      "Instagram::WebhooksBaseService": 1,
+      "Channel::Instagram": 0.2,
+      "BaseRefreshOauthTokenService": 0.2,
+      "Instagram::RefreshOauthTokenService": 0.2,
+      "Tiktok::TokenService": 0.2,
+      "AgentBotPresenter": 0.2,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Inbox": 1,
+      "Messages::Instagram::MessageBuilder": 3,
+      "Instagram::BaseMessageText": 1
+    },
+    "Instagram::Messenger::MessageText": {
+      "Instagram::WebhooksBaseService": 1,
+      "Inbox": 3,
+      "Instagram::CallbacksController": 0.6000000000000001,
+      "Linear::CallbacksController": 0.6000000000000001,
+      "Shopify::CallbacksController": 0.6000000000000001,
+      "Tiktok::CallbacksController": 0.6000000000000001,
+      "Twitter::CallbacksController": 0.6000000000000001,
+      "Messages::Instagram::Messenger::MessageBuilder": 3,
+      "Instagram::BaseMessageText": 1
+    },
+    "Instagram::Messenger::SendOnInstagramService": {
+      "Base::SendOnChannelService": 1,
+      "Instagram::BaseSendService": 1
+    },
+    "Instagram::ReadStatusService": {
+      "Conversations::UpdateMessageStatusJob": 2
+    },
+    "Instagram::RefreshOauthTokenService": {
+      "Tiktok::TokenService": 4.0
+    },
+    "Instagram::SendOnInstagramService": {
+      "Channel::Instagram": 0.2,
+      "BaseRefreshOauthTokenService": 0.2,
+      "Instagram::RefreshOauthTokenService": 0.2,
+      "Tiktok::TokenService": 0.2,
+      "AgentBotPresenter": 0.2,
+      "Base::SendOnChannelService": 2,
+      "Instagram::ReadStatusService": 1.0,
+      "Instagram::BaseSendService": 1
+    },
+    "Instagram::TestEventService": {
+      "Channel::Instagram": 2.5,
+      "Inbox": 3,
+      "Conversation": 5,
+      "Channel::FacebookPage": 0.5,
+      "ContactInbox": 1,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0
+    },
+    "Instagram::WebhooksBaseService": {
+      "Inbox": 3,
+      "ContactInbox": 2,
+      "Channel::FacebookPage": 0.5,
+      "Channel::Instagram": 0.5,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Internal::RemoveOrphanConversationsService": {
+      "Conversation": 6,
+      "Account": 1
+    },
+    "Internal::RemoveStaleContactInboxesService": {
+      "ContactInbox": 6
+    },
+    "Internal::RemoveStaleContactsService": {
+      "Contact": 4.5,
+      "ContactInbox": 4.5,
+      "Account": 1
+    },
+    "Labels::UpdateService": {
+      "Account": 2
+    },
+    "Line::IncomingMessageService": {
+      "Conversation": 3,
+      "Instagram::CallbacksController": 0.6000000000000001,
+      "Linear::CallbacksController": 0.6000000000000001,
+      "Shopify::CallbacksController": 0.6000000000000001,
+      "Tiktok::CallbacksController": 0.6000000000000001,
+      "Twitter::CallbacksController": 0.6000000000000001,
+      "Channel::Line": 0.6666666666666666,
+      "Channel::TwilioSms": 0.6666666666666666,
+      "Twilio::TemplateSyncService": 0.6666666666666666,
+      "Message": 1,
+      "ContactInboxWithContactBuilder": 3,
+      "ContactInbox": 3
+    },
+    "Line::SendOnLineService": {
+      "Channel::Line": 0.3333333333333333,
+      "Channel::TwilioSms": 0.3333333333333333,
+      "Twilio::TemplateSyncService": 0.3333333333333333,
+      "Base::SendOnChannelService": 1.2,
+      "Conversation": 0.2,
+      "Api::V1::Accounts::ConversationsController": 0.2,
+      "Public::Api::V1::Inboxes::ContactsController": 0.2,
+      "Tiktok::MessageService": 0.2,
+      "Messages::StatusUpdateService": 6,
+      "MessageTemplates::Template::CsatSurvey": 1.0,
+      "Messages::MessageBuilder": 1.0,
+      "Webhooks::TiktokEventsJob": 4.0,
+      "Attachment": 2,
+      "Message": 0.5,
+      "MessageContentPresenter": 0.5
+    },
+    "Linear::ActivityMessageService": {
+      "Conversations::ActivityMessageJob": 2,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0
+    },
+    "Liquid::CampaignTemplateService": {
+      "ContactDrop": 1,
+      "UserDrop": 1,
+      "Campaign": 0.25,
+      "Message": 0.25,
+      "Messages::NewMessageNotificationService": 0.25,
+      "Messages::MessageBuilder": 0.25,
+      "InboxDrop": 1,
+      "AccountDrop": 1
+    },
+    "LlmFormatter::ArticleLlmFormatter": {
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5,
+      "Article": 1.3333333333333333,
+      "Folder": 0.3333333333333333,
+      "RelatedCategory": 0.3333333333333333,
+      "Webhooks::TiktokEventsJob": 1.0
+    },
+    "LlmFormatter::ContactLlmFormatter": {
+      "Account": 1.6666666666666665,
+      "Contact": 0.6666666666666666,
+      "User": 0.6666666666666666,
+      "Integrations::App": 1.0,
+      "Webhooks::TiktokEventsJob": 1.0,
+      "ContactDrop": 1.25,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "Telegram::IncomingMessageService": 1.0,
+      "CustomAttributeDefinition": 1.0,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 0.5
+    },
+    "LlmFormatter::ConversationLlmFormatter": {
+      "ConversationDrop": 1.0,
+      "Message": 1,
+      "CustomAttributeDefinition": 1.0,
+      "Account": 1.0,
+      "Api::V1::Accounts::ConversationsController": 0.5,
+      "ContactIdentifyAction": 0.5
+    },
+    "LlmFormatter::LlmTextFormatterService": {
+      "LlmFormatter::ArticleLlmFormatter": 0.25,
+      "LlmFormatter::ContactLlmFormatter": 0.25,
+      "LlmFormatter::ConversationLlmFormatter": 0.25,
+      "LlmFormatter::DefaultLlmFormatter": 0.25
+    },
+    "Macros::ExecutionService": {
+      "Macro": 1,
+      "ActionService": 3,
+      "Messages::MessageBuilder": 9,
+      "WebhookJob": 2
+    },
+    "Mailbox::ConversationFinderStrategies::InReplyToStrategy": {
+      "Mailbox::ConversationFinderStrategies::NewConversationStrategy": 0.6666666666666666,
+      "MailPresenter": 0.6666666666666666,
+      "Imap::ImapMailbox": 0.6666666666666666,
+      "Conversation": 2,
+      "Message": 4
+    },
+    "Mailbox::ConversationFinderStrategies::NewConversationStrategy": {
+      "EmailChannelFinder": 2,
+      "MailPresenter": 7,
+      "Contact": 0.5,
+      "User": 0.5,
+      "Inbox": 1,
+      "ContactInbox": 2,
+      "Conversation": 2,
+      "Account": 1
+    },
+    "Mailbox::ConversationFinderStrategies::ReceiverUuidStrategy": {
+      "Conversation": 2,
+      "MailPresenter": 4
+    },
+    "Mailbox::ConversationFinderStrategies::ReferencesStrategy": {
+      "EmailChannelFinder": 2,
+      "MailPresenter": 2.0,
+      "Conversation": 2,
+      "Message": 3
+    },
+    "MessageTemplates::HookExecutionService": {
+      "Conversation": 4.0,
+      "Conversations::MessageWindowService": 0.5,
+      "Message": 1.5,
+      "MessageTemplates::Template::OutOfOffice": 2,
+      "MessageTemplates::Template::Greeting": 2,
+      "MessageTemplates::Template::EmailCollect": 2,
+      "Api::V1::Accounts::CampaignsController": 1.5,
+      "WorkingHour": 0.5,
+      "Inbox": 1.0,
+      "ContactDrop": 1.0
+    },
+    "MessageTemplates::Template::AutoResolve": {
+      "Conversation": 0.5,
+      "Conversations::MessageWindowService": 0.5,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "WidgetTestsController": 2.0,
+      "Conversations::ActivityMessageJob": 2
+    },
+    "MessageTemplates::Template::CsatSurvey": {
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0,
+      "CsatSurveyService": 1.0
+    },
+    "MessageTemplates::Template::EmailCollect": {
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "WidgetTestsController": 2.0
+    },
+    "MessageTemplates::Template::Greeting": {
+      "Conversation": 1,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0
+    },
+    "MessageTemplates::Template::OutOfOffice": {
+      "Conversation": 2,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0
+    },
+    "Messages::InReplyToMessageBuilder": {
+      "MessageTemplates::Template::CsatSurvey": 1.0,
+      "Messages::MessageBuilder": 1.0
+    },
+    "Messages::MarkdownRendererService": {
+      "Inbox": 1.0,
+      "Messages::MarkdownRenderers::BaseMarkdownRenderer": 1,
+      "Messages::MarkdownRenderers::TelegramRenderer": 1,
+      "Messages::MarkdownRenderers::WhatsAppRenderer": 1,
+      "Messages::MarkdownRenderers::InstagramRenderer": 1,
+      "Messages::MarkdownRenderers::LineRenderer": 1,
+      "Messages::MarkdownRenderers::PlainTextRenderer": 1
+    },
+    "Messages::MentionService": {
+      "Conversations::UserMentionJob": 2,
+      "Webhooks::TiktokEventsJob": 3.0,
+      "Account": 1.25,
+      "User": 2.75,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25,
+      "Api::V2::Accounts::ReportsController": 0.25,
+      "Inbox": 2,
+      "NotificationBuilder": 3,
+      "Conversation": 0.5
+    },
+    "Messages::NewMessageNotificationService": {
+      "Conversation": 2.5,
+      "Conversations::AssignmentService": 2.0,
+      "NotificationBuilder": 6,
+      "User": 0.5
+    },
+    "Messages::SendEmailNotificationService": {
+      "ConversationReplyEmailJob": 4,
+      "Message": 1.0,
+      "ContactDrop": 1.0,
+      "Inbox": 1
+    },
+    "Messages::StatusUpdateService": {
+      "Message": 2
+    },
+    "Mfa::AuthenticationService": {
+      "Mfa::ManagementService": 3
+    },
+    "Mfa::ManagementService": {
+      "User": 1,
+      "ContactDrop": 1.0
+    },
+    "Mfa::TokenService": {
+      "BaseTokenService": 1,
+      "User": 2
+    },
+    "Notification::EmailNotificationService": {
+      "Notification::MarkConversationReadService": 1.0,
+      "AgentNotifications::ConversationNotificationsMailer": 4,
+      "Notification": 1.0,
+      "Account": 0.3333333333333333,
+      "User": 0.3333333333333333,
+      "Notification::PushNotificationService": 0.3333333333333333
+    },
+    "Notification::MarkConversationReadService": {
+      "Account": 0.2,
+      "Conversation": 0.2,
+      "Message": 0.2,
+      "User": 0.2,
+      "NotificationFinder": 0.2
+    },
+    "Notification::PushNotificationService": {
+      "Notification": 4.0,
+      "ConversationDrop": 2.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "ContactDrop": 3.0,
+      "Notification::FcmService": 3
+    },
+    "ReportingEvents::BackfillService": {
+      "ReportingEventsRollup": 6
+    },
+    "ReportingEvents::RollupService": {
+      "ReportingEvent": 1,
+      "WidgetTestsController": 1.0,
+      "ReportingEventsRollup": 1
+    },
+    "SearchService": {
+      "Account": 0.5,
+      "User": 1.5,
+      "ConversationPolicy": 1.0,
+      "Contact": 2.0
+    },
+    "Sms::IncomingMessageService": {
+      "Conversation": 3,
+      "Instagram::CallbacksController": 0.6000000000000001,
+      "Linear::CallbacksController": 0.6000000000000001,
+      "Shopify::CallbacksController": 0.6000000000000001,
+      "Tiktok::CallbacksController": 0.6000000000000001,
+      "Twitter::CallbacksController": 0.6000000000000001,
+      "Inbox": 1,
+      "ContactInboxWithContactBuilder": 3,
+      "ContactInbox": 3,
+      "BaseRefreshOauthTokenService": 2.0,
+      "Message": 1
+    },
+    "Sms::OneoffSmsCampaignService": {
+      "Inbox": 1.0,
+      "Account": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.5,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.5,
+      "Sms::IncomingMessageService": 0.5,
+      "Twilio::IncomingMessageService": 0.5,
+      "ContactDrop": 0.5,
+      "Liquid::CampaignTemplateService": 4,
+      "Channel::Sms": 0.25,
+      "Tiktok::Client": 0.25,
+      "Whatsapp::Providers::Whatsapp360DialogService": 0.25,
+      "Whatsapp::Providers::WhatsappCloudService": 0.25
+    },
+    "Sms::SendOnSmsService": {
+      "Base::SendOnChannelService": 1.2,
+      "Conversation": 0.2,
+      "Api::V1::Accounts::ConversationsController": 0.2,
+      "Public::Api::V1::Inboxes::ContactsController": 0.2,
+      "Tiktok::MessageService": 0.2
+    },
+    "Telegram::IncomingMessageService": {
+      "Conversation": 3,
+      "Instagram::CallbacksController": 1.0,
+      "Linear::CallbacksController": 1.0,
+      "Shopify::CallbacksController": 1.0,
+      "Tiktok::CallbacksController": 1.0,
+      "Twitter::CallbacksController": 1.0,
+      "ContactInboxWithContactBuilder": 3,
+      "ContactInbox": 3,
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2,
+      "Channel::Telegram": 3.0,
+      "Avatar::AvatarFromUrlJob": 2,
+      "Message": 3
+    },
+    "Telegram::SendAttachmentsService": {
+      "Channel::Telegram": 8.0,
+      "Attachment": 1,
+      "Telegram::IncomingMessageService": 2.0,
+      "Crm::Leadsquared::Api::BaseClient": 1.0,
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5
+    },
+    "Telegram::SendOnTelegramService": {
+      "Channel::Telegram": 1.0
+    },
+    "Telegram::UpdateMessageService": {
+      "Contact": 0.5,
+      "Inbox": 0.5,
+      "ContactInbox": 1,
+      "Conversation": 1
+    },
+    "Tiktok::Client": {
+      "Telegram::IncomingMessageService": 1.0
+    },
+    "Tiktok::MessageService": {
+      "Instagram::CallbacksController": 0.6000000000000001,
+      "Linear::CallbacksController": 0.6000000000000001,
+      "Shopify::CallbacksController": 0.6000000000000001,
+      "Tiktok::CallbacksController": 0.6000000000000001,
+      "Twitter::CallbacksController": 0.6000000000000001,
+      "Message": 2,
+      "Webhooks::TiktokEventsJob": 0.5,
+      "Tiktok::ReadStatusService": 0.5
+    },
+    "Tiktok::ReadStatusService": {
+      "Conversations::UpdateMessageStatusJob": 2,
+      "Webhooks::TiktokEventsJob": 1.0
+    },
+    "Tiktok::SendOnTiktokService": {
+      "Messages::StatusUpdateService": 6,
+      "Message": 1.0,
+      "MessageContentPresenter": 1.0,
+      "MessageTemplates::Template::CsatSurvey": 0.5,
+      "Messages::MessageBuilder": 0.5,
+      "Tiktok::Client": 3.0,
+      "Webhooks::TiktokEventsJob": 0.5,
+      "Tiktok::ReadStatusService": 0.5,
+      "Channel::Tiktok": 1.0
+    },
+    "Tiktok::TokenService": {
+      "Channel::Instagram": 0.25,
+      "BaseRefreshOauthTokenService": 0.25,
+      "Instagram::RefreshOauthTokenService": 0.25,
+      "AgentBotPresenter": 0.25,
+      "Tiktok::AuthClient": 1
+    },
+    "Twilio::CsatTemplateService": {
+      "Twilio::CsatTemplateApiClient": 6,
+      "CsatTemplateNameService": 1,
+      "CsatSurveyService": 1.0,
+      "MessageTemplates::Template::CsatSurvey": 1.0
+    },
+    "Twilio::DeliveryStatusService": {
+      "Channel::TwilioSms": 4
+    },
+    "Twilio::IncomingMessageService": {
+      "Conversation": 3,
+      "Instagram::CallbacksController": 0.8,
+      "Linear::CallbacksController": 0.8,
+      "Shopify::CallbacksController": 0.8,
+      "Tiktok::CallbacksController": 0.8,
+      "Twitter::CallbacksController": 0.8,
+      "Channel::TwilioSms": 4,
+      "Inbox": 4.0,
+      "Whatsapp::PhoneNumberNormalizationService": 3,
+      "ContactInboxWithContactBuilder": 3,
+      "ContactInbox": 3,
+      "Message": 2
+    },
+    "Twilio::OneoffSmsCampaignService": {
+      "Inbox": 1.0,
+      "Account": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.5,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.75,
+      "Sms::IncomingMessageService": 0.75,
+      "Twilio::IncomingMessageService": 0.75,
+      "ContactDrop": 0.75,
+      "Liquid::CampaignTemplateService": 4
+    },
+    "Twilio::SendOnTwilioService": {
+      "Messages::StatusUpdateService": 3,
+      "Base::SendOnChannelService": 2,
+      "Twilio::TemplateProcessorService": 4,
+      "Message": 0.5,
+      "MessageContentPresenter": 0.5
+    },
+    "Twilio::TemplateSyncService": {
+      "Messages::MarkdownRenderers::InstagramRenderer": 0.2,
+      "Messages::MarkdownRenderers::LineRenderer": 0.2,
+      "Messages::MarkdownRenderers::PlainTextRenderer": 0.2,
+      "Messages::MarkdownRenderers::TelegramRenderer": 0.2,
+      "Messages::MarkdownRenderers::WhatsAppRenderer": 0.2,
+      "Webhooks::TiktokEventsJob": 1.0,
+      "Conversation": 1.0
+    },
+    "Twilio::WebhookSetupService": {
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.5,
+      "Sms::IncomingMessageService": 0.5,
+      "Twilio::IncomingMessageService": 0.5,
+      "ContactDrop": 0.5,
+      "Messages::MarkdownRenderers::InstagramRenderer": 0.2,
+      "Messages::MarkdownRenderers::LineRenderer": 0.2,
+      "Messages::MarkdownRenderers::PlainTextRenderer": 0.2,
+      "Messages::MarkdownRenderers::TelegramRenderer": 0.2,
+      "Messages::MarkdownRenderers::WhatsAppRenderer": 0.2
+    },
+    "Twitter::DirectMessageParserService": {
+      "Twitter::WebhooksBaseService": 4.0,
+      "Conversation": 3,
+      "Instagram::CallbacksController": 0.6000000000000001,
+      "Linear::CallbacksController": 0.6000000000000001,
+      "Shopify::CallbacksController": 0.6000000000000001,
+      "Tiktok::CallbacksController": 0.6000000000000001,
+      "Twitter::CallbacksController": 0.6000000000000001,
+      "MessageTemplates::Template::CsatSurvey": 1.0,
+      "Messages::MessageBuilder": 1.0,
+      "ContactInbox": 1,
+      "Message": 1
+    },
+    "Twitter::SendOnTwitterService": {
+      "Base::SendOnChannelService": 6,
+      "Campaign": 0.25,
+      "Message": 1.25,
+      "Messages::NewMessageNotificationService": 0.25,
+      "Messages::MessageBuilder": 0.25,
+      "MessageContentPresenter": 1.0,
+      "Mailbox::ConversationFinderStrategies::NewConversationStrategy": 0.6666666666666666,
+      "MailPresenter": 0.6666666666666666,
+      "Imap::ImapMailbox": 0.6666666666666666,
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5
+    },
+    "Twitter::TweetParserService": {
+      "Twitter::WebhooksBaseService": 3,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "ContactInbox": 1,
+      "Inbox": 2,
+      "Conversation": 3
+    },
+    "Twitter::WebhookSubscribeService": {
+      "Sms::DeliveryStatusService": 1.0,
+      "Twilio::DeliveryStatusService": 1.0,
+      "Inbox": 2
+    },
+    "Twitter::WebhooksBaseService": {
+      "Channel::TwitterProfile": 3.0,
+      "Inbox": 3,
+      "ContactInbox": 2,
+      "Avatar::AvatarFromUrlJob": 2
+    },
+    "Whatsapp::ChannelCreationService": {
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "ContactDrop": 0.25,
+      "Channel::Whatsapp": 4,
+      "Inbox": 2
+    },
+    "Whatsapp::CsatTemplateService": {
+      "CsatTemplateNameService": 2,
+      "CsatSurveyService": 0.5,
+      "MessageTemplates::Template::CsatSurvey": 0.5,
+      "BaseRefreshOauthTokenService": 2.0
+    },
+    "Whatsapp::EmbeddedSignupService": {
+      "Channel::Whatsapp": 0.5,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 1.0,
+      "Whatsapp::TokenExchangeService": 3,
+      "Whatsapp::PhoneInfoService": 3,
+      "Whatsapp::TokenValidationService": 3,
+      "Whatsapp::ReauthorizationService": 3,
+      "Whatsapp::ChannelCreationService": 3,
+      "Whatsapp::HealthService": 3,
+      "Sms::IncomingMessageService": 0.5,
+      "Twilio::IncomingMessageService": 0.5,
+      "ContactDrop": 0.5
+    },
+    "Whatsapp::HealthService": {
+      "BaseRefreshOauthTokenService": 4.0,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "ContactDrop": 0.25
+    },
+    "Whatsapp::IncomingMessageBaseService": {
+      "ContactInboxWithContactBuilder": 6,
+      "ContactInbox": 4,
+      "Conversation": 3,
+      "Webhooks::TiktokEventsJob": 1.0,
+      "Message": 3,
+      "Instagram::CallbacksController": 0.8,
+      "Linear::CallbacksController": 0.8,
+      "Shopify::CallbacksController": 0.8,
+      "Tiktok::CallbacksController": 0.8,
+      "Twitter::CallbacksController": 0.8
+    },
+    "Whatsapp::IncomingMessageWhatsappCloudService": {
+      "Channel::Whatsapp": 0.7333333333333334,
+      "Whatsapp::Providers::Whatsapp360DialogService": 0.7333333333333334,
+      "Whatsapp::Providers::WhatsappCloudService": 0.7333333333333334,
+      "Twilio::CsatTemplateApiClient": 0.4,
+      "Whatsapp::CsatTemplateService": 0.4
+    },
+    "Whatsapp::OneoffCampaignService": {
+      "Inbox": 1.0,
+      "Account": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.5,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.75,
+      "Sms::IncomingMessageService": 0.75,
+      "Twilio::IncomingMessageService": 0.75,
+      "ContactDrop": 0.75,
+      "Twilio::SendOnTwilioService": 0.6666666666666666,
+      "Whatsapp::SendOnWhatsappService": 0.6666666666666666,
+      "Messages::MessageBuilder": 0.6666666666666666,
+      "Whatsapp::TemplateProcessorService": 3,
+      "Channel::Whatsapp": 0.25,
+      "Whatsapp::Providers::BaseService": 0.25,
+      "Whatsapp::Providers::Whatsapp360DialogService": 0.25,
+      "Whatsapp::Providers::WhatsappCloudService": 0.25
+    },
+    "Whatsapp::PhoneInfoService": {
+      "Whatsapp::FacebookApiClient": 2
+    },
+    "Whatsapp::PhoneNormalizers::ArgentinaPhoneNormalizer": {
+      "Whatsapp::PhoneNormalizers::BasePhoneNormalizer": 1
+    },
+    "Whatsapp::PhoneNormalizers::BrazilPhoneNormalizer": {
+      "Whatsapp::PhoneNormalizers::BasePhoneNormalizer": 1
+    },
+    "Whatsapp::PhoneNumberNormalizationService": {
+      "Whatsapp::PhoneNormalizers::ArgentinaPhoneNormalizer": 0.3333333333333333,
+      "Whatsapp::PhoneNormalizers::BasePhoneNormalizer": 1.3333333333333333,
+      "Whatsapp::PhoneNormalizers::BrazilPhoneNormalizer": 0.3333333333333333,
+      "Contact": 0.5,
+      "Inbox": 0.5
+    },
+    "Whatsapp::Providers::BaseService": {
+      "MessageTemplates::Template::CsatSurvey": 1.5,
+      "Messages::MessageBuilder": 1.5,
+      "Message": 2
+    },
+    "Whatsapp::Providers::Whatsapp360DialogService": {
+      "Message": 4,
+      "Whatsapp::Providers::BaseService": 5,
+      "Channel::Whatsapp": 1.0,
+      "BaseRefreshOauthTokenService": 2.0,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "ContactDrop": 0.25,
+      "Attachment": 1,
+      "Telegram::IncomingMessageService": 1.0
+    },
+    "Whatsapp::Providers::WhatsappCloudService": {
+      "Message": 4,
+      "Whatsapp::Providers::BaseService": 5,
+      "Channel::Whatsapp": 1.0,
+      "BaseRefreshOauthTokenService": 5.0,
+      "CsatTemplateManagementService": 0.25,
+      "Twilio::CsatTemplateApiClient": 0.5833333333333333,
+      "Twilio::CsatTemplateService": 1.0833333333333333,
+      "Whatsapp::CsatTemplateService": 3.083333333333333,
+      "CsatTemplateNameService": 1,
+      "Attachment": 1,
+      "Telegram::IncomingMessageService": 1.0,
+      "MessageTemplates::Template::CsatSurvey": 0.5,
+      "Messages::MessageBuilder": 0.5
+    },
+    "Whatsapp::ReauthorizationService": {
+      "Account": 1,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.5,
+      "Sms::IncomingMessageService": 0.5,
+      "Twilio::IncomingMessageService": 0.5,
+      "ContactDrop": 0.5,
+      "BaseRefreshOauthTokenService": 1.0
+    },
+    "Whatsapp::SendOnWhatsappService": {
+      "Conversation": 0.8999999999999999,
+      "Conversations::MessageWindowService": 0.5,
+      "Whatsapp::TemplateProcessorService": 3,
+      "Base::SendOnChannelService": 3.4000000000000004,
+      "Channel::Whatsapp": 0.25,
+      "Whatsapp::Providers::BaseService": 0.25,
+      "Whatsapp::Providers::Whatsapp360DialogService": 0.25,
+      "Whatsapp::Providers::WhatsappCloudService": 0.25,
+      "Api::V1::Accounts::ConversationsController": 0.4,
+      "Public::Api::V1::Inboxes::ContactsController": 0.4,
+      "Tiktok::MessageService": 0.4
+    },
+    "Whatsapp::TemplateProcessorService": {
+      "Whatsapp::TemplateParameterConverterService": 3,
+      "Whatsapp::PopulateTemplateParametersService": 8.0
+    },
+    "Whatsapp::TokenExchangeService": {
+      "Whatsapp::FacebookApiClient": 2
+    },
+    "Whatsapp::TokenValidationService": {
+      "Whatsapp::FacebookApiClient": 2
+    },
+    "Whatsapp::WebhookSetupService": {
+      "BaseRefreshOauthTokenService": 7.0,
+      "Whatsapp::FacebookApiClient": 4,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 0.25,
+      "Sms::IncomingMessageService": 0.25,
+      "Twilio::IncomingMessageService": 0.25,
+      "ContactDrop": 0.25,
+      "Whatsapp::HealthService": 3
+    },
+    "Whatsapp::WebhookTeardownService": {
+      "BaseRefreshOauthTokenService": 5.0,
+      "Whatsapp::FacebookApiClient": 2
+    },
+    "Widget::TokenService": {
+      "BaseTokenService": 2,
+      "InstallationConfig": 3
+    },
+    "AccountBuilder": {
+      "Account::SignUpEmailValidationService": 3,
+      "User": 4,
+      "Account": 2,
+      "AccountUser": 4
+    },
+    "AgentBuilder": {
+      "User": 3,
+      "AccountUser": 2
+    },
+    "Campaigns::CampaignConversationBuilder": {
+      "ContactInbox": 4,
+      "Inbox": 1,
+      "Conversation": 2,
+      "Messages::MessageBuilder": 3,
+      "Campaign": 1,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2
+    },
+    "ContactInboxBuilder": {
+      "ContactDrop": 3.75,
+      "Api::V1::Accounts::Channels::TwilioChannelsController": 2.75,
+      "Sms::IncomingMessageService": 1.75,
+      "Twilio::IncomingMessageService": 1.75,
+      "ContactInbox": 5,
+      "Inbox": 7
+    },
+    "ContactInboxWithContactBuilder": {
+      "Contact": 1.0,
+      "Inbox": 0.5,
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2,
+      "ContactInboxBuilder": 3,
+      "Avatar::AvatarFromUrlJob": 2,
+      "ContactInbox": 9,
+      "User": 0.5
+    },
+    "ConversationBuilder": {
+      "ContactInbox": 3,
+      "Conversation": 2,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "WidgetTestsController": 1.0
+    },
+    "CsatSurveys::ResponseBuilder": {
+      "MessageTemplates::Template::CsatSurvey": 1.0,
+      "Messages::MessageBuilder": 1.0,
+      "Conversation": 1.5,
+      "Message": 0.5,
+      "CsatSurveyResponse": 2,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Webhooks::TiktokEventsJob": 1.0
+    },
+    "Email::BaseBuilder": {
+      "AgentBot": 0.5,
+      "UserDrop": 0.5,
+      "Campaign": 0.25,
+      "Message": 0.25,
+      "Messages::NewMessageNotificationService": 0.25,
+      "Messages::MessageBuilder": 0.25,
+      "ConversationReplyMailer": 1.0,
+      "Inbox": 1.0,
+      "Account": 1.0
+    },
+    "Email::FromBuilder": {
+      "Inbox": 1.0,
+      "Email::BaseBuilder": 18,
+      "ContactDrop": 2.0,
+      "Channel::Email": 2.0
+    },
+    "Email::ReplyToBuilder": {
+      "Inbox": 1.0,
+      "ContactDrop": 1.0,
+      "Email::BaseBuilder": 7,
+      "Account": 2.0
+    },
+    "Messages::Facebook::MessageBuilder": {
+      "Messages::Instagram::BaseMessageBuilder": 1.5,
+      "Webhooks::InstagramEventsJob": 0.5,
+      "Inbox": 4,
+      "ContactInboxWithContactBuilder": 3,
+      "Messages::Messenger::MessageBuilder": 1,
+      "Conversation": 18,
+      "Instagram::CallbacksController": 0.6000000000000001,
+      "Linear::CallbacksController": 0.6000000000000001,
+      "Shopify::CallbacksController": 0.6000000000000001,
+      "Tiktok::CallbacksController": 0.6000000000000001,
+      "Twitter::CallbacksController": 0.6000000000000001,
+      "WidgetTestsController": 1.0,
+      "Webhooks::TiktokEventsJob": 1.0,
+      "NotificationSubscriptionBuilder": 1.0,
+      "ContactInbox": 1
+    },
+    "Messages::Instagram::BaseMessageBuilder": {
+      "Inbox": 2.5,
+      "Conversation": 4,
+      "Messages::Messenger::MessageBuilder": 3,
+      "Message": 4,
+      "Contact": 0.5,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "WidgetTestsController": 1.0
+    },
+    "Messages::Instagram::MessageBuilder": {
+      "Channel::Instagram": 0.2,
+      "BaseRefreshOauthTokenService": 0.2,
+      "Instagram::RefreshOauthTokenService": 0.2,
+      "Tiktok::TokenService": 0.2,
+      "AgentBotPresenter": 0.2,
+      "Messages::Instagram::BaseMessageBuilder": 2,
+      "Api::V1::Accounts::NotificationsController": 1.0,
+      "Message": 1
+    },
+    "Messages::Instagram::Messenger::MessageBuilder": {
+      "Inbox": 2,
+      "Api::V1::Accounts::NotificationsController": 1.0,
+      "Message": 1,
+      "Conversation": 4,
+      "Messages::Instagram::BaseMessageBuilder": 1
+    },
+    "Messages::MessageBuilder": {
+      "Conversation": 7,
+      "Message": 1,
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "Inbox": 2.0,
+      "MessageTemplates::Template::CsatSurvey": 9.0,
+      "AgentBot": 4,
+      "WidgetTestsController": 1.0,
+      "Webhooks::TiktokEventsJob": 2.0,
+      "UserDrop": 1
+    },
+    "Messages::Messenger::MessageBuilder": {
+      "Message": 2,
+      "Telegram::IncomingMessageService": 2.0,
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Attachment": 3,
+      "MessageTemplates::Template::CsatSurvey": 2.5,
+      "Messages::MessageBuilder": 2.5,
+      "Webhooks::TiktokEventsJob": 1.0
+    },
+    "NotificationBuilder": {
+      "Account": 0.3333333333333333,
+      "User": 0.3333333333333333,
+      "Notification::PushNotificationService": 0.3333333333333333
+    },
+    "NotificationSubscriptionBuilder": {
+      "NotificationSubscription": 2,
+      "User": 0.5,
+      "Notification::PushNotificationService": 0.5
+    },
+    "V2::ReportBuilder": {
+      "Account": 2.25,
+      "Twitter::DirectMessageParserService": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.75,
+      "User": 0.25,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25,
+      "AccountUser": 1,
+      "ContactDrop": 1.0,
+      "SlackUploadsController": 0.5,
+      "AvatarField": 0.5,
+      "Conversation": 2.0
+    },
+    "V2::Reports::AgentSummaryBuilder": {
+      "V2::Reports::BaseSummaryBuilder": 1,
+      "Account": 0.5,
+      "User": 0.5
+    },
+    "V2::Reports::BaseSummaryBuilder": {
+      "Conversation": 0.2,
+      "Label": 0.2,
+      "Team": 0.2,
+      "V2::Reports::TeamSummaryBuilder": 0.2,
+      "V2::Reports::Timeseries::AverageReportBuilder": 0.2
+    },
+    "V2::Reports::BotMetricsBuilder": {
+      "Api::V1::Accounts::ContactInboxesController": 0.3333333333333333,
+      "Api::V1::Accounts::ContactsController": 0.3333333333333333,
+      "Api::V1::Accounts::ConversationsController": 0.3333333333333333,
+      "Contacts::BulkActionService": 1.0
+    },
+    "V2::Reports::Conversations::MetricBuilder": {
+      "V2::Reports::Conversations::ReportBuilder": 0.3333333333333333,
+      "V2::Reports::Timeseries::AverageReportBuilder": 0.3333333333333333,
+      "V2::Reports::Timeseries::CountReportBuilder": 0.3333333333333333,
+      "V2::Reports::Conversations::BaseReportBuilder": 1
+    },
+    "V2::Reports::Conversations::ReportBuilder": {
+      "V2::Reports::Conversations::BaseReportBuilder": 2
+    },
+    "V2::Reports::FirstResponseTimeDistributionBuilder": {
+      "ReportingEvent": 8,
+      "WidgetTestsController": 1.0
+    },
+    "V2::Reports::InboxLabelMatrixBuilder": {
+      "Account": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.5
+    },
+    "V2::Reports::InboxSummaryBuilder": {
+      "V2::Reports::BaseSummaryBuilder": 1
+    },
+    "V2::Reports::LabelSummaryBuilder": {
+      "Account": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.5,
+      "ReportingEvent": 19
+    },
+    "V2::Reports::OutgoingMessagesCountBuilder": {
+      "Account": 1.25,
+      "Twitter::DirectMessageParserService": 0.5,
+      "User": 0.25,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25,
+      "Api::V2::Accounts::ReportsController": 0.75
+    },
+    "V2::Reports::TeamSummaryBuilder": {
+      "Conversation": 0.2,
+      "Label": 0.2,
+      "Team": 0.2,
+      "V2::Reports::BaseSummaryBuilder": 0.2,
+      "V2::Reports::Timeseries::AverageReportBuilder": 0.2,
+      "Account": 0.25,
+      "User": 0.25,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25,
+      "Api::V2::Accounts::ReportsController": 0.25
+    },
+    "V2::Reports::Timeseries::AverageReportBuilder": {
+      "V2::Reports::Timeseries::BaseTimeseriesBuilder": 4,
+      "Conversation": 0.2,
+      "Label": 0.2,
+      "Team": 0.2,
+      "V2::Reports::BaseSummaryBuilder": 0.2,
+      "V2::Reports::TeamSummaryBuilder": 0.2
+    },
+    "V2::Reports::Timeseries::BaseTimeseriesBuilder": {
+      "Account": 1.25,
+      "Twitter::DirectMessageParserService": 0.5,
+      "Api::V2::Accounts::ReportsController": 0.75,
+      "User": 0.25,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25
+    },
+    "V2::Reports::Timeseries::CountReportBuilder": {
+      "V2::Reports::Timeseries::BaseTimeseriesBuilder": 9
+    },
+    "AgentBotPresenter": {
+      "Platform::Api::V1::UsersController": 1.0
+    },
+    "Conversations::EventDataPresenter": {
+      "Message": 1.0
+    },
+    "MailPresenter": {
+      "HtmlParser": 1,
+      "Mailbox::ConversationFinderStrategies::NewConversationStrategy": 2.0,
+      "Imap::ImapMailbox": 2.0,
+      "Tiktok::MessageService": 3.0,
+      "InstallationConfig": 9.0
+    },
+    "MessageContentPresenter": {
+      "Messages::MarkdownRendererService": 3,
+      "CsatSurveyService": 0.5,
+      "MessageTemplates::Template::CsatSurvey": 0.5,
+      "Inbox": 1.0
+    },
+    "Messages::SearchDataPresenter": {
+      "Api::V1::Accounts::ConversationsController": 1.0,
+      "ConversationDrop": 1.0
+    },
+    "ConversationFinder": {
+      "ConversationPolicy": 1.0,
+      "Account": 1.0833333333333333,
+      "User": 4.083333333333334,
+      "Api::V1::Accounts::Integrations::LinearController": 0.25,
+      "Api::V2::Accounts::ReportsController": 0.25,
+      "Conversations::PermissionFilterService": 3,
+      "Conversation": 6.333333333333334,
+      "Message": 4
+    },
+    "EmailChannelFinder": {
+      "Instagram::CallbacksController": 0.2,
+      "Linear::CallbacksController": 0.2,
+      "Shopify::CallbacksController": 0.2,
+      "Tiktok::CallbacksController": 0.2,
+      "Twitter::CallbacksController": 0.2,
+      "Tiktok::MessageService": 1.0,
+      "Channel::Email": 2
+    },
+    "MessageFinder": {
+      "Conversation": 1
+    },
+    "NotificationFinder": {
+      "Account": 0.2,
+      "Conversation": 0.2,
+      "Message": 0.2,
+      "User": 0.2,
+      "Notification::MarkConversationReadService": 0.2
+    },
+    "ContactIdentifyAction": {
+      "Contact": 2.5,
+      "User": 0.5,
+      "NotificationSubscriptionBuilder": 2.0,
+      "ContactDrop": 2.0,
+      "Api::V1::Accounts::AgentBotsController": 0.2,
+      "Api::V1::Accounts::ContactsController": 0.2,
+      "Api::V1::Accounts::InboxesController": 0.2,
+      "Api::V1::ProfilesController": 0.2,
+      "Platform::Api::V1::AgentBotsController": 0.2,
+      "Avatar::AvatarFromUrlJob": 2,
+      "ContactMergeAction": 2,
+      "Api::V1::Accounts::ConversationsController": 2.0
+    },
+    "ContactMergeAction": {
+      "Instagram::CallbacksController": 0.4,
+      "Linear::CallbacksController": 0.4,
+      "Shopify::CallbacksController": 0.4,
+      "Tiktok::CallbacksController": 0.4,
+      "Twitter::CallbacksController": 0.4,
+      "Conversation": 4,
+      "Note": 4,
+      "Message": 4,
+      "ContactInbox": 4,
+      "Contact": 0.5,
+      "Inbox": 0.5
+    },
+    "RoomChannel": {
+      "ContactInbox": 3,
+      "User": 3
+    },
+    "ActionCableListener": {
+      "BaseListener": 16,
+      "RoomChannel": 7.0,
+      "Notification": 2,
+      "User": 4,
+      "Account": 6,
+      "NotificationFinder": 2,
+      "Message": 6,
+      "Inbox": 5.5,
+      "Team": 5.5,
+      "Conversation": 20,
+      "Contact": 4,
+      "ContactInbox": 1,
+      "ActionCableBroadcastJob": 2
+    },
+    "AgentBotListener": {
+      "BaseListener": 5,
+      "Conversation": 5,
+      "Message": 5,
+      "ContactInbox": 2,
+      "ContactPolicy": 1.0,
+      "Inbox": 2,
+      "AgentBots::WebhookJob": 2
+    },
+    "AutomationRuleListener": {
+      "AutomationRules::ConditionsFilterService": 6,
+      "Message": 3,
+      "AutomationRules::ActionService": 6,
+      "Conversation": 1,
+      "AutomationRule": 2
+    },
+    "BaseListener": {
+      "Conversation": 1,
+      "NotificationFinder": 2,
+      "Notification": 3,
+      "Message": 1,
+      "Contact": 1,
+      "Inbox": 1
+    },
+    "CampaignListener": {
+      "Campaigns::CampaignConversationBuilder": 3
+    },
+    "CsatSurveyListener": {
+      "BaseListener": 2,
+      "CsatSurveyService": 3,
+      "CsatSurveys::ResponseBuilder": 3
+    },
+    "HookListener": {
+      "BaseListener": 6,
+      "Contact": 2,
+      "Conversation": 2,
+      "Sms::DeliveryStatusService": 0.5,
+      "Twilio::DeliveryStatusService": 0.5,
+      "Account": 1.3333333333333333,
+      "Inbox": 0.3333333333333333,
+      "Integrations::App": 0.3333333333333333,
+      "Message": 2,
+      "Integrations::Hook": 3.0,
+      "HookJob": 4
+    },
+    "InstallationWebhookListener": {
+      "Account": 1.0,
+      "InstallationConfig": 3,
+      "WebhookJob": 2
+    },
+    "NotificationListener": {
+      "BaseListener": 4,
+      "Inbox": 1.0,
+      "Team": 1.0,
+      "Conversation": 3,
+      "NotificationBuilder": 9,
+      "Messages::MentionService": 3,
+      "Messages::NewMessageNotificationService": 3
+    },
+    "ParticipationListener": {
+      "BaseListener": 1,
+      "Conversation": 2
+    },
+    "ReportingEventListener": {
+      "BaseListener": 6,
+      "ReportingEvent": 23,
+      "Conversation": 7,
+      "Instagram::CallbacksController": 1.2,
+      "Linear::CallbacksController": 1.2,
+      "Shopify::CallbacksController": 1.2,
+      "Tiktok::CallbacksController": 1.2,
+      "Twitter::CallbacksController": 1.2,
+      "WidgetTestsController": 6.0,
+      "Message": 2,
+      "Webhooks::InstagramEventsJob": 0.5,
+      "Messages::Instagram::BaseMessageBuilder": 0.5,
+      "Inbox": 1.0,
+      "ReportingEvents::RollupService": 1
+    },
+    "WebhookListener": {
+      "BaseListener": 13,
+      "Conversation": 4,
+      "Message": 4,
+      "ContactInbox": 2,
+      "Contact": 2,
+      "Inbox::EventDataPresenter": 6,
+      "User": 1,
+      "Account": 1,
+      "WebhookJob": 4,
+      "Tiktok::AuthClient": 2.0,
+      "Inbox": 1
+    },
+    "AsyncDispatcher": {
+      "EventDispatcherJob": 2,
+      "AutomationRuleListener": 1,
+      "CampaignListener": 1,
+      "CsatSurveyListener": 1,
+      "HookListener": 1,
+      "InstallationWebhookListener": 1,
+      "NotificationListener": 1,
+      "ParticipationListener": 1,
+      "ReportingEventListener": 1,
+      "WebhookListener": 1
+    },
+    "Dispatcher": {
+      "SyncDispatcher": 3,
+      "AsyncDispatcher": 3
+    },
+    "SyncDispatcher": {
+      "ActionCableListener": 1,
+      "AgentBotListener": 1
+    },
+    "ConversationDrop": {
+      "Message": 2,
+      "Webhooks::TiktokEventsJob": 1.0,
+      "AgentBot": 0.5,
+      "UserDrop": 0.5
+    },
+    "MessageDrop": {
+      "Campaign": 0.25,
+      "Message": 0.25,
+      "Messages::NewMessageNotificationService": 0.25,
+      "Messages::MessageBuilder": 0.25
+    },
+    "ApplicationMailbox": {
+      "EmailChannelFinder": 3,
+      "Tiktok::MessageService": 3.0
+    },
+    "Imap::ImapMailbox": {
+      "MailPresenter": 11.5,
+      "Inbox": 7,
+      "Webhooks::TiktokEventsJob": 2.0,
+      "Conversation": 2,
+      "Contact": 0.5,
+      "User": 0.5,
+      "ContactInbox": 2,
+      "Tiktok::MessageService": 0.5
+    },
+    "ReplyMailbox": {
+      "Mailbox::ConversationFinder": 2,
+      "MailPresenter": 2,
+      "Conversation": 1
+    },
+    "AccountUserDashboard": {
+      "AccountUser": 2
+    },
+    "Account": {
+      "AccountUser": 2,
+      "AgentBotInbox": 2,
+      "AgentBot": 2,
+      "AssignmentPolicy": 2,
+      "AutomationRule": 2,
+      "Macro": 2,
+      "Campaign": 2,
+      "Contact": 2,
+      "Conversation": 2,
+      "CustomAttributeDefinition": 2,
+      "CustomFilter": 2,
+      "DashboardApp": 2,
+      "DataImport": 2,
+      "Integrations::Hook": 2,
+      "Inbox": 2,
+      "Label": 2,
+      "Mention": 2,
+      "Message": 2,
+      "Note": 2,
+      "NotificationSetting": 2,
+      "Notification": 2,
+      "Team": 2,
+      "User": 2,
+      "Webhook": 2,
+      "WorkingHour": 2
+    },
+    "AssignmentPolicy": {
+      "Account": 2,
+      "InboxAssignmentPolicy": 2,
+      "Inbox": 2
+    },
+    "CannedResponse": {
+      "Account": 2
+    },
+    "CsatSurveyResponse": {
+      "Account": 2,
+      "Conversation": 2,
+      "Contact": 2,
+      "Message": 2,
+      "User": 4
+    },
+    "DashboardApp": {
+      "User": 2,
+      "Account": 2
+    },
+    "Folder": {
+      "Account": 2,
+      "Category": 2,
+      "Article": 2
+    },
+    "InboxAssignmentPolicy": {
+      "Inbox": 2,
+      "AssignmentPolicy": 2
+    },
+    "Macro": {
+      "Account": 2,
+      "User": 4
+    },
+    "NotificationSetting": {
+      "Account": 2,
+      "User": 2
+    },
+    "NotificationSubscription": {
+      "User": 2
+    },
+    "PlatformApp": {
+      "PlatformAppPermissible": 2
+    },
+    "PlatformAppPermissible": {
+      "PlatformApp": 2
+    },
+    "RelatedCategory": {
+      "Category": 4
+    },
+    "ReportingEvent": {
+      "Account": 2,
+      "User": 2,
+      "Inbox": 2,
+      "Conversation": 2
+    },
+    "ReportingEventsRollup": {
+      "Account": 2
+    },
+    "TeamMember": {
+      "User": 2,
+      "Team": 2
+    },
+    "Webhook": {
+      "Account": 2,
+      "Inbox": 2
+    },
+    "AccessToken": {
+    },
+    "ApplicationRecord": {
+    },
+    "Channel::Api": {
+    },
+    "Channel::Line": {
+    },
+    "Channel::TwilioSms": {
+    },
+    "ContentAttributeValidator": {
+    },
+    "SuperAdmin": {
+    },
+    "Api::V1::Accounts::CampaignsController": {
+    },
+    "Api::V1::Accounts::OauthAuthorizationController": {
+    },
+    "Microsoft::CallbacksController": {
+    },
+    "SlackUploadsController": {
+    },
+    "AgentBots::WebhookJob": {
+    },
+    "BulkActionsJob": {
+    },
+    "DeleteObjectJob": {
+    },
+    "EventDispatcherJob": {
+    },
+    "Internal::CheckNewVersionsJob": {
+    },
+    "Internal::SeedAccountJob": {
+    },
+    "Migration::ConversationBatchCacheLabelJob": {
+    },
+    "MutexApplicationJob": {
+    },
+    "WebhookJob": {
+    },
+    "Account::SignUpEmailValidationService": {
+    },
+    "Base::SendOnChannelService": {
+    },
+    "BaseTokenService": {
+    },
+    "Conversations::TypingStatusManager": {
+    },
+    "Crm::Leadsquared::Api::BaseClient::ApiError": {
+    },
+    "CsatTemplateNameService": {
+    },
+    "CsatTemplateUtilityAnalysisService": {
+    },
+    "EmailTemplates::DbResolverService": {
+    },
+    "Google::RefreshOauthTokenService": {
+    },
+    "Internal::RemoveStaleRedisKeysService": {
+    },
+    "IpLookupService": {
+    },
+    "LlmFormatter::DefaultLlmFormatter": {
+    },
+    "Mailbox::ConversationFinder": {
+    },
+    "Messages::MarkdownRenderers::BaseMarkdownRenderer": {
+    },
+    "Messages::MarkdownRenderers::InstagramRenderer": {
+    },
+    "Messages::MarkdownRenderers::LineRenderer": {
+    },
+    "Messages::MarkdownRenderers::PlainTextRenderer": {
+    },
+    "Messages::MarkdownRenderers::TelegramRenderer": {
+    },
+    "Messages::MarkdownRenderers::WhatsAppRenderer": {
+    },
+    "Microsoft::RefreshOauthTokenService": {
+    },
+    "Notification::FcmService": {
+    },
+    "Sms::DeliveryStatusService": {
+    },
+    "Tiktok::AuthClient": {
+    },
+    "Twilio::CsatTemplateApiClient": {
+    },
+    "Twilio::TemplateProcessorService": {
+    },
+    "Whatsapp::FacebookApiClient": {
+    },
+    "Whatsapp::IncomingMessageService": {
+    },
+    "Whatsapp::PhoneNormalizers::BasePhoneNormalizer": {
+    },
+    "Whatsapp::PopulateTemplateParametersService": {
+    },
+    "Whatsapp::TemplateParameterConverterService": {
+    },
+    "V2::Reports::Conversations::BaseReportBuilder": {
+    },
+    "YearInReviewBuilder": {
+    },
+    "HtmlParser": {
+    },
+    "Inbox::EventDataPresenter": {
+    },
+    "AccountDrop": {
+    },
+    "ContactDrop": {
+    },
+    "InboxDrop": {
+    },
+    "UserDrop": {
+    },
+    "AvatarField": {
+    }
+  },
+  "data_associations": {
+    "Account": [
+      "AccountUser",
+      "AgentBotInbox",
+      "AgentBot",
+      "AssignmentPolicy",
+      "AutomationRule",
+      "Macro",
+      "Campaign",
+      "Contact",
+      "Conversation",
+      "CustomAttributeDefinition",
+      "CustomFilter",
+      "DashboardApp",
+      "DataImport",
+      "Integrations::Hook",
+      "Inbox",
+      "Label",
+      "Mention",
+      "Message",
+      "Note",
+      "NotificationSetting",
+      "Notification",
+      "Team",
+      "User",
+      "Webhook",
+      "WorkingHour"
+    ],
+    "AccountUser": [
+      "Account",
+      "User"
+    ],
+    "AgentBot": [
+      "AgentBotInbox",
+      "Inbox",
+      "Message",
+      "Conversation",
+      "Account"
+    ],
+    "AgentBotInbox": [
+      "Inbox",
+      "AgentBot",
+      "Account"
+    ],
+    "Article": [
+      "Account",
+      "Category",
+      "Portal",
+      "User"
+    ],
+    "AssignmentPolicy": [
+      "Account",
+      "InboxAssignmentPolicy",
+      "Inbox"
+    ],
+    "Attachment": [
+      "Account",
+      "Message"
+    ],
+    "AutomationRule": [
+      "Account"
+    ],
+    "Campaign": [
+      "Account",
+      "Inbox",
+      "User",
+      "Conversation"
+    ],
+    "CannedResponse": [
+      "Account"
+    ],
+    "Category": [
+      "Account",
+      "Portal",
+      "Folder",
+      "Article",
+      "RelatedCategory"
+    ],
+    "Channel::WebWidget": [
+      "Portal"
+    ],
+    "Contact": [
+      "Account",
+      "Conversation",
+      "ContactInbox",
+      "Inbox",
+      "Message",
+      "Note"
+    ],
+    "ContactInbox": [
+      "Contact",
+      "Inbox",
+      "Conversation"
+    ],
+    "Conversation": [
+      "Account",
+      "Inbox",
+      "User",
+      "AgentBot",
+      "Contact",
+      "ContactInbox",
+      "Team",
+      "Campaign",
+      "Mention",
+      "Message",
+      "CsatSurveyResponse",
+      "ConversationParticipant",
+      "Notification",
+      "Attachment",
+      "ReportingEvent"
+    ],
+    "ConversationParticipant": [
+      "Account",
+      "Conversation",
+      "User"
+    ],
+    "CsatSurveyResponse": [
+      "Account",
+      "Conversation",
+      "Contact",
+      "Message",
+      "User"
+    ],
+    "CustomAttributeDefinition": [
+      "Account"
+    ],
+    "CustomFilter": [
+      "User",
+      "Account"
+    ],
+    "DashboardApp": [
+      "User",
+      "Account"
+    ],
+    "DataImport": [
+      "Account"
+    ],
+    "EmailTemplate": [
+      "Account"
+    ],
+    "Folder": [
+      "Account",
+      "Category",
+      "Article"
+    ],
+    "Inbox": [
+      "Account",
+      "Portal",
+      "Campaign",
+      "ContactInbox",
+      "Contact",
+      "InboxMember",
+      "Conversation",
+      "Message",
+      "InboxAssignmentPolicy",
+      "AssignmentPolicy",
+      "AgentBotInbox",
+      "AgentBot",
+      "Webhook",
+      "Integrations::Hook"
+    ],
+    "InboxAssignmentPolicy": [
+      "Inbox",
+      "AssignmentPolicy"
+    ],
+    "InboxMember": [
+      "User",
+      "Inbox"
+    ],
+    "Integrations::Hook": [
+      "Account",
+      "Inbox",
+      "Integrations::App"
+    ],
+    "Label": [
+      "Account"
+    ],
+    "Macro": [
+      "Account",
+      "User"
+    ],
+    "Mention": [
+      "Account",
+      "Conversation",
+      "User"
+    ],
+    "Message": [
+      "Account",
+      "Inbox",
+      "Conversation",
+      "AgentBot",
+      "Contact",
+      "User",
+      "Attachment",
+      "CsatSurveyResponse",
+      "Notification"
+    ],
+    "Note": [
+      "Account",
+      "Contact",
+      "User"
+    ],
+    "Notification": [
+      "Account",
+      "User",
+      "Conversation",
+      "Message"
+    ],
+    "NotificationSetting": [
+      "Account",
+      "User"
+    ],
+    "NotificationSubscription": [
+      "User"
+    ],
+    "PlatformApp": [
+      "PlatformAppPermissible"
+    ],
+    "PlatformAppPermissible": [
+      "PlatformApp"
+    ],
+    "Portal": [
+      "Account",
+      "Category",
+      "Folder",
+      "Article",
+      "Inbox",
+      "Channel::WebWidget"
+    ],
+    "RelatedCategory": [
+      "Category"
+    ],
+    "ReportingEvent": [
+      "Account",
+      "User",
+      "Inbox",
+      "Conversation"
+    ],
+    "ReportingEventsRollup": [
+      "Account"
+    ],
+    "Team": [
+      "Account",
+      "TeamMember",
+      "Conversation"
+    ],
+    "TeamMember": [
+      "User",
+      "Team"
+    ],
+    "User": [
+      "AccountUser",
+      "Account",
+      "Conversation",
+      "CsatSurveyResponse",
+      "ConversationParticipant",
+      "InboxMember",
+      "Inbox",
+      "Message",
+      "CustomFilter",
+      "DashboardApp",
+      "Mention",
+      "Note",
+      "NotificationSetting",
+      "NotificationSubscription",
+      "Notification",
+      "TeamMember",
+      "Team",
+      "Article",
+      "Macro"
+    ],
+    "Webhook": [
+      "Account",
+      "Inbox"
+    ],
+    "WorkingHour": [
+      "Inbox"
+    ],
+    "InstallationConfig": [
+      "User"
+    ],
+    "Api::V1::Accounts::AgentBotsController": [
+      "AgentBot"
+    ],
+    "Api::V1::Accounts::ConversationsController": [
+      "ContactInbox"
+    ],
+    "Api::V1::Accounts::InboxesController": [
+      "AgentBotInbox",
+      "AgentBot"
+    ],
+    "Api::V1::Accounts::Integrations::AppsController": [
+      "Integrations::App"
+    ],
+    "Api::V1::Accounts::Integrations::LinearController": [
+      "Integrations::Hook"
+    ],
+    "Api::V1::Accounts::Integrations::NotionController": [
+      "Integrations::Hook"
+    ],
+    "Api::V1::Accounts::Integrations::ShopifyController": [
+      "Integrations::Hook"
+    ],
+    "Api::V1::Accounts::Integrations::SlackController": [
+      "Integrations::Hook"
+    ],
+    "Api::V1::Accounts::PortalsController": [
+      "Inbox"
+    ],
+    "Api::V1::NotificationSubscriptionsController": [
+      "NotificationSubscription"
+    ],
+    "Api::V1::Widget::BaseController": [
+      "Conversation",
+      "Inbox"
+    ],
+    "DashboardController": [
+      "Portal"
+    ],
+    "DeviseOverrides::ConfirmationsController": [
+      "User"
+    ],
+    "DeviseOverrides::PasswordsController": [
+      "User"
+    ],
+    "Google::CallbacksController": [
+      "Channel::Email"
+    ],
+    "Instagram::CallbacksController": [
+      "Channel::Instagram",
+      "Account"
+    ],
+    "Linear::CallbacksController": [
+      "Account"
+    ],
+    "OauthCallbackController": [
+      "Channel::Email"
+    ],
+    "Platform::Api::V1::AccountUsersController": [
+      "Account"
+    ],
+    "Platform::Api::V1::AccountsController": [
+      "Account"
+    ],
+    "Platform::Api::V1::AgentBotsController": [
+      "AgentBot"
+    ],
+    "Platform::Api::V1::EmailChannelMigrationsController": [
+      "Account",
+      "Channel::Email"
+    ],
+    "Platform::Api::V1::UsersController": [
+      "User"
+    ],
+    "PlatformController": [
+      "AccessToken"
+    ],
+    "Public::Api::V1::CsatSurveyController": [
+      "Conversation"
+    ],
+    "Public::Api::V1::InboxesController": [
+      "Channel::Api"
+    ],
+    "Public::Api::V1::Portals::BaseController": [
+      "Portal",
+      "Article"
+    ],
+    "Public::Api::V1::PortalsController": [
+      "Portal"
+    ],
+    "PublicController": [
+      "Portal"
+    ],
+    "Shopify::CallbacksController": [
+      "Account"
+    ],
+    "SuperAdmin::AccountsController": [
+      "Account"
+    ],
+    "SuperAdmin::AppConfigsController": [
+      "InstallationConfig"
+    ],
+    "SuperAdmin::DashboardController": [
+      "Conversation",
+      "Account",
+      "User",
+      "Inbox"
+    ],
+    "SuperAdmin::Devise::SessionsController": [
+      "SuperAdmin"
+    ],
+    "Tiktok::CallbacksController": [
+      "Channel::Tiktok",
+      "Account"
+    ],
+    "Twitter::CallbacksController": [
+      "Account"
+    ],
+    "Webhooks::ShopifyController": [
+      "Integrations::Hook"
+    ],
+    "Webhooks::WhatsappController": [
+      "Channel::Whatsapp"
+    ],
+    "WidgetTestsController": [
+      "Channel::WebWidget",
+      "Inbox"
+    ],
+    "WidgetsController": [
+      "Channel::WebWidget",
+      "ContactInbox"
+    ],
+    "Account::ContactsExportJob": [
+      "Account"
+    ],
+    "ActionCableBroadcastJob": [
+      "Account"
+    ],
+    "AutoAssignment::AssignmentJob": [
+      "Inbox"
+    ],
+    "Channels::Whatsapp::TemplatesSyncSchedulerJob": [
+      "Channel::Whatsapp"
+    ],
+    "Companies::FetchAvatarsJob": [
+      "Account"
+    ],
+    "Contacts::BulkActionJob": [
+      "Account",
+      "User"
+    ],
+    "ConversationReplyEmailJob": [
+      "Conversation"
+    ],
+    "Conversations::ReopenSnoozedConversationsJob": [
+      "Conversation"
+    ],
+    "Conversations::UpdateMessageStatusJob": [
+      "Conversation"
+    ],
+    "Conversations::UserMentionJob": [
+      "Mention"
+    ],
+    "Crm::SetupJob": [
+      "Integrations::Hook"
+    ],
+    "Inboxes::FetchImapEmailInboxesJob": [
+      "Inbox"
+    ],
+    "Internal::DeleteAccountsJob": [
+      "Account"
+    ],
+    "Internal::ProcessStaleContactsJob": [
+      "Account"
+    ],
+    "Migration::RemoveMessageNotifications": [
+      "Notification"
+    ],
+    "Migration::RemoveStaleNotificationsJob": [
+      "Message",
+      "Inbox"
+    ],
+    "Notification::RemoveDuplicateNotificationJob": [
+      "Notification"
+    ],
+    "Notification::RemoveOldNotificationJob": [
+      "Notification"
+    ],
+    "Notification::ReopenSnoozedNotificationsJob": [
+      "Notification"
+    ],
+    "SendReplyJob": [
+      "Message"
+    ],
+    "SlackUnfurlJob": [
+      "Integrations::Hook"
+    ],
+    "TriggerScheduledItemsJob": [
+      "Campaign"
+    ],
+    "Webhooks::InstagramEventsJob": [
+      "Channel::Instagram",
+      "Channel::FacebookPage"
+    ],
+    "Webhooks::LineEventsJob": [
+      "Channel::Line"
+    ],
+    "Webhooks::SmsEventsJob": [
+      "Channel::Sms"
+    ],
+    "Webhooks::TelegramEventsJob": [
+      "Channel::Telegram"
+    ],
+    "Webhooks::TiktokEventsJob": [
+      "Channel::Tiktok"
+    ],
+    "Webhooks::WhatsappEventsJob": [
+      "Channel::Whatsapp"
+    ],
+    "AutomationRules::ActionService": [
+      "Team"
+    ],
+    "AutomationRules::ConditionsFilterService": [
+      "Conversation"
+    ],
+    "Conversations::AssignmentService": [
+      "AgentBot"
+    ],
+    "Conversations::PermissionFilterService": [
+      "AccountUser"
+    ],
+    "Instagram::TestEventService": [
+      "Channel::Instagram",
+      "Inbox",
+      "Conversation"
+    ],
+    "Instagram::WebhooksBaseService": [
+      "Inbox"
+    ],
+    "Internal::RemoveOrphanConversationsService": [
+      "Conversation"
+    ],
+    "Internal::RemoveStaleContactInboxesService": [
+      "ContactInbox"
+    ],
+    "Internal::RemoveStaleContactsService": [
+      "ContactInbox",
+      "Contact"
+    ],
+    "Labels::UpdateService": [
+      "Account"
+    ],
+    "Line::IncomingMessageService": [
+      "Conversation"
+    ],
+    "Mailbox::ConversationFinderStrategies::InReplyToStrategy": [
+      "Conversation",
+      "Message"
+    ],
+    "Mailbox::ConversationFinderStrategies::NewConversationStrategy": [
+      "ContactInbox",
+      "Conversation"
+    ],
+    "Mailbox::ConversationFinderStrategies::ReceiverUuidStrategy": [
+      "Conversation"
+    ],
+    "Mailbox::ConversationFinderStrategies::ReferencesStrategy": [
+      "Conversation",
+      "Message"
+    ],
+    "Messages::MentionService": [
+      "User"
+    ],
+    "Mfa::TokenService": [
+      "User"
+    ],
+    "ReportingEvents::BackfillService": [
+      "ReportingEventsRollup"
+    ],
+    "Sms::IncomingMessageService": [
+      "Conversation"
+    ],
+    "Telegram::IncomingMessageService": [
+      "Conversation"
+    ],
+    "Twilio::DeliveryStatusService": [
+      "Channel::TwilioSms"
+    ],
+    "Twilio::IncomingMessageService": [
+      "Channel::TwilioSms",
+      "Conversation"
+    ],
+    "Twitter::DirectMessageParserService": [
+      "Conversation"
+    ],
+    "Twitter::TweetParserService": [
+      "Conversation"
+    ],
+    "Twitter::WebhookSubscribeService": [
+      "Inbox"
+    ],
+    "Twitter::WebhooksBaseService": [
+      "Channel::TwitterProfile",
+      "Inbox"
+    ],
+    "Whatsapp::ChannelCreationService": [
+      "Channel::Whatsapp",
+      "Inbox"
+    ],
+    "Whatsapp::IncomingMessageBaseService": [
+      "Conversation"
+    ],
+    "Widget::TokenService": [
+      "InstallationConfig"
+    ],
+    "AccountBuilder": [
+      "User",
+      "Account",
+      "AccountUser"
+    ],
+    "AgentBuilder": [
+      "User",
+      "AccountUser"
+    ],
+    "Campaigns::CampaignConversationBuilder": [
+      "ContactInbox",
+      "Conversation"
+    ],
+    "ContactInboxBuilder": [
+      "ContactInbox"
+    ],
+    "ContactInboxWithContactBuilder": [
+      "ContactInbox"
+    ],
+    "ConversationBuilder": [
+      "Conversation"
+    ],
+    "CsatSurveys::ResponseBuilder": [
+      "CsatSurveyResponse"
+    ],
+    "Messages::Facebook::MessageBuilder": [
+      "Conversation"
+    ],
+    "Messages::Instagram::BaseMessageBuilder": [
+      "Conversation",
+      "Message"
+    ],
+    "Messages::Instagram::Messenger::MessageBuilder": [
+      "Conversation"
+    ],
+    "Messages::MessageBuilder": [
+      "AgentBot"
+    ],
+    "NotificationSubscriptionBuilder": [
+      "NotificationSubscription"
+    ],
+    "V2::Reports::FirstResponseTimeDistributionBuilder": [
+      "ReportingEvent"
+    ],
+    "V2::Reports::LabelSummaryBuilder": [
+      "ReportingEvent"
+    ],
+    "EmailChannelFinder": [
+      "Channel::Email"
+    ],
+    "ContactMergeAction": [
+      "Conversation",
+      "Note",
+      "Message",
+      "ContactInbox"
+    ],
+    "RoomChannel": [
+      "ContactInbox",
+      "User"
+    ],
+    "ActionCableListener": [
+      "User",
+      "Account"
+    ],
+    "AutomationRuleListener": [
+      "AutomationRule"
+    ],
+    "InstallationWebhookListener": [
+      "InstallationConfig"
+    ],
+    "ReportingEventListener": [
+      "ReportingEvent"
+    ],
+    "Imap::ImapMailbox": [
+      "Conversation",
+      "ContactInbox"
+    ],
+    "AccessToken": [
+
+    ],
+    "ApplicationRecord": [
+
+    ],
+    "Channel::Api": [
+
+    ],
+    "Channel::Email": [
+
+    ],
+    "Channel::FacebookPage": [
+
+    ],
+    "Channel::Instagram": [
+
+    ],
+    "Channel::Line": [
+
+    ],
+    "Channel::Sms": [
+
+    ],
+    "Channel::Telegram": [
+
+    ],
+    "Channel::Tiktok": [
+
+    ],
+    "Channel::TwilioSms": [
+
+    ],
+    "Channel::TwitterProfile": [
+
+    ],
+    "Channel::Whatsapp": [
+
+    ],
+    "ContentAttributeValidator": [
+
+    ],
+    "JsonSchemaValidator": [
+
+    ],
+    "Integrations::App": [
+
+    ],
+    "SuperAdmin": [
+
+    ],
+    "Api::BaseController": [
+
+    ],
+    "Api::V1::Accounts::Actions::ContactMergesController": [
+
+    ],
+    "Api::V1::Accounts::AgentsController": [
+
+    ],
+    "Api::V1::Accounts::ArticlesController": [
+
+    ],
+    "Api::V1::Accounts::AssignableAgentsController": [
+
+    ],
+    "Api::V1::Accounts::AssignmentPolicies::InboxesController": [
+
+    ],
+    "Api::V1::Accounts::BulkActionsController": [
+
+    ],
+    "Api::V1::Accounts::CallbacksController": [
+
+    ],
+    "Api::V1::Accounts::CampaignsController": [
+
+    ],
+    "Api::V1::Accounts::CategoriesController": [
+
+    ],
+    "Api::V1::Accounts::Channels::TwilioChannelsController": [
+
+    ],
+    "Api::V1::Accounts::ContactInboxesController": [
+
+    ],
+    "Api::V1::Accounts::Contacts::ContactInboxesController": [
+
+    ],
+    "Api::V1::Accounts::Contacts::ConversationsController": [
+
+    ],
+    "Api::V1::Accounts::Contacts::NotesController": [
+
+    ],
+    "Api::V1::Accounts::ContactsController": [
+
+    ],
+    "Api::V1::Accounts::Conversations::AssignmentsController": [
+
+    ],
+    "Api::V1::Accounts::Conversations::MessagesController": [
+
+    ],
+    "Api::V1::Accounts::Conversations::ParticipantsController": [
+
+    ],
+    "Api::V1::Accounts::CsatSurveyResponsesController": [
+
+    ],
+    "Api::V1::Accounts::Google::AuthorizationsController": [
+
+    ],
+    "Api::V1::Accounts::InboxCsatTemplatesController": [
+
+    ],
+    "Api::V1::Accounts::InboxMembersController": [
+
+    ],
+    "Api::V1::Accounts::Inboxes::AssignmentPoliciesController": [
+
+    ],
+    "Api::V1::Accounts::Instagram::AuthorizationsController": [
+
+    ],
+    "Api::V1::Accounts::Integrations::DyteController": [
+
+    ],
+    "Api::V1::Accounts::Integrations::HooksController": [
+
+    ],
+    "Api::V1::Accounts::MacrosController": [
+
+    ],
+    "Api::V1::Accounts::Microsoft::AuthorizationsController": [
+
+    ],
+    "Api::V1::Accounts::NotificationSettingsController": [
+
+    ],
+    "Api::V1::Accounts::NotificationsController": [
+
+    ],
+    "Api::V1::Accounts::Notion::AuthorizationsController": [
+
+    ],
+    "Api::V1::Accounts::OauthAuthorizationController": [
+
+    ],
+    "Api::V1::Accounts::SearchController": [
+
+    ],
+    "Api::V1::Accounts::TeamMembersController": [
+
+    ],
+    "Api::V1::Accounts::Tiktok::AuthorizationsController": [
+
+    ],
+    "Api::V1::Accounts::Twitter::AuthorizationsController": [
+
+    ],
+    "Api::V1::Accounts::Whatsapp::AuthorizationsController": [
+
+    ],
+    "Api::V1::AccountsController": [
+
+    ],
+    "Api::V1::Profile::MfaController": [
+
+    ],
+    "Api::V1::ProfilesController": [
+
+    ],
+    "Api::V1::Widget::CampaignsController": [
+
+    ],
+    "Api::V1::Widget::ConfigsController": [
+
+    ],
+    "Api::V1::Widget::ContactsController": [
+
+    ],
+    "Api::V1::Widget::ConversationsController": [
+
+    ],
+    "Api::V1::Widget::EventsController": [
+
+    ],
+    "Api::V1::Widget::InboxMembersController": [
+
+    ],
+    "Api::V1::Widget::Integrations::DyteController": [
+
+    ],
+    "Api::V1::Widget::LabelsController": [
+
+    ],
+    "Api::V1::Widget::MessagesController": [
+
+    ],
+    "Api::V2::Accounts::LiveReportsController": [
+
+    ],
+    "Api::V2::Accounts::ReportsController": [
+
+    ],
+    "Api::V2::Accounts::YearInReviewsController": [
+
+    ],
+    "Api::V2::AccountsController": [
+
+    ],
+    "DeviseOverrides::OmniauthCallbacksController": [
+
+    ],
+    "DeviseOverrides::SessionsController": [
+
+    ],
+    "Installation::OnboardingController": [
+
+    ],
+    "Microsoft::CallbacksController": [
+
+    ],
+    "MicrosoftController": [
+
+    ],
+    "Notion::CallbacksController": [
+
+    ],
+    "Public::Api::V1::Inboxes::ContactsController": [
+
+    ],
+    "Public::Api::V1::Inboxes::ConversationsController": [
+
+    ],
+    "Public::Api::V1::Inboxes::MessagesController": [
+
+    ],
+    "Public::Api::V1::Portals::ArticlesController": [
+
+    ],
+    "Public::Api::V1::Portals::CategoriesController": [
+
+    ],
+    "SlackUploadsController": [
+
+    ],
+    "SuperAdmin::AgentBotsController": [
+
+    ],
+    "SuperAdmin::InstallationConfigsController": [
+
+    ],
+    "SuperAdmin::SettingsController": [
+
+    ],
+    "SuperAdmin::UsersController": [
+
+    ],
+    "Twilio::CallbackController": [
+
+    ],
+    "Twilio::DeliveryStatusController": [
+
+    ],
+    "Webhooks::InstagramController": [
+
+    ],
+    "Webhooks::LineController": [
+
+    ],
+    "Webhooks::SmsController": [
+
+    ],
+    "Webhooks::TelegramController": [
+
+    ],
+    "Webhooks::TiktokController": [
+
+    ],
+    "AdministratorNotifications::AccountComplianceMailer": [
+
+    ],
+    "AdministratorNotifications::AccountNotificationMailer": [
+
+    ],
+    "AdministratorNotifications::BaseMailer": [
+
+    ],
+    "AdministratorNotifications::ChannelNotificationsMailer": [
+
+    ],
+    "AdministratorNotifications::IntegrationsNotificationMailer": [
+
+    ],
+    "AgentNotifications::ConversationNotificationsMailer": [
+
+    ],
+    "ApplicationMailer": [
+
+    ],
+    "ConversationReplyMailer": [
+
+    ],
+    "PortalInstructionsMailer": [
+
+    ],
+    "TeamNotifications::AutomationNotificationMailer": [
+
+    ],
+    "Account::ConversationsResolutionSchedulerJob": [
+
+    ],
+    "AgentBots::WebhookJob": [
+
+    ],
+    "Agents::DestroyJob": [
+
+    ],
+    "AutoAssignment::PeriodicAssignmentJob": [
+
+    ],
+    "Avatar::AvatarFromFaviconJob": [
+
+    ],
+    "Avatar::AvatarFromGravatarJob": [
+
+    ],
+    "Avatar::AvatarFromUrlJob": [
+
+    ],
+    "BulkActionsJob": [
+
+    ],
+    "Campaigns::TriggerOneoffCampaignJob": [
+
+    ],
+    "Channels::Twilio::TemplatesSyncJob": [
+
+    ],
+    "Channels::Whatsapp::TemplatesSyncJob": [
+
+    ],
+    "ContactIpLookupJob": [
+
+    ],
+    "Conversations::ActivityMessageJob": [
+
+    ],
+    "Conversations::ResolutionJob": [
+
+    ],
+    "DataImportJob": [
+
+    ],
+    "DeleteObjectJob": [
+
+    ],
+    "EventDispatcherJob": [
+
+    ],
+    "HookJob": [
+
+    ],
+    "Inboxes::FetchImapEmailsJob": [
+
+    ],
+    "Inboxes::SyncWidgetPreChatCustomFieldsJob": [
+
+    ],
+    "Inboxes::UpdateWidgetPreChatCustomFieldsJob": [
+
+    ],
+    "Internal::CheckNewVersionsJob": [
+
+    ],
+    "Internal::ProcessStaleRedisKeysJob": [
+
+    ],
+    "Internal::RemoveOrphanConversationsJob": [
+
+    ],
+    "Internal::RemoveStaleContactInboxesJob": [
+
+    ],
+    "Internal::RemoveStaleContactsJob": [
+
+    ],
+    "Internal::RemoveStaleRedisKeysJob": [
+
+    ],
+    "Internal::SeedAccountJob": [
+
+    ],
+    "Internal::TriggerDailyScheduledItemsJob": [
+
+    ],
+    "Labels::UpdateJob": [
+
+    ],
+    "MacrosExecutionJob": [
+
+    ],
+    "Migration::ConversationBatchCacheLabelJob": [
+
+    ],
+    "Migration::ConversationCacheLabelJob": [
+
+    ],
+    "Migration::ConversationsFirstReplySchedulerJob": [
+
+    ],
+    "Migration::UpdateFirstResponseTimeInReportingEventsJob": [
+
+    ],
+    "MutexApplicationJob": [
+
+    ],
+    "Notification::DeleteNotificationJob": [
+
+    ],
+    "Notification::EmailNotificationJob": [
+
+    ],
+    "Notification::PushNotificationJob": [
+
+    ],
+    "SendOnSlackJob": [
+
+    ],
+    "WebhookJob": [
+
+    ],
+    "Webhooks::FacebookEventsJob": [
+
+    ],
+    "Webhooks::TwilioDeliveryStatusJob": [
+
+    ],
+    "Webhooks::TwilioEventsJob": [
+
+    ],
+    "AccountPolicy": [
+
+    ],
+    "AgentBotPolicy": [
+
+    ],
+    "ArticlePolicy": [
+
+    ],
+    "AssignmentPolicyPolicy": [
+
+    ],
+    "AutomationRulePolicy": [
+
+    ],
+    "CampaignPolicy": [
+
+    ],
+    "CategoryPolicy": [
+
+    ],
+    "ContactPolicy": [
+
+    ],
+    "ConversationPolicy": [
+
+    ],
+    "CsatSurveyResponsePolicy": [
+
+    ],
+    "CustomFilterPolicy": [
+
+    ],
+    "HookPolicy": [
+
+    ],
+    "InboxPolicy": [
+
+    ],
+    "InboxPolicy::Scope": [
+
+    ],
+    "LabelPolicy": [
+
+    ],
+    "MacroPolicy": [
+
+    ],
+    "PortalPolicy": [
+
+    ],
+    "ReportPolicy": [
+
+    ],
+    "TeamMemberPolicy": [
+
+    ],
+    "TeamPolicy": [
+
+    ],
+    "UserPolicy": [
+
+    ],
+    "WebhookPolicy": [
+
+    ],
+    "Account::SignUpEmailValidationService": [
+
+    ],
+    "AccountDeletionService": [
+
+    ],
+    "ActionService": [
+
+    ],
+    "AutoAssignment::AgentAssignmentService": [
+
+    ],
+    "AutoAssignment::AssignmentService": [
+
+    ],
+    "AutoAssignment::InboxRoundRobinService": [
+
+    ],
+    "AutoAssignment::RateLimiter": [
+
+    ],
+    "AutoAssignment::RoundRobinSelector": [
+
+    ],
+    "AutomationRules::ConditionValidationService": [
+
+    ],
+    "Base::SendOnChannelService": [
+
+    ],
+    "BaseRefreshOauthTokenService": [
+
+    ],
+    "BaseTokenService": [
+
+    ],
+    "Contacts::BulkActionService": [
+
+    ],
+    "Contacts::BulkAssignLabelsService": [
+
+    ],
+    "Contacts::BulkDeleteService": [
+
+    ],
+    "Contacts::ContactableInboxesService": [
+
+    ],
+    "Contacts::FilterService": [
+
+    ],
+    "Contacts::SyncAttributes": [
+
+    ],
+    "Conversations::FilterService": [
+
+    ],
+    "Conversations::MessageWindowService": [
+
+    ],
+    "Conversations::TypingStatusManager": [
+
+    ],
+    "Crm::BaseProcessorService": [
+
+    ],
+    "Crm::Leadsquared::Api::ActivityClient": [
+
+    ],
+    "Crm::Leadsquared::Api::BaseClient": [
+
+    ],
+    "Crm::Leadsquared::Api::BaseClient::ApiError": [
+
+    ],
+    "Crm::Leadsquared::Api::LeadClient": [
+
+    ],
+    "Crm::Leadsquared::LeadFinderService": [
+
+    ],
+    "Crm::Leadsquared::Mappers::ContactMapper": [
+
+    ],
+    "Crm::Leadsquared::Mappers::ConversationMapper": [
+
+    ],
+    "Crm::Leadsquared::ProcessorService": [
+
+    ],
+    "Crm::Leadsquared::SetupService": [
+
+    ],
+    "CsatSurveyService": [
+
+    ],
+    "CsatTemplateManagementService": [
+
+    ],
+    "CsatTemplateNameService": [
+
+    ],
+    "CsatTemplateUtilityAnalysisService": [
+
+    ],
+    "DataImport::ContactManager": [
+
+    ],
+    "Email::SendOnEmailService": [
+
+    ],
+    "EmailTemplates::DbResolverService": [
+
+    ],
+    "Facebook::SendOnFacebookService": [
+
+    ],
+    "FilterService": [
+
+    ],
+    "Google::RefreshOauthTokenService": [
+
+    ],
+    "Imap::BaseFetchEmailService": [
+
+    ],
+    "Imap::FetchEmailService": [
+
+    ],
+    "Imap::GoogleFetchEmailService": [
+
+    ],
+    "Imap::MicrosoftFetchEmailService": [
+
+    ],
+    "Instagram::BaseMessageText": [
+
+    ],
+    "Instagram::BaseSendService": [
+
+    ],
+    "Instagram::MessageText": [
+
+    ],
+    "Instagram::Messenger::MessageText": [
+
+    ],
+    "Instagram::Messenger::SendOnInstagramService": [
+
+    ],
+    "Instagram::ReadStatusService": [
+
+    ],
+    "Instagram::RefreshOauthTokenService": [
+
+    ],
+    "Instagram::SendOnInstagramService": [
+
+    ],
+    "Internal::RemoveStaleRedisKeysService": [
+
+    ],
+    "IpLookupService": [
+
+    ],
+    "Line::SendOnLineService": [
+
+    ],
+    "Linear::ActivityMessageService": [
+
+    ],
+    "Liquid::CampaignTemplateService": [
+
+    ],
+    "LlmFormatter::ArticleLlmFormatter": [
+
+    ],
+    "LlmFormatter::ContactLlmFormatter": [
+
+    ],
+    "LlmFormatter::ConversationLlmFormatter": [
+
+    ],
+    "LlmFormatter::DefaultLlmFormatter": [
+
+    ],
+    "LlmFormatter::LlmTextFormatterService": [
+
+    ],
+    "Macros::ExecutionService": [
+
+    ],
+    "Mailbox::ConversationFinder": [
+
+    ],
+    "MessageTemplates::HookExecutionService": [
+
+    ],
+    "MessageTemplates::Template::AutoResolve": [
+
+    ],
+    "MessageTemplates::Template::CsatSurvey": [
+
+    ],
+    "MessageTemplates::Template::EmailCollect": [
+
+    ],
+    "MessageTemplates::Template::Greeting": [
+
+    ],
+    "MessageTemplates::Template::OutOfOffice": [
+
+    ],
+    "Messages::InReplyToMessageBuilder": [
+
+    ],
+    "Messages::MarkdownRendererService": [
+
+    ],
+    "Messages::MarkdownRenderers::BaseMarkdownRenderer": [
+
+    ],
+    "Messages::MarkdownRenderers::InstagramRenderer": [
+
+    ],
+    "Messages::MarkdownRenderers::LineRenderer": [
+
+    ],
+    "Messages::MarkdownRenderers::PlainTextRenderer": [
+
+    ],
+    "Messages::MarkdownRenderers::TelegramRenderer": [
+
+    ],
+    "Messages::MarkdownRenderers::WhatsAppRenderer": [
+
+    ],
+    "Messages::NewMessageNotificationService": [
+
+    ],
+    "Messages::SendEmailNotificationService": [
+
+    ],
+    "Messages::StatusUpdateService": [
+
+    ],
+    "Mfa::AuthenticationService": [
+
+    ],
+    "Mfa::ManagementService": [
+
+    ],
+    "Microsoft::RefreshOauthTokenService": [
+
+    ],
+    "Notification::EmailNotificationService": [
+
+    ],
+    "Notification::FcmService": [
+
+    ],
+    "Notification::MarkConversationReadService": [
+
+    ],
+    "Notification::PushNotificationService": [
+
+    ],
+    "ReportingEvents::RollupService": [
+
+    ],
+    "SearchService": [
+
+    ],
+    "Sms::DeliveryStatusService": [
+
+    ],
+    "Sms::OneoffSmsCampaignService": [
+
+    ],
+    "Sms::SendOnSmsService": [
+
+    ],
+    "Telegram::SendAttachmentsService": [
+
+    ],
+    "Telegram::SendOnTelegramService": [
+
+    ],
+    "Telegram::UpdateMessageService": [
+
+    ],
+    "Tiktok::AuthClient": [
+
+    ],
+    "Tiktok::Client": [
+
+    ],
+    "Tiktok::MessageService": [
+
+    ],
+    "Tiktok::ReadStatusService": [
+
+    ],
+    "Tiktok::SendOnTiktokService": [
+
+    ],
+    "Tiktok::TokenService": [
+
+    ],
+    "Twilio::CsatTemplateApiClient": [
+
+    ],
+    "Twilio::CsatTemplateService": [
+
+    ],
+    "Twilio::OneoffSmsCampaignService": [
+
+    ],
+    "Twilio::SendOnTwilioService": [
+
+    ],
+    "Twilio::TemplateProcessorService": [
+
+    ],
+    "Twilio::TemplateSyncService": [
+
+    ],
+    "Twilio::WebhookSetupService": [
+
+    ],
+    "Twitter::SendOnTwitterService": [
+
+    ],
+    "Whatsapp::CsatTemplateService": [
+
+    ],
+    "Whatsapp::EmbeddedSignupService": [
+
+    ],
+    "Whatsapp::FacebookApiClient": [
+
+    ],
+    "Whatsapp::HealthService": [
+
+    ],
+    "Whatsapp::IncomingMessageService": [
+
+    ],
+    "Whatsapp::IncomingMessageWhatsappCloudService": [
+
+    ],
+    "Whatsapp::OneoffCampaignService": [
+
+    ],
+    "Whatsapp::PhoneInfoService": [
+
+    ],
+    "Whatsapp::PhoneNormalizers::ArgentinaPhoneNormalizer": [
+
+    ],
+    "Whatsapp::PhoneNormalizers::BasePhoneNormalizer": [
+
+    ],
+    "Whatsapp::PhoneNormalizers::BrazilPhoneNormalizer": [
+
+    ],
+    "Whatsapp::PhoneNumberNormalizationService": [
+
+    ],
+    "Whatsapp::PopulateTemplateParametersService": [
+
+    ],
+    "Whatsapp::Providers::BaseService": [
+
+    ],
+    "Whatsapp::Providers::Whatsapp360DialogService": [
+
+    ],
+    "Whatsapp::Providers::WhatsappCloudService": [
+
+    ],
+    "Whatsapp::ReauthorizationService": [
+
+    ],
+    "Whatsapp::SendOnWhatsappService": [
+
+    ],
+    "Whatsapp::TemplateParameterConverterService": [
+
+    ],
+    "Whatsapp::TemplateProcessorService": [
+
+    ],
+    "Whatsapp::TokenExchangeService": [
+
+    ],
+    "Whatsapp::TokenValidationService": [
+
+    ],
+    "Whatsapp::WebhookSetupService": [
+
+    ],
+    "Whatsapp::WebhookTeardownService": [
+
+    ],
+    "Email::BaseBuilder": [
+
+    ],
+    "Email::FromBuilder": [
+
+    ],
+    "Email::ReplyToBuilder": [
+
+    ],
+    "Messages::Instagram::MessageBuilder": [
+
+    ],
+    "Messages::Messenger::MessageBuilder": [
+
+    ],
+    "NotificationBuilder": [
+
+    ],
+    "V2::ReportBuilder": [
+
+    ],
+    "V2::Reports::AgentSummaryBuilder": [
+
+    ],
+    "V2::Reports::BaseSummaryBuilder": [
+
+    ],
+    "V2::Reports::BotMetricsBuilder": [
+
+    ],
+    "V2::Reports::Conversations::BaseReportBuilder": [
+
+    ],
+    "V2::Reports::Conversations::MetricBuilder": [
+
+    ],
+    "V2::Reports::Conversations::ReportBuilder": [
+
+    ],
+    "V2::Reports::InboxLabelMatrixBuilder": [
+
+    ],
+    "V2::Reports::InboxSummaryBuilder": [
+
+    ],
+    "V2::Reports::OutgoingMessagesCountBuilder": [
+
+    ],
+    "V2::Reports::TeamSummaryBuilder": [
+
+    ],
+    "V2::Reports::Timeseries::AverageReportBuilder": [
+
+    ],
+    "V2::Reports::Timeseries::BaseTimeseriesBuilder": [
+
+    ],
+    "V2::Reports::Timeseries::CountReportBuilder": [
+
+    ],
+    "YearInReviewBuilder": [
+
+    ],
+    "AgentBotPresenter": [
+
+    ],
+    "Conversations::EventDataPresenter": [
+
+    ],
+    "HtmlParser": [
+
+    ],
+    "Inbox::EventDataPresenter": [
+
+    ],
+    "MailPresenter": [
+
+    ],
+    "MessageContentPresenter": [
+
+    ],
+    "Messages::SearchDataPresenter": [
+
+    ],
+    "ConversationFinder": [
+
+    ],
+    "MessageFinder": [
+
+    ],
+    "NotificationFinder": [
+
+    ],
+    "ContactIdentifyAction": [
+
+    ],
+    "AgentBotListener": [
+
+    ],
+    "BaseListener": [
+
+    ],
+    "CampaignListener": [
+
+    ],
+    "CsatSurveyListener": [
+
+    ],
+    "HookListener": [
+
+    ],
+    "NotificationListener": [
+
+    ],
+    "ParticipationListener": [
+
+    ],
+    "WebhookListener": [
+
+    ],
+    "AsyncDispatcher": [
+
+    ],
+    "Dispatcher": [
+
+    ],
+    "SyncDispatcher": [
+
+    ],
+    "AccountDrop": [
+
+    ],
+    "ContactDrop": [
+
+    ],
+    "ConversationDrop": [
+
+    ],
+    "InboxDrop": [
+
+    ],
+    "MessageDrop": [
+
+    ],
+    "UserDrop": [
+
+    ],
+    "AvatarField": [
+
+    ],
+    "ApplicationMailbox": [
+
+    ],
+    "ReplyMailbox": [
+
+    ],
+    "AccountUserDashboard": [
+
+    ]
+  },
+  "clusters": [
+    {
+      "id": 1,
+      "name": "Cluster939",
+      "classes": [
+        "ContentAttributeValidator",
+        "Instagram::BaseMessageText",
+        "NotificationFinder",
+        "Api::V1::Accounts::NotificationsController",
+        "Notification::DeleteNotificationJob",
+        "Instagram::Messenger::MessageText",
+        "Messages::Instagram::Messenger::MessageBuilder"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cluster943",
+      "classes": [
+        "Conversations::TypingStatusManager",
+        "Api::V1::Widget::Integrations::DyteController",
+        "Api::V1::Accounts::MacrosController",
+        "MacrosExecutionJob",
+        "WebhookJob",
+        "Macros::ExecutionService",
+        "AutomationRules::ActionService",
+        "Messages::MessageBuilder"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cluster880",
+      "classes": [
+        "Api::V1::Accounts::Tiktok::AuthorizationsController",
+        "Channel::FacebookPage",
+        "AdministratorNotifications::IntegrationsNotificationMailer",
+        "AdministratorNotifications::BaseMailer",
+        "AdministratorNotifications::ChannelNotificationsMailer"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cluster950",
+      "classes": [
+        "Messages::MarkdownRenderers::WhatsAppRenderer",
+        "LabelPolicy",
+        "CampaignPolicy",
+        "AssignmentPolicyPolicy",
+        "PortalPolicy",
+        "CategoryPolicy",
+        "AutomationRulePolicy",
+        "ArticlePolicy",
+        "AgentBotPolicy",
+        "InboxPolicy",
+        "AccountPolicy",
+        "ConversationPolicy",
+        "TeamMemberPolicy",
+        "TeamPolicy",
+        "UserPolicy",
+        "WebhookPolicy"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cluster886",
+      "classes": [
+        "LlmFormatter::ArticleLlmFormatter",
+        "ContactPolicy",
+        "Tiktok::ReadStatusService",
+        "Webhooks::TiktokController",
+        "Webhooks::TiktokEventsJob",
+        "Tiktok::MessageService",
+        "EmailChannelFinder",
+        "ApplicationMailbox"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cluster854",
+      "classes": [
+        "EmailTemplates::DbResolverService",
+        "EmailTemplate",
+        "Platform::Api::V1::EmailChannelMigrationsController",
+        "Channel::Email",
+        "Email::ReplyToBuilder",
+        "Email::BaseBuilder",
+        "Email::FromBuilder"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Cluster879",
+      "classes": [
+        "Api::V1::Accounts::NotificationSettingsController",
+        "AutomationRule",
+        "Google::CallbacksController",
+        "Notion::CallbacksController",
+        "OauthCallbackController"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Cluster798",
+      "classes": [
+        "Label",
+        "Labels::UpdateJob",
+        "Labels::UpdateService"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cluster835",
+      "classes": [
+        "CannedResponse",
+        "Contacts::FilterService",
+        "Account::ContactsExportJob",
+        "DataImport",
+        "AdministratorNotifications::AccountNotificationMailer",
+        "DataImportJob",
+        "Api::V1::Accounts::Contacts::ConversationsController",
+        "Conversations::PermissionFilterService",
+        "Conversations::FilterService",
+        "FilterService"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Cluster827",
+      "classes": [
+        "Platform::Api::V1::AccountUsersController",
+        "Linear::CallbacksController",
+        "UserDrop",
+        "TeamNotifications::AutomationNotificationMailer",
+        "ConversationDrop",
+        "AgentNotifications::ConversationNotificationsMailer",
+        "ApplicationMailer"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Cluster901",
+      "classes": [
+        "Public::Api::V1::Portals::CategoriesController",
+        "Internal::DeleteAccountsJob",
+        "AdministratorNotifications::AccountComplianceMailer",
+        "AccountDeletionService"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Cluster909",
+      "classes": [
+        "HookPolicy",
+        "HtmlParser",
+        "Mailbox::ConversationFinderStrategies::ReferencesStrategy",
+        "Mailbox::ConversationFinderStrategies::InReplyToStrategy",
+        "Mailbox::ConversationFinderStrategies::ReceiverUuidStrategy",
+        "Mailbox::ConversationFinderStrategies::NewConversationStrategy",
+        "MailPresenter",
+        "Imap::ImapMailbox",
+        "ReplyMailbox",
+        "Mailbox::ConversationFinder"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Cluster871",
+      "classes": [
+        "Twilio::CallbackController",
+        "Whatsapp::PhoneNumberNormalizationService",
+        "Webhooks::TwilioEventsJob",
+        "Twilio::IncomingMessageService",
+        "Whatsapp::PhoneNormalizers::ArgentinaPhoneNormalizer",
+        "Whatsapp::PhoneNormalizers::BasePhoneNormalizer",
+        "Whatsapp::PhoneNormalizers::BrazilPhoneNormalizer"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Cluster847",
+      "classes": [
+        "Twilio::DeliveryStatusController",
+        "Webhooks::TwilioDeliveryStatusJob",
+        "Twilio::DeliveryStatusService",
+        "Channel::TwilioSms"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Cluster782",
+      "classes": [
+        "Crm::Leadsquared::Api::BaseClient::ApiError",
+        "WidgetsController",
+        "Crm::Leadsquared::Api::BaseClient",
+        "PlatformController",
+        "AccessToken"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Cluster944",
+      "classes": [
+        "AvatarField",
+        "V2::Reports::BotMetricsBuilder",
+        "V2::Reports::InboxLabelMatrixBuilder",
+        "V2::Reports::OutgoingMessagesCountBuilder",
+        "Api::V2::Accounts::ReportsController",
+        "V2::ReportBuilder",
+        "V2::Reports::Conversations::ReportBuilder",
+        "V2::Reports::Conversations::BaseReportBuilder"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Cluster864",
+      "classes": [
+        "Api::V1::Accounts::Contacts::ContactInboxesController",
+        "Instagram::WebhooksBaseService",
+        "Public::Api::V1::Inboxes::ContactsController",
+        "Internal::RemoveStaleContactsService",
+        "Sms::IncomingMessageService",
+        "ContactInboxBuilder",
+        "Whatsapp::IncomingMessageBaseService",
+        "ContactInbox",
+        "ContactInboxWithContactBuilder",
+        "Api::V1::Accounts::ContactInboxesController",
+        "Internal::ProcessStaleContactsJob",
+        "Internal::RemoveStaleContactsJob",
+        "Internal::RemoveStaleContactInboxesJob",
+        "Internal::RemoveStaleContactInboxesService",
+        "Campaigns::CampaignConversationBuilder",
+        "CampaignListener",
+        "Public::Api::V1::Inboxes::ConversationsController",
+        "ConversationBuilder",
+        "Public::Api::V1::InboxesController",
+        "Channel::Api"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Cluster945",
+      "classes": [
+        "Messages::MarkdownRenderers::LineRenderer",
+        "Api::V1::Accounts::Channels::TwilioChannelsController",
+        "Twilio::WebhookSetupService",
+        "Api::V1::Accounts::ContactsController",
+        "Contacts::ContactableInboxesService"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Cluster918",
+      "classes": [
+        "LlmFormatter::ConversationLlmFormatter",
+        "MessageFinder",
+        "Api::V1::Widget::EventsController",
+        "Public::Api::V1::CsatSurveyController",
+        "Api::V1::Widget::ContactsController",
+        "Conversations::UpdateMessageStatusJob",
+        "ContactIdentifyAction",
+        "Api::V1::Widget::LabelsController",
+        "Api::V1::Widget::MessagesController",
+        "Api::V1::Widget::BaseController",
+        "Api::V1::Widget::ConversationsController"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Cluster940",
+      "classes": [
+        "Api::V1::Accounts::CampaignsController",
+        "Channel::TwitterProfile",
+        "Twitter::TweetParserService",
+        "Twitter::DirectMessageParserService",
+        "Twitter::WebhooksBaseService"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Cluster946",
+      "classes": [
+        "LlmFormatter::DefaultLlmFormatter",
+        "LlmFormatter::ContactLlmFormatter",
+        "Webhooks::TelegramController",
+        "Telegram::UpdateMessageService",
+        "Webhooks::TelegramEventsJob",
+        "Telegram::IncomingMessageService",
+        "Channel::Telegram",
+        "Telegram::SendAttachmentsService",
+        "Telegram::SendOnTelegramService",
+        "LlmFormatter::LlmTextFormatterService"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Cluster683",
+      "classes": [
+        "ContactIpLookupJob",
+        "IpLookupService"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Cluster873",
+      "classes": [
+        "Api::V1::Accounts::Integrations::DyteController",
+        "Messages::SendEmailNotificationService",
+        "Email::SendOnEmailService",
+        "ActionService",
+        "ConversationReplyMailer",
+        "ConversationReplyEmailJob"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Cluster687",
+      "classes": [
+        "Internal::RemoveOrphanConversationsJob",
+        "Internal::RemoveOrphanConversationsService"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Cluster884",
+      "classes": [
+        "Webhooks::LineController",
+        "Channel::Line",
+        "Webhooks::LineEventsJob",
+        "Line::IncomingMessageService"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Cluster844",
+      "classes": [
+        "Api::BaseController",
+        "AutomationRules::ConditionValidationService",
+        "AutomationRules::ConditionsFilterService",
+        "AutomationRuleListener",
+        "Api::V1::Accounts::AssignmentPolicies::InboxesController"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Cluster942",
+      "classes": [
+        "Microsoft::CallbacksController",
+        "AgentBotPresenter",
+        "Sms::SendOnSmsService",
+        "Instagram::SendOnInstagramService",
+        "Twitter::SendOnTwitterService",
+        "Api::V1::Accounts::Conversations::MessagesController",
+        "Line::SendOnLineService",
+        "Instagram::BaseSendService",
+        "Base::SendOnChannelService",
+        "Facebook::SendOnFacebookService",
+        "Messages::StatusUpdateService",
+        "Tiktok::Client",
+        "Tiktok::SendOnTiktokService",
+        "Channel::Tiktok",
+        "Tiktok::CallbacksController",
+        "Twilio::SendOnTwilioService",
+        "Twilio::TemplateProcessorService"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Cluster922",
+      "classes": [
+        "MessageTemplates::Template::OutOfOffice",
+        "PublicController",
+        "MessageTemplates::Template::EmailCollect",
+        "Shopify::CallbacksController",
+        "ConversationParticipant",
+        "ReportingEvents::RollupService",
+        "Channel::WebWidget",
+        "WidgetTestsController",
+        "V2::Reports::FirstResponseTimeDistributionBuilder",
+        "V2::Reports::LabelSummaryBuilder",
+        "ReportingEventListener",
+        "ReportingEvent"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Cluster938",
+      "classes": [
+        "AccountUserDashboard",
+        "Platform::Api::V1::AccountsController",
+        "PlatformApp",
+        "PlatformAppPermissible"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Cluster915",
+      "classes": [
+        "ApplicationRecord",
+        "DashboardController",
+        "Public::Api::V1::PortalsController",
+        "Api::V1::Accounts::CategoriesController",
+        "RelatedCategory",
+        "Public::Api::V1::Portals::ArticlesController",
+        "Public::Api::V1::Portals::BaseController",
+        "Folder",
+        "Article",
+        "Api::V1::Accounts::ArticlesController",
+        "Category",
+        "Portal"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Cluster769",
+      "classes": [
+        "SuperAdmin::Devise::SessionsController",
+        "SuperAdmin"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Cluster677",
+      "classes": [
+        "Api::V2::Accounts::YearInReviewsController",
+        "YearInReviewBuilder"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Cluster941",
+      "classes": [
+        "InboxDrop",
+        "AccountDrop",
+        "Twilio::OneoffSmsCampaignService",
+        "Liquid::CampaignTemplateService",
+        "Sms::OneoffSmsCampaignService"
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Cluster891",
+      "classes": [
+        "MessageDrop",
+        "Conversations::ReopenSnoozedConversationsJob",
+        "Campaigns::TriggerOneoffCampaignJob",
+        "Campaign",
+        "TriggerScheduledItemsJob",
+        "Account::ConversationsResolutionSchedulerJob",
+        "Conversations::ResolutionJob"
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Cluster894",
+      "classes": [
+        "Api::V1::ProfilesController",
+        "Instagram::RefreshOauthTokenService",
+        "Tiktok::TokenService",
+        "Channel::Instagram",
+        "Instagram::CallbacksController"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Cluster890",
+      "classes": [
+        "Migration::UpdateFirstResponseTimeInReportingEventsJob",
+        "Instagram::ReadStatusService",
+        "Instagram::TestEventService",
+        "Webhooks::InstagramController",
+        "Webhooks::InstagramEventsJob"
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Cluster949",
+      "classes": [
+        "Messages::MarkdownRenderers::TelegramRenderer",
+        "Contacts::SyncAttributes",
+        "Migration::ConversationsFirstReplySchedulerJob",
+        "Api::V2::Accounts::LiveReportsController",
+        "DataImport::ContactManager",
+        "Api::V1::Accounts::InboxMembersController",
+        "Api::V1::Accounts::Conversations::ParticipantsController",
+        "RoomChannel",
+        "Conversations::MessageWindowService",
+        "Webhook",
+        "ConversationFinder",
+        "Messages::Instagram::BaseMessageBuilder",
+        "SuperAdmin::DashboardController",
+        "Api::V1::Accounts::ConversationsController",
+        "Contact",
+        "Account",
+        "Inbox",
+        "Messages::Facebook::MessageBuilder",
+        "Conversation",
+        "ActionCableListener",
+        "ActionCableBroadcastJob",
+        "Api::V1::Accounts::Inboxes::AssignmentPoliciesController",
+        "Api::V1::Accounts::Contacts::NotesController",
+        "DashboardApp",
+        "Instagram::MessageText",
+        "Messages::Instagram::MessageBuilder",
+        "Channels::Twilio::TemplatesSyncJob",
+        "Twilio::TemplateSyncService",
+        "Api::V1::Accounts::SearchController",
+        "SearchService"
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Cluster936",
+      "classes": [
+        "V2::Reports::InboxSummaryBuilder",
+        "Api::V1::Accounts::Actions::ContactMergesController",
+        "Note",
+        "ContactMergeAction"
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Cluster948",
+      "classes": [
+        "Messages::MarkdownRenderers::PlainTextRenderer",
+        "Installation::OnboardingController",
+        "Api::V2::AccountsController",
+        "CustomFilter",
+        "Platform::Api::V1::UsersController",
+        "Agents::DestroyJob",
+        "Macro",
+        "AccountBuilder",
+        "AccountUser",
+        "User",
+        "Mention",
+        "Conversations::UserMentionJob",
+        "DeviseOverrides::OmniauthCallbacksController",
+        "Account::SignUpEmailValidationService",
+        "Api::V1::Accounts::CsatSurveyResponsesController",
+        "CsatSurveyResponse"
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Cluster831",
+      "classes": [
+        "NotificationSetting",
+        "NotificationSubscriptionBuilder",
+        "Api::V1::NotificationSubscriptionsController",
+        "NotificationSubscription"
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Cluster850",
+      "classes": [
+        "Contacts::BulkDeleteService",
+        "Contacts::BulkAssignLabelsService",
+        "Contacts::BulkActionJob",
+        "Contacts::BulkActionService",
+        "Api::V1::Accounts::BulkActionsController",
+        "BulkActionsJob"
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Cluster926",
+      "classes": [
+        "V2::Reports::AgentSummaryBuilder",
+        "V2::Reports::BaseSummaryBuilder",
+        "Api::V1::AccountsController",
+        "TeamMember",
+        "Team",
+        "Api::V1::Accounts::TeamMembersController"
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Cluster919",
+      "classes": [
+        "MessageTemplates::Template::Greeting",
+        "Messages::SearchDataPresenter",
+        "Messages::MarkdownRendererService",
+        "Instagram::Messenger::SendOnInstagramService",
+        "MessageTemplates::HookExecutionService",
+        "Crm::Leadsquared::Mappers::ConversationMapper",
+        "MessageContentPresenter",
+        "SendReplyJob",
+        "Message",
+        "Migration::RemoveStaleNotificationsJob",
+        "Messages::MarkdownRenderers::InstagramRenderer",
+        "Attachment",
+        "Messages::Messenger::MessageBuilder"
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Cluster905",
+      "classes": [
+        "Avatar::AvatarFromGravatarJob",
+        "Api::V1::Accounts::AssignableAgentsController",
+        "Notification::FcmService",
+        "Notification::ReopenSnoozedNotificationsJob",
+        "Notification::PushNotificationJob",
+        "Notification::PushNotificationService",
+        "Migration::RemoveMessageNotifications",
+        "Notification::RemoveDuplicateNotificationJob",
+        "Notification",
+        "Notification::RemoveOldNotificationJob"
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Cluster920",
+      "classes": [
+        "SlackUploadsController",
+        "Api::V1::Accounts::AgentBotsController",
+        "Avatar::AvatarFromUrlJob",
+        "Platform::Api::V1::AgentBotsController",
+        "Api::V1::Accounts::InboxesController",
+        "AgentBot",
+        "AgentBotInbox",
+        "Api::V1::Accounts::Conversations::AssignmentsController",
+        "Conversations::AssignmentService",
+        "Avatar::AvatarFromFaviconJob",
+        "Companies::FetchAvatarsJob",
+        "Twitter::CallbacksController",
+        "Twitter::WebhookSubscribeService"
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Cluster899",
+      "classes": [
+        "MicrosoftController",
+        "Whatsapp::TemplateParameterConverterService",
+        "Whatsapp::SendOnWhatsappService",
+        "Whatsapp::OneoffCampaignService",
+        "Whatsapp::TemplateProcessorService",
+        "Whatsapp::PopulateTemplateParametersService"
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Cluster875",
+      "classes": [
+        "V2::Reports::TeamSummaryBuilder",
+        "MessageTemplates::Template::AutoResolve",
+        "Conversations::ActivityMessageJob",
+        "Api::V1::Accounts::Integrations::LinearController",
+        "Linear::ActivityMessageService"
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Cluster817",
+      "classes": [
+        "SlackUnfurlJob",
+        "Api::V1::Accounts::Integrations::ShopifyController",
+        "Imap::BaseFetchEmailService",
+        "ContactDrop",
+        "Imap::MicrosoftFetchEmailService",
+        "Microsoft::RefreshOauthTokenService",
+        "Inboxes::FetchImapEmailsJob",
+        "Imap::FetchEmailService",
+        "Imap::GoogleFetchEmailService",
+        "Google::RefreshOauthTokenService"
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Cluster906",
+      "classes": [
+        "CsatSurveyResponsePolicy",
+        "Webhooks::ShopifyController",
+        "Api::V1::Accounts::Integrations::SlackController",
+        "Api::V1::Accounts::Integrations::NotionController",
+        "Integrations::Hook",
+        "Crm::SetupJob",
+        "Crm::Leadsquared::Api::ActivityClient",
+        "Crm::Leadsquared::SetupService"
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Cluster868",
+      "classes": [
+        "Inboxes::UpdateWidgetPreChatCustomFieldsJob",
+        "CustomAttributeDefinition",
+        "ReportingEvents::BackfillService",
+        "ReportingEventsRollup"
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Cluster859",
+      "classes": [
+        "Inboxes::SyncWidgetPreChatCustomFieldsJob",
+        "PortalInstructionsMailer",
+        "Api::V1::Accounts::PortalsController",
+        "Integrations::App",
+        "Api::V1::Accounts::Integrations::AppsController"
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Cluster907",
+      "classes": [
+        "CustomFilterPolicy",
+        "Messages::InReplyToMessageBuilder",
+        "CsatSurveys::ResponseBuilder",
+        "CsatSurveyListener",
+        "CsatSurveyService",
+        "MessageTemplates::Template::CsatSurvey"
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Cluster872",
+      "classes": [
+        "EventDispatcherJob",
+        "SyncDispatcher",
+        "AsyncDispatcher",
+        "Dispatcher"
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Cluster914",
+      "classes": [
+        "InboxPolicy::Scope",
+        "Api::V1::Accounts::CallbacksController",
+        "CsatTemplateUtilityAnalysisService",
+        "CsatTemplateNameService",
+        "Twilio::CsatTemplateApiClient",
+        "Api::V1::Accounts::InboxCsatTemplatesController",
+        "Twilio::CsatTemplateService",
+        "CsatTemplateManagementService",
+        "Whatsapp::CsatTemplateService"
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Cluster824",
+      "classes": [
+        "Webhooks::SmsController",
+        "Webhooks::SmsEventsJob",
+        "Sms::DeliveryStatusService"
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Cluster885",
+      "classes": [
+        "Api::V1::Accounts::Twitter::AuthorizationsController",
+        "Crm::Leadsquared::Mappers::ContactMapper",
+        "Crm::Leadsquared::LeadFinderService",
+        "Crm::Leadsquared::Api::LeadClient",
+        "Crm::BaseProcessorService",
+        "Crm::Leadsquared::ProcessorService"
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Cluster845",
+      "classes": [
+        "Webhooks::FacebookEventsJob",
+        "MutexApplicationJob",
+        "HookJob",
+        "SendOnSlackJob"
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Cluster897",
+      "classes": [
+        "Api::V1::Widget::InboxMembersController",
+        "ParticipationListener",
+        "AgentBots::WebhookJob",
+        "AgentBotListener",
+        "Inbox::EventDataPresenter",
+        "HookListener",
+        "BaseListener",
+        "WebhookListener"
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Cluster772",
+      "classes": [
+        "Migration::ConversationCacheLabelJob",
+        "Migration::ConversationBatchCacheLabelJob"
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Cluster823",
+      "classes": [
+        "Notification::MarkConversationReadService",
+        "Notification::EmailNotificationJob",
+        "Notification::EmailNotificationService"
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Cluster822",
+      "classes": [
+        "Internal::RemoveStaleRedisKeysJob",
+        "Internal::ProcessStaleRedisKeysJob",
+        "Internal::RemoveStaleRedisKeysService"
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Cluster925",
+      "classes": [
+        "ReportPolicy",
+        "Whatsapp::TokenValidationService",
+        "Whatsapp::TokenExchangeService",
+        "Whatsapp::FacebookApiClient",
+        "Whatsapp::WebhookTeardownService",
+        "Whatsapp::HealthService",
+        "BaseRefreshOauthTokenService",
+        "Whatsapp::WebhookSetupService"
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Cluster849",
+      "classes": [
+        "Whatsapp::ReauthorizationService",
+        "Whatsapp::PhoneInfoService",
+        "Api::V1::Accounts::Whatsapp::AuthorizationsController",
+        "Whatsapp::EmbeddedSignupService"
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Cluster937",
+      "classes": [
+        "Conversations::EventDataPresenter",
+        "SuperAdmin::SettingsController",
+        "Internal::TriggerDailyScheduledItemsJob",
+        "Internal::CheckNewVersionsJob"
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Cluster903",
+      "classes": [
+        "SuperAdmin::AgentBotsController",
+        "Channel::Sms",
+        "Mfa::AuthenticationService",
+        "Api::V1::Profile::MfaController",
+        "Mfa::ManagementService"
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Cluster869",
+      "classes": [
+        "Api::V1::Accounts::Notion::AuthorizationsController",
+        "Api::V1::Accounts::Microsoft::AuthorizationsController",
+        "Api::V1::Accounts::Google::AuthorizationsController",
+        "Api::V1::Accounts::OauthAuthorizationController",
+        "Tiktok::AuthClient"
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Cluster947",
+      "classes": [
+        "Messages::MarkdownRenderers::BaseMarkdownRenderer",
+        "SuperAdmin::InstallationConfigsController",
+        "Api::V1::Widget::ConfigsController",
+        "InstallationWebhookListener",
+        "Widget::TokenService",
+        "InstallationConfig",
+        "SuperAdmin::AppConfigsController"
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Cluster895",
+      "classes": [
+        "Api::V1::Widget::CampaignsController",
+        "AutoAssignment::RoundRobinSelector",
+        "AutoAssignment::AgentAssignmentService",
+        "InboxMember",
+        "AutoAssignment::InboxRoundRobinService"
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Cluster867",
+      "classes": [
+        "Api::V1::Accounts::Instagram::AuthorizationsController",
+        "DeleteObjectJob",
+        "Api::V1::Accounts::AgentsController",
+        "AgentBuilder",
+        "SuperAdmin::AccountsController",
+        "Internal::SeedAccountJob"
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Cluster904",
+      "classes": [
+        "SuperAdmin::UsersController",
+        "DeviseOverrides::PasswordsController",
+        "DeviseOverrides::ConfirmationsController",
+        "Messages::MentionService",
+        "Messages::NewMessageNotificationService",
+        "NotificationBuilder",
+        "NotificationListener"
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Cluster900",
+      "classes": [
+        "Public::Api::V1::Inboxes::MessagesController",
+        "BaseTokenService",
+        "DeviseOverrides::SessionsController",
+        "Mfa::TokenService"
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Cluster878",
+      "classes": [
+        "Api::V1::Accounts::Integrations::HooksController",
+        "Webhooks::WhatsappController",
+        "Whatsapp::ChannelCreationService",
+        "Channel::Whatsapp",
+        "Channels::Whatsapp::TemplatesSyncSchedulerJob"
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Cluster843",
+      "classes": [
+        "JsonSchemaValidator",
+        "Whatsapp::IncomingMessageService",
+        "Webhooks::WhatsappEventsJob",
+        "Whatsapp::IncomingMessageWhatsappCloudService"
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Cluster917",
+      "classes": [
+        "MacroPolicy",
+        "Channels::Whatsapp::TemplatesSyncJob",
+        "Whatsapp::Providers::WhatsappCloudService",
+        "Whatsapp::Providers::BaseService",
+        "Whatsapp::Providers::Whatsapp360DialogService"
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Cluster898",
+      "classes": [
+        "V2::Reports::Conversations::MetricBuilder",
+        "Inboxes::FetchImapEmailInboxesJob",
+        "V2::Reports::Timeseries::AverageReportBuilder",
+        "WorkingHour",
+        "V2::Reports::Timeseries::BaseTimeseriesBuilder",
+        "V2::Reports::Timeseries::CountReportBuilder"
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Cluster870",
+      "classes": [
+        "AutoAssignment::PeriodicAssignmentJob",
+        "AutoAssignment::RateLimiter",
+        "AutoAssignment::AssignmentJob",
+        "AutoAssignment::AssignmentService",
+        "AssignmentPolicy",
+        "InboxAssignmentPolicy"
+      ]
+    }
+  ],
+  "cluster_metrics": [
+    {
+      "cluster_id": 1,
+      "num_classes": 7,
+      "intra_dependencies": 15.0,
+      "inter_dependencies": 23.0,
+      "f_struct": 0.394737,
+      "f_data": 0.0,
+      "f_quality": 0.355263
+    },
+    {
+      "cluster_id": 2,
+      "num_classes": 8,
+      "intra_dependencies": 27.5,
+      "inter_dependencies": 49.5,
+      "f_struct": 0.357143,
+      "f_data": 0.0,
+      "f_quality": 0.321429
+    },
+    {
+      "cluster_id": 3,
+      "num_classes": 5,
+      "intra_dependencies": 13,
+      "inter_dependencies": 6,
+      "f_struct": 0.684211,
+      "f_data": 0.0,
+      "f_quality": 0.615789
+    },
+    {
+      "cluster_id": 4,
+      "num_classes": 16,
+      "intra_dependencies": 76.0,
+      "inter_dependencies": 8.0,
+      "f_struct": 0.904762,
+      "f_data": 0.0,
+      "f_quality": 0.814286
+    },
+    {
+      "cluster_id": 5,
+      "num_classes": 8,
+      "intra_dependencies": 26.0,
+      "inter_dependencies": 20.0,
+      "f_struct": 0.565217,
+      "f_data": 0.0,
+      "f_quality": 0.508696
+    },
+    {
+      "cluster_id": 6,
+      "num_classes": 7,
+      "intra_dependencies": 30.0,
+      "inter_dependencies": 19.0,
+      "f_struct": 0.612245,
+      "f_data": 0.02381,
+      "f_quality": 0.553401
+    },
+    {
+      "cluster_id": 7,
+      "num_classes": 5,
+      "intra_dependencies": 13,
+      "inter_dependencies": 13.0,
+      "f_struct": 0.5,
+      "f_data": 0.1,
+      "f_quality": 0.46
+    },
+    {
+      "cluster_id": 8,
+      "num_classes": 3,
+      "intra_dependencies": 5,
+      "inter_dependencies": 5.0,
+      "f_struct": 0.5,
+      "f_data": 0.333333,
+      "f_quality": 0.483333
+    },
+    {
+      "cluster_id": 9,
+      "num_classes": 10,
+      "intra_dependencies": 31.0,
+      "inter_dependencies": 34.0,
+      "f_struct": 0.476923,
+      "f_data": 0.066667,
+      "f_quality": 0.435897
+    },
+    {
+      "cluster_id": 10,
+      "num_classes": 7,
+      "intra_dependencies": 28.8,
+      "inter_dependencies": 33.2,
+      "f_struct": 0.464516,
+      "f_data": 0.047619,
+      "f_quality": 0.422826
+    },
+    {
+      "cluster_id": 11,
+      "num_classes": 4,
+      "intra_dependencies": 7,
+      "inter_dependencies": 16.0,
+      "f_struct": 0.304348,
+      "f_data": 0.0,
+      "f_quality": 0.273913
+    },
+    {
+      "cluster_id": 12,
+      "num_classes": 10,
+      "intra_dependencies": 35.5,
+      "inter_dependencies": 54.5,
+      "f_struct": 0.394444,
+      "f_data": 0.118519,
+      "f_quality": 0.366852
+    },
+    {
+      "cluster_id": 13,
+      "num_classes": 7,
+      "intra_dependencies": 12.0,
+      "inter_dependencies": 24.0,
+      "f_struct": 0.333333,
+      "f_data": 0.0,
+      "f_quality": 0.3
+    },
+    {
+      "cluster_id": 14,
+      "num_classes": 4,
+      "intra_dependencies": 9,
+      "inter_dependencies": 0,
+      "f_struct": 1.0,
+      "f_data": 0.0,
+      "f_quality": 0.9
+    },
+    {
+      "cluster_id": 15,
+      "num_classes": 5,
+      "intra_dependencies": 10.0,
+      "inter_dependencies": 11.0,
+      "f_struct": 0.47619,
+      "f_data": 0.0,
+      "f_quality": 0.428571
+    },
+    {
+      "cluster_id": 16,
+      "num_classes": 8,
+      "intra_dependencies": 19.5,
+      "inter_dependencies": 17.5,
+      "f_struct": 0.527027,
+      "f_data": 0.0,
+      "f_quality": 0.474324
+    },
+    {
+      "cluster_id": 17,
+      "num_classes": 20,
+      "intra_dependencies": 90.25,
+      "inter_dependencies": 86.75,
+      "f_struct": 0.509887,
+      "f_data": 0.066667,
+      "f_quality": 0.465565
+    },
+    {
+      "cluster_id": 18,
+      "num_classes": 5,
+      "intra_dependencies": 9.65,
+      "inter_dependencies": 30.35,
+      "f_struct": 0.24125,
+      "f_data": 0.0,
+      "f_quality": 0.217125
+    },
+    {
+      "cluster_id": 19,
+      "num_classes": 11,
+      "intra_dependencies": 58.5,
+      "inter_dependencies": 55.5,
+      "f_struct": 0.513158,
+      "f_data": 0.036364,
+      "f_quality": 0.465478
+    },
+    {
+      "cluster_id": 20,
+      "num_classes": 5,
+      "intra_dependencies": 10.0,
+      "inter_dependencies": 28.0,
+      "f_struct": 0.263158,
+      "f_data": 0.1,
+      "f_quality": 0.246842
+    },
+    {
+      "cluster_id": 21,
+      "num_classes": 10,
+      "intra_dependencies": 28.5,
+      "inter_dependencies": 43.5,
+      "f_struct": 0.395833,
+      "f_data": 0.0,
+      "f_quality": 0.35625
+    },
+    {
+      "cluster_id": 22,
+      "num_classes": 2,
+      "intra_dependencies": 3,
+      "inter_dependencies": 0,
+      "f_struct": 1.0,
+      "f_data": 0.0,
+      "f_quality": 0.9
+    },
+    {
+      "cluster_id": 23,
+      "num_classes": 6,
+      "intra_dependencies": 20,
+      "inter_dependencies": 67.0,
+      "f_struct": 0.229885,
+      "f_data": 0.0,
+      "f_quality": 0.206897
+    },
+    {
+      "cluster_id": 24,
+      "num_classes": 2,
+      "intra_dependencies": 3,
+      "inter_dependencies": 7,
+      "f_struct": 0.3,
+      "f_data": 0.0,
+      "f_quality": 0.27
+    },
+    {
+      "cluster_id": 25,
+      "num_classes": 4,
+      "intra_dependencies": 7.6667,
+      "inter_dependencies": 15.3333,
+      "f_struct": 0.333333,
+      "f_data": 0.0,
+      "f_quality": 0.3
+    },
+    {
+      "cluster_id": 26,
+      "num_classes": 5,
+      "intra_dependencies": 10,
+      "inter_dependencies": 26.0,
+      "f_struct": 0.277778,
+      "f_data": 0.0,
+      "f_quality": 0.25
+    },
+    {
+      "cluster_id": 27,
+      "num_classes": 17,
+      "intra_dependencies": 79.6,
+      "inter_dependencies": 61.4,
+      "f_struct": 0.564539,
+      "f_data": 0.0,
+      "f_quality": 0.508085
+    },
+    {
+      "cluster_id": 28,
+      "num_classes": 12,
+      "intra_dependencies": 69.0,
+      "inter_dependencies": 57.0,
+      "f_struct": 0.547619,
+      "f_data": 0.083838,
+      "f_quality": 0.501241
+    },
+    {
+      "cluster_id": 29,
+      "num_classes": 4,
+      "intra_dependencies": 6,
+      "inter_dependencies": 8,
+      "f_struct": 0.428571,
+      "f_data": 0.0,
+      "f_quality": 0.385714
+    },
+    {
+      "cluster_id": 30,
+      "num_classes": 12,
+      "intra_dependencies": 71.3333,
+      "inter_dependencies": 19.6667,
+      "f_struct": 0.783883,
+      "f_data": 0.102832,
+      "f_quality": 0.715778
+    },
+    {
+      "cluster_id": 31,
+      "num_classes": 2,
+      "intra_dependencies": 2,
+      "inter_dependencies": 0,
+      "f_struct": 1.0,
+      "f_data": 0.0,
+      "f_quality": 0.9
+    },
+    {
+      "cluster_id": 32,
+      "num_classes": 2,
+      "intra_dependencies": 3,
+      "inter_dependencies": 0,
+      "f_struct": 1.0,
+      "f_data": 0.0,
+      "f_quality": 0.9
+    },
+    {
+      "cluster_id": 33,
+      "num_classes": 5,
+      "intra_dependencies": 10,
+      "inter_dependencies": 13.0,
+      "f_struct": 0.434783,
+      "f_data": 0.0,
+      "f_quality": 0.391304
+    },
+    {
+      "cluster_id": 34,
+      "num_classes": 7,
+      "intra_dependencies": 16.25,
+      "inter_dependencies": 45.75,
+      "f_struct": 0.262097,
+      "f_data": 0.011905,
+      "f_quality": 0.237078
+    },
+    {
+      "cluster_id": 35,
+      "num_classes": 5,
+      "intra_dependencies": 12.1,
+      "inter_dependencies": 13.9,
+      "f_struct": 0.465385,
+      "f_data": 0.0,
+      "f_quality": 0.418846
+    },
+    {
+      "cluster_id": 36,
+      "num_classes": 5,
+      "intra_dependencies": 12.5,
+      "inter_dependencies": 28.5,
+      "f_struct": 0.304878,
+      "f_data": 0.025,
+      "f_quality": 0.27689
+    },
+    {
+      "cluster_id": 37,
+      "num_classes": 30,
+      "intra_dependencies": 212.1167,
+      "inter_dependencies": 233.8833,
+      "f_struct": 0.475598,
+      "f_data": 0.029417,
+      "f_quality": 0.43098
+    },
+    {
+      "cluster_id": 38,
+      "num_classes": 4,
+      "intra_dependencies": 6,
+      "inter_dependencies": 23.0,
+      "f_struct": 0.206897,
+      "f_data": 0.0,
+      "f_quality": 0.186207
+    },
+    {
+      "cluster_id": 39,
+      "num_classes": 16,
+      "intra_dependencies": 70.8333,
+      "inter_dependencies": 72.1667,
+      "f_struct": 0.495338,
+      "f_data": 0.104546,
+      "f_quality": 0.456259
+    },
+    {
+      "cluster_id": 40,
+      "num_classes": 4,
+      "intra_dependencies": 9,
+      "inter_dependencies": 7.0,
+      "f_struct": 0.5625,
+      "f_data": 0.25,
+      "f_quality": 0.53125
+    },
+    {
+      "cluster_id": 41,
+      "num_classes": 6,
+      "intra_dependencies": 13,
+      "inter_dependencies": 6,
+      "f_struct": 0.684211,
+      "f_data": 0.0,
+      "f_quality": 0.615789
+    },
+    {
+      "cluster_id": 42,
+      "num_classes": 6,
+      "intra_dependencies": 15.4,
+      "inter_dependencies": 21.6,
+      "f_struct": 0.416216,
+      "f_data": 0.0,
+      "f_quality": 0.374595
+    },
+    {
+      "cluster_id": 43,
+      "num_classes": 13,
+      "intra_dependencies": 57.5,
+      "inter_dependencies": 82.5,
+      "f_struct": 0.410714,
+      "f_data": 0.019658,
+      "f_quality": 0.371609
+    },
+    {
+      "cluster_id": 44,
+      "num_classes": 10,
+      "intra_dependencies": 51.3333,
+      "inter_dependencies": 24.6667,
+      "f_struct": 0.675439,
+      "f_data": 0.133333,
+      "f_quality": 0.621228
+    },
+    {
+      "cluster_id": 45,
+      "num_classes": 13,
+      "intra_dependencies": 37.9,
+      "inter_dependencies": 40.1,
+      "f_struct": 0.485897,
+      "f_data": 0.113462,
+      "f_quality": 0.448654
+    },
+    {
+      "cluster_id": 46,
+      "num_classes": 6,
+      "intra_dependencies": 17.6667,
+      "inter_dependencies": 15.3333,
+      "f_struct": 0.535354,
+      "f_data": 0.0,
+      "f_quality": 0.481818
+    },
+    {
+      "cluster_id": 47,
+      "num_classes": 5,
+      "intra_dependencies": 13.25,
+      "inter_dependencies": 15.75,
+      "f_struct": 0.456897,
+      "f_data": 0.0,
+      "f_quality": 0.411207
+    },
+    {
+      "cluster_id": 48,
+      "num_classes": 10,
+      "intra_dependencies": 27.75,
+      "inter_dependencies": 17.25,
+      "f_struct": 0.616667,
+      "f_data": 0.022222,
+      "f_quality": 0.557222
+    },
+    {
+      "cluster_id": 49,
+      "num_classes": 8,
+      "intra_dependencies": 26.0,
+      "inter_dependencies": 15.0,
+      "f_struct": 0.634146,
+      "f_data": 0.214286,
+      "f_quality": 0.59216
+    },
+    {
+      "cluster_id": 50,
+      "num_classes": 4,
+      "intra_dependencies": 8,
+      "inter_dependencies": 8.0,
+      "f_struct": 0.5,
+      "f_data": 0.166667,
+      "f_quality": 0.466667
+    },
+    {
+      "cluster_id": 51,
+      "num_classes": 5,
+      "intra_dependencies": 14.0,
+      "inter_dependencies": 11.0,
+      "f_struct": 0.56,
+      "f_data": 0.0,
+      "f_quality": 0.504
+    },
+    {
+      "cluster_id": 52,
+      "num_classes": 6,
+      "intra_dependencies": 17.0,
+      "inter_dependencies": 38.0,
+      "f_struct": 0.309091,
+      "f_data": 0.0,
+      "f_quality": 0.278182
+    },
+    {
+      "cluster_id": 53,
+      "num_classes": 4,
+      "intra_dependencies": 8,
+      "inter_dependencies": 11,
+      "f_struct": 0.421053,
+      "f_data": 0.0,
+      "f_quality": 0.378947
+    },
+    {
+      "cluster_id": 54,
+      "num_classes": 9,
+      "intra_dependencies": 39,
+      "inter_dependencies": 19.0,
+      "f_struct": 0.672414,
+      "f_data": 0.0,
+      "f_quality": 0.605172
+    },
+    {
+      "cluster_id": 55,
+      "num_classes": 3,
+      "intra_dependencies": 5,
+      "inter_dependencies": 5,
+      "f_struct": 0.5,
+      "f_data": 0.0,
+      "f_quality": 0.45
+    },
+    {
+      "cluster_id": 56,
+      "num_classes": 6,
+      "intra_dependencies": 19.0,
+      "inter_dependencies": 21.0,
+      "f_struct": 0.475,
+      "f_data": 0.0,
+      "f_quality": 0.4275
+    },
+    {
+      "cluster_id": 57,
+      "num_classes": 4,
+      "intra_dependencies": 9,
+      "inter_dependencies": 10.0,
+      "f_struct": 0.473684,
+      "f_data": 0.0,
+      "f_quality": 0.426316
+    },
+    {
+      "cluster_id": 58,
+      "num_classes": 8,
+      "intra_dependencies": 33,
+      "inter_dependencies": 64.0,
+      "f_struct": 0.340206,
+      "f_data": 0.0,
+      "f_quality": 0.306186
+    },
+    {
+      "cluster_id": 59,
+      "num_classes": 2,
+      "intra_dependencies": 2,
+      "inter_dependencies": 1,
+      "f_struct": 0.666667,
+      "f_data": 0.0,
+      "f_quality": 0.6
+    },
+    {
+      "cluster_id": 60,
+      "num_classes": 3,
+      "intra_dependencies": 5.0,
+      "inter_dependencies": 7.0,
+      "f_struct": 0.416667,
+      "f_data": 0.0,
+      "f_quality": 0.375
+    },
+    {
+      "cluster_id": 61,
+      "num_classes": 3,
+      "intra_dependencies": 5,
+      "inter_dependencies": 1,
+      "f_struct": 0.833333,
+      "f_data": 0.0,
+      "f_quality": 0.75
+    },
+    {
+      "cluster_id": 62,
+      "num_classes": 8,
+      "intra_dependencies": 29.0,
+      "inter_dependencies": 4.0,
+      "f_struct": 0.878788,
+      "f_data": 0.0,
+      "f_quality": 0.790909
+    },
+    {
+      "cluster_id": 63,
+      "num_classes": 4,
+      "intra_dependencies": 9,
+      "inter_dependencies": 21.0,
+      "f_struct": 0.3,
+      "f_data": 0.0,
+      "f_quality": 0.27
+    },
+    {
+      "cluster_id": 64,
+      "num_classes": 4,
+      "intra_dependencies": 6,
+      "inter_dependencies": 1.0,
+      "f_struct": 0.857143,
+      "f_data": 0.0,
+      "f_quality": 0.771429
+    },
+    {
+      "cluster_id": 65,
+      "num_classes": 5,
+      "intra_dependencies": 11.5,
+      "inter_dependencies": 8.5,
+      "f_struct": 0.575,
+      "f_data": 0.0,
+      "f_quality": 0.5175
+    },
+    {
+      "cluster_id": 66,
+      "num_classes": 5,
+      "intra_dependencies": 11.0,
+      "inter_dependencies": 0,
+      "f_struct": 1.0,
+      "f_data": 0.0,
+      "f_quality": 0.9
+    },
+    {
+      "cluster_id": 67,
+      "num_classes": 7,
+      "intra_dependencies": 20.0,
+      "inter_dependencies": 11.0,
+      "f_struct": 0.645161,
+      "f_data": 0.142857,
+      "f_quality": 0.594931
+    },
+    {
+      "cluster_id": 68,
+      "num_classes": 5,
+      "intra_dependencies": 12.0,
+      "inter_dependencies": 10.0,
+      "f_struct": 0.545455,
+      "f_data": 0.0,
+      "f_quality": 0.490909
+    },
+    {
+      "cluster_id": 69,
+      "num_classes": 6,
+      "intra_dependencies": 12,
+      "inter_dependencies": 10.0,
+      "f_struct": 0.545455,
+      "f_data": 0.0,
+      "f_quality": 0.490909
+    },
+    {
+      "cluster_id": 70,
+      "num_classes": 7,
+      "intra_dependencies": 24,
+      "inter_dependencies": 33.0,
+      "f_struct": 0.421053,
+      "f_data": 0.142857,
+      "f_quality": 0.393233
+    },
+    {
+      "cluster_id": 71,
+      "num_classes": 4,
+      "intra_dependencies": 7,
+      "inter_dependencies": 16.0,
+      "f_struct": 0.304348,
+      "f_data": 0.0,
+      "f_quality": 0.273913
+    },
+    {
+      "cluster_id": 72,
+      "num_classes": 5,
+      "intra_dependencies": 13,
+      "inter_dependencies": 19.0,
+      "f_struct": 0.40625,
+      "f_data": 0.2,
+      "f_quality": 0.385625
+    },
+    {
+      "cluster_id": 73,
+      "num_classes": 4,
+      "intra_dependencies": 9,
+      "inter_dependencies": 10.0,
+      "f_struct": 0.473684,
+      "f_data": 0.0,
+      "f_quality": 0.426316
+    },
+    {
+      "cluster_id": 74,
+      "num_classes": 5,
+      "intra_dependencies": 10.6667,
+      "inter_dependencies": 39.3333,
+      "f_struct": 0.213333,
+      "f_data": 0.0,
+      "f_quality": 0.192
+    },
+    {
+      "cluster_id": 75,
+      "num_classes": 6,
+      "intra_dependencies": 17.6667,
+      "inter_dependencies": 14.3333,
+      "f_struct": 0.552083,
+      "f_data": 0.066667,
+      "f_quality": 0.503542
+    },
+    {
+      "cluster_id": 76,
+      "num_classes": 6,
+      "intra_dependencies": 13.5,
+      "inter_dependencies": 20.5,
+      "f_struct": 0.397059,
+      "f_data": 0.072222,
+      "f_quality": 0.364575
+    }
+  ],
+  "isolated_classes": [
+    "JsonbAttributesLengthValidator",
+    "AndroidAppController",
+    "Api::V1::Accounts::AssignmentPoliciesController",
+    "Api::V1::Accounts::AutomationRulesController",
+    "Api::V1::Accounts::BaseController",
+    "Api::V1::Accounts::CannedResponsesController",
+    "Api::V1::Accounts::Captain::PreferencesController",
+    "Api::V1::Accounts::Captain::TasksController",
+    "Api::V1::Accounts::Contacts::BaseController",
+    "Api::V1::Accounts::Contacts::LabelsController",
+    "Api::V1::Accounts::Conversations::BaseController",
+    "Api::V1::Accounts::Conversations::DirectUploadsController",
+    "Api::V1::Accounts::Conversations::DraftMessagesController",
+    "Api::V1::Accounts::Conversations::LabelsController",
+    "Api::V1::Accounts::CustomAttributeDefinitionsController",
+    "Api::V1::Accounts::CustomFiltersController",
+    "Api::V1::Accounts::DashboardAppsController",
+    "Api::V1::Accounts::LabelsController",
+    "Api::V1::Accounts::TeamsController",
+    "Api::V1::Accounts::UploadController",
+    "Api::V1::Accounts::WebhooksController",
+    "Api::V1::Accounts::WorkingHoursController",
+    "Api::V1::Integrations::WebhooksController",
+    "Api::V1::WebhooksController",
+    "Api::V1::Widget::DirectUploadsController",
+    "Api::V2::Accounts::SummaryReportsController",
+    "ApiController",
+    "AppleAppController",
+    "ApplicationController",
+    "DeviseOverrides::TokenValidationsController",
+    "HealthController",
+    "SuperAdmin::AccessTokensController",
+    "SuperAdmin::AccountUsersController",
+    "SuperAdmin::ApplicationController",
+    "SuperAdmin::InstanceStatusesController",
+    "SuperAdmin::PlatformAppsController",
+    "Survey::ResponsesController",
+    "SwaggerController",
+    "Twitter::BaseController",
+    "ApplicationJob",
+    "Migration::AddSearchIndexesJob",
+    "Migration::BackfillCompaniesContactsCountJob",
+    "MutexApplicationJob::LockAcquisitionError",
+    "Webhooks::FacebookDeliveryJob",
+    "ApplicationPolicy",
+    "ApplicationPolicy::Scope",
+    "Captain::TasksPolicy",
+    "Geocoder::SetupService",
+    "Mailbox::ConversationFinderStrategies::BaseStrategy",
+    "WebsiteBrandingService",
+    "Whatsapp::MessageDedupLock",
+    "V2::Reports::ChannelSummaryBuilder",
+    "Reports::TimeFormatPresenter",
+    "ApplicationCable::Channel",
+    "ApplicationCable::Connection",
+    "BaseDispatcher",
+    "BaseDrop",
+    "ConfirmedAtField",
+    "CountField",
+    "SecretField",
+    "SerializedField",
+    "DefaultMailbox",
+    "AccessTokenDashboard",
+    "AccountDashboard",
+    "AgentBotDashboard",
+    "InstallationConfigDashboard",
+    "PlatformAppDashboard",
+    "UserDashboard"
+  ]
+}
